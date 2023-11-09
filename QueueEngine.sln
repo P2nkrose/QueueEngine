@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor_Window", "Editor_Window\Editor_Window.vcxproj", "{6D1377D5-A268-4CB1-84C3-6809CEF626A0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QueueEngine_Window", "QueueEngine_Window\QueueEngine_Window.vcxproj", "{81408AD5-66E5-4282-A17A-B34A29CCA66F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QueueEngine_SOURCE", "QueueEngine_SOURCE\QueueEngine_SOURCE.vcxitems", "{5E2436AF-EAB6-407B-B99C-70B8D05EA171}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,11 +25,24 @@ Global
 		{6D1377D5-A268-4CB1-84C3-6809CEF626A0}.Release|x64.Build.0 = Release|x64
 		{6D1377D5-A268-4CB1-84C3-6809CEF626A0}.Release|x86.ActiveCfg = Release|Win32
 		{6D1377D5-A268-4CB1-84C3-6809CEF626A0}.Release|x86.Build.0 = Release|Win32
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Debug|x64.ActiveCfg = Debug|x64
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Debug|x64.Build.0 = Debug|x64
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Debug|x86.ActiveCfg = Debug|Win32
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Debug|x86.Build.0 = Debug|Win32
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Release|x64.ActiveCfg = Release|x64
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Release|x64.Build.0 = Release|x64
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Release|x86.ActiveCfg = Release|Win32
+		{81408AD5-66E5-4282-A17A-B34A29CCA66F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F28FFEBD-06DA-4C76-A93B-7B496F49E335}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		QueueEngine_SOURCE\QueueEngine_SOURCE.vcxitems*{5e2436af-eab6-407b-b99c-70b8d05ea171}*SharedItemsImports = 9
+		QueueEngine_SOURCE\QueueEngine_SOURCE.vcxitems*{6d1377d5-a268-4cb1-84c3-6809cef626a0}*SharedItemsImports = 4
+		QueueEngine_SOURCE\QueueEngine_SOURCE.vcxitems*{81408ad5-66e5-4282-a17a-b34a29cca66f}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
