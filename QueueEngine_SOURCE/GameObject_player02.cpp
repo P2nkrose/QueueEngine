@@ -1,4 +1,6 @@
 #include "GameObject_player02.h"
+#include "qInput.h"
+#include "qTime.h"
 
 namespace Q
 {
@@ -12,24 +14,25 @@ namespace Q
 
 	void GameObject02::Update()
 	{
-		if (GetAsyncKeyState('A') & 0x8000)
+		const int speed = 100.0f;
+		if (Input::GetKey(eKeyCode::A))
 		{
-			pX -= 0.01f;
+			pX -= speed * Time::DeltaTime();
 		}
 
-		if (GetAsyncKeyState('D') & 0x8000)
+		if (Input::GetKey(eKeyCode::D))
 		{
-			pX += 0.01f;
+			pX += speed * Time::DeltaTime();
 		}
 
-		if (GetAsyncKeyState('W') & 0x8000)
+		if (Input::GetKey(eKeyCode::W))
 		{
-			pY -= 0.01f;
+			pY -= speed * Time::DeltaTime();
 		}
 
-		if (GetAsyncKeyState('S') & 0x8000)
+		if (Input::GetKey(eKeyCode::S))
 		{
-			pY += 0.01f;
+			pY += speed * Time::DeltaTime();
 		}
 	}
 

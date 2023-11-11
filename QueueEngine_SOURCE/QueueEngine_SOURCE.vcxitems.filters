@@ -13,6 +13,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp">
       <Filter>GameObject\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -28,6 +34,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h">
       <Filter>GameObject\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h">
+      <Filter>Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObject">
@@ -41,6 +53,12 @@
     </Filter>
     <Filter Include="Application">
       <UniqueIdentifier>{caf57dec-37ae-49d4-84f5-3c4d29950cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{fb7b9e93-09ae-416f-a5a7-4252890fb54c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{62b9a376-578d-46db-868b-a78536808c21}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

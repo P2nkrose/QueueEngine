@@ -1,4 +1,5 @@
 #include "GameObject_monster01.h"
+#include "qInput.h"
 
 namespace Q
 {
