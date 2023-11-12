@@ -14,7 +14,7 @@ namespace Q
 		Application();
 		~Application();
 
-		void Initialize(HWND hwnd);
+		void Initialize(HWND hwnd, UINT width, UINT height);
 		void Run();
 
 		void Update();
@@ -25,6 +25,14 @@ namespace Q
 	private:
 		HWND mHwnd;
 		HDC mHdc;
+
+		// 도화지
+		HDC mBackHdc;	// 하나 더만듬
+		HBITMAP mBackBitmap;
+
+		// 해상도
+		UINT mWidth;
+		UINT mHeight;
 
 		// 플레이어
 		GameObject01 mPlayer1;

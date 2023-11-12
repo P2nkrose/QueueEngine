@@ -14,7 +14,7 @@ namespace Q
 
 	private:
 		static LARGE_INTEGER CpuFrequency;			// 고유 진동수
-		static LARGE_INTEGER PrevFrequency;		// 앞 진동수
+		static LARGE_INTEGER PrevFrequency;			// 앞 진동수
 		static LARGE_INTEGER CurrentFrequency;		// 현재 진동수
 		static float DeltaTimeValue;
 	};

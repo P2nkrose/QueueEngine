@@ -15,22 +15,22 @@ namespace Q
 	{
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
-			pX -= 0.01f;
+			pX -= 0.1f;
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 		{
-			pX += 0.01f;
+			pX += 0.1f;
 		}
 
 		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
-			pY -= 0.01f;
+			pY -= 0.1f;
 		}
 
 		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
-			pY += 0.01f;
+			pY += 0.1f;
 		}
 	}
 

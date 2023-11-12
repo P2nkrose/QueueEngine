@@ -15,7 +15,7 @@ namespace Q
 		// 프로그램이 시작했을때 현재까지의 진동수 (앞전 진동수)
 		QueryPerformanceCounter(&PrevFrequency);
 	}
-
+		
 	void Time::Update()
 	{
 		// 현재 진동수
@@ -23,7 +23,7 @@ namespace Q
 
 		float differenceFrequency = static_cast<float>(CurrentFrequency.QuadPart - PrevFrequency.QuadPart);
 		
-		// 
+		
 		DeltaTimeValue = differenceFrequency / static_cast<float>(CpuFrequency.QuadPart);
 
 		PrevFrequency.QuadPart = CurrentFrequency.QuadPart;
