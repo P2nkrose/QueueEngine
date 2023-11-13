@@ -19,6 +19,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp">
       <Filter>Time</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qShoot.cpp">
+      <Filter>GameObject\Player\Shoot</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -40,6 +43,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h">
       <Filter>Time</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h">
+      <Filter>GameObject\Player\Shoot</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObject">
@@ -59,6 +65,9 @@
     </Filter>
     <Filter Include="Time">
       <UniqueIdentifier>{62b9a376-578d-46db-868b-a78536808c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Player\Shoot">
+      <UniqueIdentifier>{c43eb322-0bd3-462f-aaf2-da87c720696c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

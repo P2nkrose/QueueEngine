@@ -4,6 +4,7 @@
 #include "GameObject_player01.h"
 #include "GameObject_player02.h"
 #include "GameObject_monster01.h"
+#include "qShoot.h"
 
 
 namespace Q
@@ -38,6 +39,10 @@ namespace Q
 		GameObject01 mPlayer1;
 		GameObject02 mPlayer2;
 		GameObject03 mMonster1;
+
+		//Shoot* mBullet;
+		std::vector<Shoot*> mBullets;
+		
 	};
 }
 	

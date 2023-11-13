@@ -27,7 +27,7 @@ namespace Q
 		// 몬스터 좌표
 		float mX;
 		float mY;
-		float dir;
+		float mSpeed;
 
 	};
 }

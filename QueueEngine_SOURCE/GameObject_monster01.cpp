@@ -17,15 +17,15 @@ namespace Q
 
 		if (mX <= 0 || mY <= 0)
 		{
-			dir = 0.01f;
+			mSpeed = 0.01f;
 		}
 		else if (mX+100 >= 500 || mY+100 >= 700)
 		{
-			dir = -0.01f;
+			mSpeed = -0.01f;
 		}
 
-		mX += dir;
-		mY += dir;
+		mX += mSpeed;
+		mY += mSpeed;
 
 	}
 

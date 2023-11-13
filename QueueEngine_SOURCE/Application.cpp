@@ -10,7 +10,8 @@ namespace Q
 		mWidth(0),
 		mHeight(0),
 		mBackHdc(NULL),
-		mBackBitmap(NULL)
+		mBackBitmap(NULL),
+		mBullets{}
 	{
 	}
 
@@ -48,6 +49,7 @@ namespace Q
 		mPlayer2.SetPosition(0, 0);
 		mMonster1.SetPosition(0, 0);
 
+
 		Input::Initialize();
 		Time::Initialize();
 	}
@@ -67,6 +69,26 @@ namespace Q
 		mPlayer1.Update();
 		mPlayer2.Update();
 		mMonster1.Update();
+
+ 		if (Input::GetKeyDown(eKeyCode::SPACE))
+		{
+			Shoot* shoot = new Shoot();
+			mBullets.push_back(shoot);
+
+			float x = mPlayer2.GetPositionX();
+			float y = mPlayer2.GetPositionY();
+			
+			shoot->SetPosition(x+50, y);
+		}
+
+		//mBullet->Update();
+		if (!mBullets.empty())
+		{
+			for (int i = 0; i < mBullets.size(); i++)
+			{
+				mBullets[i]->Update();
+			}
+		}
 	}
 
 	void Application::LateUpdate()
@@ -75,16 +97,27 @@ namespace Q
 
 	void Application::Render()
 	{
-		Rectangle(mBackHdc, 0, 0, 1600, 900);
+		// clear
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
 
 		Time::Render(mBackHdc);
 
 		mPlayer1.Render(mBackHdc);
 		mPlayer2.Render(mBackHdc);
 		mMonster1.Render(mBackHdc);
+		
+		if (!mBullets.empty())
+		{
+			for (int i = 0; i < mBullets.size(); i++)
+			{
+				mBullets[i]->Render(mBackHdc);
+			}
+			
+
+		}
 
 		// BackBitmap에 있는걸 원본 비트맵에 복사
-		BitBlt(mHdc, 100, 100, mWidth - 100, mHeight - 100, mBackHdc, 0, 0, SRCCOPY);
+		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);
 	}
 }
 

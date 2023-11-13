@@ -20,6 +20,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player02.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h" />
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +29,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player02.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qShoot.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp" />
   </ItemGroup>
 </Project>

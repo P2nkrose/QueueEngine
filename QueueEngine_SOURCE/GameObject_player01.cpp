@@ -36,6 +36,7 @@ namespace Q
 
 	void GameObject01::LateUpdate()
 	{
+		
 	}
 
 	void GameObject01::Render(HDC hdc)
@@ -51,5 +52,4 @@ namespace Q
 		SelectObject(hdc, oldBrush);
 		DeleteObject(redBrush);
 	}
-
 }

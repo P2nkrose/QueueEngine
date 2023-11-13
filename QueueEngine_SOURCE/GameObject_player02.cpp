@@ -48,7 +48,7 @@ namespace Q
 
 		SelectObject(hdc, blueBrush);
 
-		Ellipse(hdc, 300 + pX, 100 + pY, 400 + pX, 200 + pY);
+		Ellipse(hdc, pX, pY, pX+100, pY+100);
 
 		SelectObject(hdc, oldBrush);
 		DeleteObject(blueBrush);
