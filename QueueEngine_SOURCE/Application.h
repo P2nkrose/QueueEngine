@@ -22,6 +22,10 @@ namespace Q
 		void LateUpdate();
 		void Render();
 
+	private:
+		void clearRenderTarget();
+		void copyRenderTarget(HDC source, HDC dest);
+
 
 	private:
 		HWND mHwnd;
@@ -36,12 +40,16 @@ namespace Q
 		UINT mHeight;
 
 		// 플레이어
-		GameObject01 mPlayer1;
-		GameObject02 mPlayer2;
-		GameObject03 mMonster1;
+		//GameObject01 mPlayer1;
+		//GameObject02 mPlayer2;
+		//GameObject03 mMonster1;
+
+		//std::vector<GameObject02*> mGameObjects;
+		//std::vector<Scene*> mScenes;
+
 
 		//Shoot* mBullet;
-		std::vector<Shoot*> mBullets;
+		//std::vector<Shoot*> mBullets;
 		
 	};
 }

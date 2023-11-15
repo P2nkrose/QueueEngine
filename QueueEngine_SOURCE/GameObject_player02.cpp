@@ -5,6 +5,7 @@
 namespace Q
 {
 	GameObject02::GameObject02()
+		:pX(0), pY(0)
 	{
 	}
 
@@ -48,7 +49,7 @@ namespace Q
 
 		SelectObject(hdc, blueBrush);
 
-		Ellipse(hdc, pX, pY, pX+100, pY+100);
+		Ellipse(hdc, pX + 100, pY + 100, pX + 200, pY + 200);
 
 		SelectObject(hdc, oldBrush);
 		DeleteObject(blueBrush);

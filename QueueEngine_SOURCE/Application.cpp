@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "qInput.h"
 #include "qTime.h"
+#include "qSceneManager.h"
 
 namespace Q
 {
@@ -10,8 +11,9 @@ namespace Q
 		mWidth(0),
 		mHeight(0),
 		mBackHdc(NULL),
-		mBackBitmap(NULL),
-		mBullets{}
+		mBackBitmap(NULL)
+		//mBullets{},
+		//mGameObjects{}
 	{
 	}
 
@@ -45,10 +47,19 @@ namespace Q
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
 
-		mPlayer1.SetPosition(0, 0);
-		mPlayer2.SetPosition(0, 0);
-		mMonster1.SetPosition(0, 0);
+		//mPlayer1.SetPosition(0, 0);
+		//mPlayer2.SetPosition(0, 0);
+		//mMonster1.SetPosition(0, 0);
 
+		/*for (int i = 0; i < 100; i++)
+		{
+			GameObject02* gameObj = new GameObject02();
+
+			gameObj->SetPosition(rand() % 1600, rand() % 900);
+			mGameObjects.push_back(gameObj);
+		}*/
+
+		SceneManager::Initialize();
 
 		Input::Initialize();
 		Time::Initialize();
@@ -66,11 +77,21 @@ namespace Q
 		Input::Update();
 		Time::Update();
 
-		mPlayer1.Update();
-		mPlayer2.Update();
-		mMonster1.Update();
+		SceneManager::Update();
 
- 		if (Input::GetKeyDown(eKeyCode::SPACE))
+		//mPlayer1.Update();
+		//mPlayer2.Update();
+		//mMonster1.Update();
+
+		/*for (size_t i = 0; i < mGameObjects.size(); i++)
+		{
+			mGameObjects[i]->Update();
+		}*/
+
+
+
+		// 총알
+ 		/*if (Input::GetKeyDown(eKeyCode::SPACE))
 		{
 			Shoot* shoot = new Shoot();
 			mBullets.push_back(shoot);
@@ -79,16 +100,16 @@ namespace Q
 			float y = mPlayer2.GetPositionY();
 			
 			shoot->SetPosition(x+50, y);
-		}
+		}*/
 
 		//mBullet->Update();
-		if (!mBullets.empty())
+		/*if (!mBullets.empty())
 		{
 			for (int i = 0; i < mBullets.size(); i++)
 			{
 				mBullets[i]->Update();
 			}
-		}
+		}*/
 	}
 
 	void Application::LateUpdate()
@@ -97,27 +118,44 @@ namespace Q
 
 	void Application::Render()
 	{
-		// clear
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
+		clearRenderTarget();
 
 		Time::Render(mBackHdc);
 
-		mPlayer1.Render(mBackHdc);
-		mPlayer2.Render(mBackHdc);
-		mMonster1.Render(mBackHdc);
-		
-		if (!mBullets.empty())
+		SceneManager::Render(mBackHdc);
+
+		//mPlayer1.Render(mBackHdc);
+		//mPlayer2.Render(mBackHdc);
+		//mMonster1.Render(mBackHdc);
+
+		/*for (int i = 0; i < mGameObjects.size(); i++)
+		{
+			mGameObjects[i]->Render(mBackHdc);
+		}*/
+
+
+		// 총알
+		/*if (!mBullets.empty())
 		{
 			for (int i = 0; i < mBullets.size(); i++)
 			{
 				mBullets[i]->Render(mBackHdc);
 			}
-			
+		}*/
+		// Backbuffer에 있는것을 원본 buffer에 복사
+		copyRenderTarget(mBackHdc, mHdc);
 
-		}
+	}
+	void Application::clearRenderTarget()
+	{
+		// clear
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
+	}
 
+	void Application::copyRenderTarget(HDC source, HDC dest)
+	{
 		// BackBitmap에 있는걸 원본 비트맵에 복사
-		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);
+		BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
 	}
 }
 

@@ -5,6 +5,8 @@
 #include "Editor_Window.h"
 #include "Application.h"
 
+#include "../QueueEngine_Window/LoadScene.h"
+
 Q::Application application;
 
 #define MAX_LOADSTRING 100
@@ -160,6 +162,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   // load Scenes
+   Q::LoadScenes();
 
    return TRUE;
 }
