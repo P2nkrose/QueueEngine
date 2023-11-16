@@ -18,24 +18,30 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player02.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player02.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qShoot.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp" />
   </ItemGroup>
 </Project>

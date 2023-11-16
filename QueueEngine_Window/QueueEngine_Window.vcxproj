@@ -131,10 +131,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LoadScene.h" />
-    <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="qPlayer.h" />
+    <ClInclude Include="qPlayScene.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="qPlayer.cpp" />
+    <ClCompile Include="qPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

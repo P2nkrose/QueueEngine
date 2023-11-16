@@ -2,7 +2,7 @@
 
 #include "CommonInclude.h"
 #include "GameObject_player01.h"
-#include "GameObject_player02.h"
+#include "qGameObject.h"
 #include "GameObject_monster01.h"
 #include "qShoot.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "qEntity.h"
-#include "GameObject_player02.h"
+#include "qGameObject.h"
 
 
 namespace Q
@@ -16,12 +16,12 @@ namespace Q
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
 
-		void AddGameObject(GameObject02* gameObject);
+		void AddGameObject(GameObject* gameObject);
 		
 
 	private:
 
-		std::vector<GameObject02*> mGameObjects;
+		std::vector<GameObject*> mGameObjects;
 	};
 }
 

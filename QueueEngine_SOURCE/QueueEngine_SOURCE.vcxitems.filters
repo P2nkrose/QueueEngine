@@ -1,90 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp">
-      <Filter>GameObject\Player</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player02.cpp">
-      <Filter>GameObject\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp">
-      <Filter>GameObject\Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp">
-      <Filter>Time</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp">
+      <Filter>etc</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qShoot.cpp">
-      <Filter>GameObject\Player\Shoot</Filter>
+      <Filter>etc</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp">
-      <Filter>Scene</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp">
+      <Filter>etc</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qSpriteRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player01.h">
-      <Filter>GameObject\Player</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h">
       <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player02.h">
-      <Filter>GameObject\Player</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h">
+      <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player01.h">
+      <Filter>etc</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h">
-      <Filter>GameObject\Monster</Filter>
+      <Filter>etc</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h">
-      <Filter>GameObject\Player\Shoot</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qSpriteRenderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="GameObject">
-      <UniqueIdentifier>{eae1f057-beea-4144-8c69-956a46c3ffbb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\Player">
-      <UniqueIdentifier>{5cb3fe60-114b-4d5d-86c3-2f920e15a3aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\Monster">
-      <UniqueIdentifier>{07dc160c-9117-49b7-9d7a-e0419f382fe3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Application">
       <UniqueIdentifier>{caf57dec-37ae-49d4-84f5-3c4d29950cc1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Input">
-      <UniqueIdentifier>{fb7b9e93-09ae-416f-a5a7-4252890fb54c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Time">
-      <UniqueIdentifier>{62b9a376-578d-46db-868b-a78536808c21}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObject\Player\Shoot">
-      <UniqueIdentifier>{c43eb322-0bd3-462f-aaf2-da87c720696c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{fb658540-0f59-4503-98bc-fb710c1def61}</UniqueIdentifier>
+    <Filter Include="etc">
+      <UniqueIdentifier>{6fe3bcaf-b98e-4a97-99c4-276a514c25e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

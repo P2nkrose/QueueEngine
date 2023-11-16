@@ -21,28 +21,28 @@ namespace Q
 		}*/
 		
 		// 범위 기반 for문
-		for (GameObject02* gameobj : mGameObjects)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			gameobj->Update();
 		}
 	}
 	void Scene::LateUpdate()
 	{
-		for (GameObject02* gameobj : mGameObjects)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			gameobj->LateUpdate();
 		}
 	}
 	void Scene::Render(HDC hdc)
 	{
-		for (GameObject02* gameobj : mGameObjects)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			gameobj->Render(hdc);
 		}
 	}
 
 
-	void Scene::AddGameObject(GameObject02* gameObject)
+	void Scene::AddGameObject(GameObject* gameObject)
 	{
 		mGameObjects.push_back(gameObject);
 	}
