@@ -12,7 +12,7 @@ namespace Q
 		SceneManager::CreateScene<PlayScene>(L"PlayScene");
 		SceneManager::CreateScene<EndScene>(L"EndScene");
 
-		SceneManager::LoadScene(L"EndScene");
+		SceneManager::LoadScene(L"PlayScene");
 	}
 }
 

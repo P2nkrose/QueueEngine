@@ -18,11 +18,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
@@ -40,6 +43,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />

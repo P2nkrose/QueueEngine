@@ -4,14 +4,30 @@
 namespace Q
 {
 	Scene::Scene()
-		:mGameObjects{}
+		:mLayers{}
 	{
+		mLayers.resize((UINT)eLayerType::Max);
+		for (size_t i = 0; i < (UINT)eLayerType::Max; i++)
+		{
+			mLayers[i] = new Layer();
+		}
+		
+		int a = 0;
 	}
 	Scene::~Scene()
 	{
 	}
 	void Scene::Initialize()
 	{
+		for (Layer* Layer : mLayers)
+		{
+			if (Layer == nullptr)
+			{
+				continue;
+			}
+
+			Layer->Initialize();
+		}
 	}
 	void Scene::Update()
 	{
@@ -21,29 +37,54 @@ namespace Q
 		}*/
 		
 		// 범위 기반 for문
-		for (GameObject* gameobj : mGameObjects)
+		for (Layer* Layer : mLayers)
 		{
-			gameobj->Update();
+			if (Layer == nullptr)
+			{
+				continue;
+			}
+
+			Layer->Update();
 		}
 	}
 	void Scene::LateUpdate()
 	{
-		for (GameObject* gameobj : mGameObjects)
+		for (Layer* Layer : mLayers)
 		{
-			gameobj->LateUpdate();
+			if (Layer == nullptr)
+			{
+				continue;
+			}
+
+			Layer->LateUpdate();
 		}
 	}
 	void Scene::Render(HDC hdc)
 	{
-		for (GameObject* gameobj : mGameObjects)
+		for (Layer* Layer : mLayers)
 		{
-			gameobj->Render(hdc);
+			if (Layer == nullptr)
+			{
+				continue;
+			}
+
+			Layer->Render(hdc);
 		}
 	}
 
-
-	void Scene::AddGameObject(GameObject* gameObject)
+	void Scene::OnEnter()
 	{
-		mGameObjects.push_back(gameObject);
+
 	}
+
+	void Scene::OnExit()
+	{
+
+	}
+
+	void Scene::AddGameObject(GameObject* gameObj, const eLayerType type)
+	{
+		mLayers[(UINT)type]->AddGameObject(gameObj);
+	}
+
 }

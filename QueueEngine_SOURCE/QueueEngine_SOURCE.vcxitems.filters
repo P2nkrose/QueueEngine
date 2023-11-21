@@ -2,15 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp">
-      <Filter>Application</Filter>
+      <Filter>High Level Interface</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp">
       <Filter>etc</Filter>
     </ClCompile>
@@ -20,24 +13,46 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp">
       <Filter>etc</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qSpriteRenderer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qSpriteRenderer.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Application.h">
-      <Filter>Application</Filter>
+      <Filter>High Level Interface</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h">
       <Filter>etc</Filter>
     </ClInclude>
@@ -47,18 +62,75 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h">
       <Filter>etc</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qSpriteRenderer.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qMath.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qSpriteRenderer.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qEnums.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Application">
-      <UniqueIdentifier>{caf57dec-37ae-49d4-84f5-3c4d29950cc1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="etc">
       <UniqueIdentifier>{6fe3bcaf-b98e-4a97-99c4-276a514c25e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="High Level Interface">
+      <UniqueIdentifier>{caf57dec-37ae-49d4-84f5-3c4d29950cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{69e1db30-2a34-4b24-b0eb-a5fa4246eca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{dc82ae9b-bebe-4ccb-8c6e-26e87d775ab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{24e526c9-f408-4998-97ea-e25b18d06b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{5add1b1d-7bc0-4a23-9864-2964fe35ec14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{73ced706-66e4-4fab-9860-8c5205ed017b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{807cadda-75a3-4c4d-a4e8-f2fab0079127}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

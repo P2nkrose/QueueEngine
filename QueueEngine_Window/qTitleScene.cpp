@@ -3,6 +3,9 @@
 #include "qPlayer.h"
 #include "qTransform.h"
 #include "qSpriteRenderer.h"
+#include "qInput.h"
+#include "qPlayScene.h"
+#include "qSceneManager.h"
 
 namespace Q
 {
@@ -17,7 +20,7 @@ namespace Q
 		{
 			Player* bg1 = new Player();
 			Transform* tr = bg1->AddComponent<Transform>();
-			tr->SetPos(Vector2(0, 0));
+			tr->SetPosition(Vector2(0, 0));
 			tr->SetName(L"TR1");
 
 			SpriteRenderer* sr = bg1->AddComponent<SpriteRenderer>();
@@ -25,7 +28,7 @@ namespace Q
 			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\TitleScene.png");
 
 
-			AddGameObject(bg1);
+			AddGameObject(bg1, eLayerType::BackGround);
 		}
 	}
 
@@ -37,9 +40,17 @@ namespace Q
 	void TitleScene::LateUpdate()
 	{
 		Scene::LateUpdate();
+		
+		if (Input::GetKeyDown(eKeyCode::N))
+		{
+			SceneManager::LoadScene(L"PlayScene");
+		}
 	}
+
 	void TitleScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		wchar_t str[50] = L"Title Scene";
+		TextOut(hdc, 0, 0, str, 11);
 	}
 }
