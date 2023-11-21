@@ -16,11 +16,13 @@ namespace Q
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
+		void ImageLoad(const std::wstring& path);
+
 	private:
 
-		BITMAP mBitmap;
-		HDC mHdc;
 		Gdiplus::Image* mImage;
+		UINT mWidth;
+		UINT mHeight;
 	};
 
 }

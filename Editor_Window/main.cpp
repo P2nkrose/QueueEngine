@@ -9,6 +9,9 @@
 
 Q::Application application;
 
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -38,7 +41,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,             // 프로그램의 �
     LoadStringW(hInstance, IDC_EDITORWINDOW, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 
-    // 애플리케이션 초기화를 수행합니다:
+    // 애플리케이션 초기화를 수행합니다
+    // 윈도우 생성
     if (!InitInstance (hInstance, nCmdShow))
     {
         return FALSE;
@@ -74,9 +78,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,             // 프로그램의 �
         }
     }
 
+    Gdiplus::GdiplusShutdown(gpToken);
 
-
-
+    return (int)msg.wParam;
 
     // GetMessage(&msg, nullptr, 0, 0)
     
@@ -92,7 +96,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,             // 프로그램의 �
         }
     }*/
 
-    return (int) msg.wParam;
+    
 }
 
 
@@ -142,8 +146,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   const UINT width = 1600;
-   const UINT height = 900;
+   const UINT width = 255;
+   const UINT height = 192;
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
@@ -162,6 +166,10 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+
+   Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
+
 
    // load Scenes
    Q::LoadScenes();
@@ -204,7 +212,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
 
-    case WM_PAINT:
+    case WM_PAINT: // 무효화영역(Invalidate)이 발생한 경우
         {
 
             PAINTSTRUCT ps;

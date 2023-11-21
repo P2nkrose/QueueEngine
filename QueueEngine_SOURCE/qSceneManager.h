@@ -39,7 +39,6 @@ namespace Q
 
 	private:
 
-		//static std::vector<Scene*> mScene;
 		static std::map<std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
 

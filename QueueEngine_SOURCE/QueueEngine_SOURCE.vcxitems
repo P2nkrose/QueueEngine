@@ -22,6 +22,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h" />
@@ -37,6 +40,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qShoot.cpp" />

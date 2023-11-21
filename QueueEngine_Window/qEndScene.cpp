@@ -1,4 +1,4 @@
-#include "qPlayScene.h"
+#include "qEndScene.h"
 #include "qGameObject.h"
 #include "qPlayer.h"
 #include "qTransform.h"
@@ -6,14 +6,13 @@
 
 namespace Q
 {
-	PlayScene::PlayScene()
-	{
-
-	}
-	PlayScene::~PlayScene()
+	EndScene::EndScene()
 	{
 	}
-	void PlayScene::Initialize()
+	EndScene::~EndScene()
+	{
+	}
+	void EndScene::Initialize()
 	{
 		{
 			Player* bg = new Player();
@@ -23,24 +22,21 @@ namespace Q
 
 			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
-			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\PlayScene.png");
+			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\EndScene.png");
 
 
 			AddGameObject(bg);
 		}
-		
 	}
-
-
-	void PlayScene::Update()
+	void EndScene::Update()
 	{
 		Scene::Update();
 	}
-	void PlayScene::LateUpdate()
+	void EndScene::LateUpdate()
 	{
 		Scene::LateUpdate();
 	}
-	void PlayScene::Render(HDC hdc)
+	void EndScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
 	}

@@ -22,6 +22,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Application">

@@ -5,6 +5,9 @@
 namespace Q
 {
 	SpriteRenderer::SpriteRenderer()
+		:mImage(nullptr)
+		, mWidth(0)
+		, mHeight(0)
 	{
 	}
 	SpriteRenderer::~SpriteRenderer()
@@ -19,18 +22,20 @@ namespace Q
 	void SpriteRenderer::LateUpdate()
 	{
 	}
+
 	void SpriteRenderer::Render(HDC hdc)
 	{
-		HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));
-
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
-
-		SelectObject(hdc, blueBrush);
-
 		Transform* tr = GetOwner()->GetComponent<Transform>();
-		Ellipse(hdc, tr->GetX(), tr->GetY(), 100 + tr->GetX(), 100 + tr->GetY());
+		Vector2 pos = tr->GetPosition();
 
-		SelectObject(hdc, oldBrush);
-		DeleteObject(blueBrush);
+		Gdiplus::Graphics graphics(hdc);
+		graphics.DrawImage(mImage, Gdiplus::Rect(pos.x, pos.y, mWidth, mHeight));
+	}
+
+	void SpriteRenderer::ImageLoad(const std::wstring& path)
+	{
+		mImage = Gdiplus::Image::FromFile(path.c_str());
+		mWidth = mImage->GetWidth();
+		mHeight = mImage->GetHeight();
 	}
 }
