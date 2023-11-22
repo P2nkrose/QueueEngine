@@ -1,11 +1,13 @@
 #include "qGameObject.h"
 #include "qInput.h"
 #include "qTime.h"
+#include "qTransform.h"
 
 namespace Q
 {
 	GameObject::GameObject()
 	{
+		initializeTransform();
 	}
 
 	GameObject::~GameObject()
@@ -47,6 +49,11 @@ namespace Q
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void GameObject::initializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Q
+namespace Q::enums
 {
 	enum class eLayerType
 	{
@@ -9,6 +9,7 @@ namespace Q
 		//Tree
 		//character
 		Player,
+		Title,
 		Max = 16,
 	};
 }

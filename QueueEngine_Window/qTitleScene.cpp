@@ -6,6 +6,7 @@
 #include "qInput.h"
 #include "qPlayScene.h"
 #include "qSceneManager.h"
+#include "qObject.h"
 
 namespace Q
 {
@@ -18,17 +19,25 @@ namespace Q
 	void TitleScene::Initialize()
 	{
 		{
-			Player* bg1 = new Player();
-			Transform* tr = bg1->AddComponent<Transform>();
-			tr->SetPosition(Vector2(0, 0));
-			tr->SetName(L"TR1");
+			//Player* bg1 = new Player();
+			//Transform* tr = bg1->AddComponent<Transform>();
+			//tr->SetPosition(Vector2(0, 0));
+			//tr->SetName(L"TR1");
 
-			SpriteRenderer* sr = bg1->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR1");
-			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\TitleScene.png");
+			//SpriteRenderer* sr = bg1->AddComponent<SpriteRenderer>();
+			//sr->SetName(L"SR1");
+			//sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\TitleScene.png");
 
 
-			AddGameObject(bg1, eLayerType::BackGround);
+			//AddGameObject(bg1, enums::eLayerType::BackGround);
+			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
+			title = object::Instantiate<Player>(enums::eLayerType::Title, Vector2(0, 0));
+
+			SpriteRenderer* ti = title->AddComponent<SpriteRenderer>();
+			ti->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\Title.png");
+
+			SpriteRenderer* ba = bg->AddComponent<SpriteRenderer>();
+			ba->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\BackScene.png");
 		}
 	}
 

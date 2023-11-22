@@ -28,7 +28,7 @@ namespace Q
 			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\EndScene.png");
 
 
-			AddGameObject(bg, eLayerType::BackGround);
+			AddGameObject(bg, enums::eLayerType::BackGround);
 		}
 	}
 	void EndScene::Update()

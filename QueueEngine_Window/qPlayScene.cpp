@@ -7,6 +7,7 @@
 #include "qEndScene.h"
 #include "qSceneManager.h"
 #include "qTitleScene.h"
+#include "qObject.h"
 
 namespace Q
 {
@@ -21,17 +22,21 @@ namespace Q
 	{
 		{
 
-			bg = new Player();
-			Transform* tr = bg->AddComponent<Transform>();
-			tr->SetPosition(Vector2(0, 0));
-			tr->SetName(L"TR");
+			//bg = new Player();
+			//Transform* tr = bg->AddComponent<Transform>();
+			//tr->SetPosition(Vector2(0, 0));
+			//tr->SetName(L"TR");
+
+			
+			//sr->SetName(L"SR");
+			
+
+
+			//AddGameObject(bg, eLayerType::BackGround);
+			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
 
 			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
 			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\PlayScene.png");
-
-
-			AddGameObject(bg, eLayerType::BackGround);
 		}
 		
 	}
@@ -65,7 +70,7 @@ namespace Q
 
 	void PlayScene::OnExit()
 	{
-		Transform* tr = bg->GetComponent<Transform>();
-		tr->SetPosition(Vector2(0, 0));
+		//Transform* tr = bg->GetComponent<Transform>();
+		//tr->SetPosition(Vector2(0, 0));
 	}
 }
