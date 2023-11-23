@@ -3,7 +3,7 @@
 
 #include "framework.h"
 #include "Editor_Window.h"
-#include "Application.h"
+#include "qApplication.h"
 
 #include "../QueueEngine_Window/LoadScene.h"
 

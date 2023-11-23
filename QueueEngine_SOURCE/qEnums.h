@@ -12,4 +12,13 @@ namespace Q::enums
 		Title,
 		Max = 16,
 	};
+
+
+	enum class eResourceType
+	{
+		Texture,
+		AudioClip,
+		Prefab,
+		End
+	};
 }

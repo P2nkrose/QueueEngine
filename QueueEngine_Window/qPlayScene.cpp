@@ -8,6 +8,7 @@
 #include "qSceneManager.h"
 #include "qTitleScene.h"
 #include "qObject.h"
+#include "qTexture.h"
 
 namespace Q
 {
@@ -21,22 +22,14 @@ namespace Q
 	void PlayScene::Initialize()
 	{
 		{
-
-			//bg = new Player();
-			//Transform* tr = bg->AddComponent<Transform>();
-			//tr->SetPosition(Vector2(0, 0));
-			//tr->SetName(L"TR");
-
-			
-			//sr->SetName(L"SR");
-			
-
-
-			//AddGameObject(bg, eLayerType::BackGround);
 			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
-
 			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
-			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\PlayScene.png");
+			
+			graphics::Texture* tex = new graphics::Texture();
+			tex->Load(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\PlayScene.png");
+			
+			
+			//sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\PlayScene.png");
 		}
 		
 	}

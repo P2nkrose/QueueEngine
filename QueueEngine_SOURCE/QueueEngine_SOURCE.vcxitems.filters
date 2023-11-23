@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Application.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)qApplication.cpp">
       <Filter>High Level Interface</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp">
@@ -13,8 +13,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp">
       <Filter>etc</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -48,9 +46,18 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qLayer.cpp">
       <Filter>Layer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qTexture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Application.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
       <Filter>High Level Interface</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qShoot.h">
@@ -62,8 +69,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h">
       <Filter>etc</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
       <Filter>Common</Filter>
     </ClInclude>
@@ -106,6 +111,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qEnums.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qTexture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -131,6 +145,12 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{807cadda-75a3-4c4d-a4e8-f2fab0079127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{65bac85f-3cf1-4335-b576-648de7455dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{6a6efb77-93bc-4032-8370-601f37484742}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "qApplication.h"
 #include "qInput.h"
 #include "qTime.h"
 #include "qSceneManager.h"
@@ -46,18 +46,6 @@ namespace Q
 		// ¿¬°á
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
-
-		//mPlayer1.SetPosition(0, 0);
-		//mPlayer2.SetPosition(0, 0);
-		//mMonster1.SetPosition(0, 0);
-
-		/*for (int i = 0; i < 100; i++)
-		{
-			GameObject02* gameObj = new GameObject02();
-
-			gameObj->SetPosition(rand() % 1600, rand() % 900);
-			mGameObjects.push_back(gameObj);
-		}*/
 
 		SceneManager::Initialize();
 

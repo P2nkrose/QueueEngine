@@ -16,6 +16,7 @@ namespace Q
 
 
 	private:
+		class Player* end;
 	};
 }
 

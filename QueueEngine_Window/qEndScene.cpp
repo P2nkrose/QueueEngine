@@ -6,6 +6,8 @@
 #include "qInput.h"
 #include "qTitleScene.h"
 #include "qSceneManager.h"
+#include "qObject.h"
+#include "qTexture.h"
 
 namespace Q
 {
@@ -18,17 +20,11 @@ namespace Q
 	void EndScene::Initialize()
 	{
 		{
-			Player* bg = new Player();
-			Transform* tr = bg->AddComponent<Transform>();
-			tr->SetPosition(Vector2(0, 0));
-			tr->SetName(L"TR");
+			end = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
+			SpriteRenderer* sr = end->AddComponent<SpriteRenderer>();
 
-			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-			sr->ImageLoad(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\EndScene.png");
-
-
-			AddGameObject(bg, enums::eLayerType::BackGround);
+			graphics::Texture* tex = new graphics::Texture();
+			tex->Load(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\EndScene.png");
 		}
 	}
 	void EndScene::Update()

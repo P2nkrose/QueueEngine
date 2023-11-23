@@ -1,5 +1,7 @@
 #pragma once
-class Resources
-{
-};
+#include "qResouce.h"
+
+
+
+
 
