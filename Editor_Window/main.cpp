@@ -5,7 +5,8 @@
 #include "Editor_Window.h"
 #include "qApplication.h"
 
-#include "../QueueEngine_Window/LoadScene.h"
+#include "..\\QueueEngine_Window\\qLoadScene.h"
+#include "..\\QueueEngine_Window\\qLoadResources.h"
 
 Q::Application application;
 
@@ -146,8 +147,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   const UINT width = 960;
-   const UINT height = 540;
+   const UINT width = 762;
+   const UINT height = 576;
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
@@ -170,6 +171,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
+   // load Resources
+   Q::LoadResources();
 
    // load Scenes
    Q::LoadScenes();

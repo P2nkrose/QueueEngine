@@ -7,6 +7,7 @@ namespace Q
 {
 	GameObject::GameObject()
 	{
+		mComponents.resize((UINT)enums::eComponentType::End);
 		initializeTransform();
 	}
 
@@ -23,6 +24,11 @@ namespace Q
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
+
 			comp->Initialize();
 		}
 	}
@@ -31,6 +37,10 @@ namespace Q
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->Update();
 		}
 	}
@@ -39,6 +49,10 @@ namespace Q
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->LateUpdate();
 		}
 	}
@@ -47,6 +61,10 @@ namespace Q
 	{
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+			{
+				continue;
+			}
 			comp->Render(hdc);
 		}
 	}

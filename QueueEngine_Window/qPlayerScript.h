@@ -1,13 +1,13 @@
 #pragma once
-#include "qScene.h"
+#include "qScript.h"
 
 namespace Q
 {
-	class TitleScene : public Scene
+	class PlayerScript : public Script
 	{
 	public:
-		TitleScene();
-		~TitleScene();
+		PlayerScript();
+		~PlayerScript();
 
 		void Initialize() override;
 		void Update() override;
@@ -15,8 +15,6 @@ namespace Q
 		void Render(HDC hdc) override;
 
 	private:
-		class Player* titleBackGround;
-		class Player* title;
 
 	};
 }

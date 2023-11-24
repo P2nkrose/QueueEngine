@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="LoadScene.h">
+    <ClInclude Include="qLoadScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="qPlayScene.h">
@@ -16,6 +16,10 @@
     <ClInclude Include="qEndScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="qPlayerScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="qLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -30,6 +34,9 @@
     <ClCompile Include="qEndScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="qPlayerScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -37,6 +44,9 @@
     </Filter>
     <Filter Include="Contents">
       <UniqueIdentifier>{9f4c2bf3-00b5-4122-ae9f-1c0c8fd35fc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{d5d4d1fc-6498-44f3-a8a7-618c3c17df52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

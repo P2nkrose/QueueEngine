@@ -3,6 +3,7 @@
 namespace Q
 {
 	Transform::Transform()
+		: Component(enums::eComponentType::Transform)
 	{
 	}
 

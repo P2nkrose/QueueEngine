@@ -14,9 +14,11 @@ namespace Q
 		
 		int a = 0;
 	}
+
 	Scene::~Scene()
 	{
 	}
+
 	void Scene::Initialize()
 	{
 		for (Layer* Layer : mLayers)

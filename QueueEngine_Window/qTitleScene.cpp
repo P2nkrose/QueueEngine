@@ -8,10 +8,16 @@
 #include "qSceneManager.h"
 #include "qObject.h"
 #include "qTexture.h"
+#include "qResources.h"
+#include "qPlayerScript.h"
+#include "qCamera.h"
+#include "qRenderer.h"
 
 namespace Q
 {
 	TitleScene::TitleScene()
+		: title(nullptr)
+		, titleBackGround(nullptr)
 	{
 	}
 	TitleScene::~TitleScene()
@@ -19,22 +25,7 @@ namespace Q
 	}
 	void TitleScene::Initialize()
 	{
-		{
-
-			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
-			SpriteRenderer* sr1 = bg->AddComponent<SpriteRenderer>();
-
-			title = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(0, 0));
-			SpriteRenderer* sr2 = title->AddComponent<SpriteRenderer>();
-
-			graphics::Texture* tex1 = new graphics::Texture();
-			tex1->Load(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\BackScene.png");
-
-			graphics::Texture* tex2 = new graphics::Texture();
-			tex2->Load(L"Q:\\assortrock\\Win32API\\QueueEngine\\Resources\\Title.png");
-
-
-		}
+		Scene::Initialize();
 	}
 
 	void TitleScene::Update()
@@ -55,7 +46,7 @@ namespace Q
 	void TitleScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
-		wchar_t str[50] = L"Title Scene";
-		TextOut(hdc, 0, 0, str, 11);
+		/*wchar_t str[50] = L"Title Scene";
+		TextOut(hdc, 0, 0, str, 11);*/
 	}
 }
