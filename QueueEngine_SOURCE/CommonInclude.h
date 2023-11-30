@@ -19,3 +19,9 @@
 #pragma comment (lib, "gdiplus.lib");
 
 #include "qEnums.h"
+
+#include <Vfw.h>
+#pragma comment (lib, "Vfw32.lib")
+
+
+

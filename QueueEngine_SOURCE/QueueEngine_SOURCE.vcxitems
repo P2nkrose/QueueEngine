@@ -17,6 +17,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_monster01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject_player01.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qEnums.h" />
@@ -42,6 +44,8 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_player01.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp" />

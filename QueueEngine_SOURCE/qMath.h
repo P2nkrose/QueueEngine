@@ -7,7 +7,9 @@ namespace Q::math
 	struct Vector2
 	{
 		static Vector2 One;
+		static Vector2 Two;
 		static Vector2 Zero;
+		static Vector2 Half;
 
 		float x;
 		float y;

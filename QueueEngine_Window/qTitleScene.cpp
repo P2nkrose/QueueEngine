@@ -12,12 +12,15 @@
 #include "qPlayerScript.h"
 #include "qCamera.h"
 #include "qRenderer.h"
+#include "qBackGround.h"
+#include "qMath.h"
+#include "qAnimator.h"
 
 namespace Q
 {
 	TitleScene::TitleScene()
 		: title(nullptr)
-		, titleBackGround(nullptr)
+		, titleUnder(nullptr)
 	{
 	}
 	TitleScene::~TitleScene()
@@ -25,6 +28,33 @@ namespace Q
 	}
 	void TitleScene::Initialize()
 	{
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(270.0f, 405.0f));
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		renderer::mainCamera = cameraComp;
+
+
+		// 360 270
+		title = object::Instantiate<BackGround>(enums::eLayerType::BackGround);
+		SpriteRenderer* titlesr = title->AddComponent<SpriteRenderer>();
+
+		graphics::Texture* TitleTexture = Resources::Find<graphics::Texture>(L"Title");
+		titlesr->SetTexture(TitleTexture);
+
+		titlesr->SetSize(Vector2::Half);
+
+		
+
+		//
+
+		titleUnder = object::Instantiate<BackGround>(enums::eLayerType::BackGround, Vector2(0.0f, 405.0f));
+		SpriteRenderer* titleudsr = titleUnder->AddComponent<SpriteRenderer>();
+
+		graphics::Texture* TitleUnderTexture = Resources::Find<graphics::Texture>(L"Under");
+		titleudsr->SetTexture(TitleUnderTexture);
+
+		titleudsr->SetSize(Vector2::Half);
+
+
 		Scene::Initialize();
 	}
 

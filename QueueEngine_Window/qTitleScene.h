@@ -15,8 +15,9 @@ namespace Q
 		void Render(HDC hdc) override;
 
 	private:
-		class Player* titleBackGround;
-		class Player* title;
+		class BackGround* title;
+		class BackGround* titleUnder;
+		class Player* mPlayer;
 
 	};
 }

@@ -19,6 +19,9 @@ namespace Q
 
 	private:
 		class Player* mPlayer;
+		class Stage* mStage;
+		class BackGround* mBackGround;
+		class BackGround* titleUnder;
 	};
 }
 

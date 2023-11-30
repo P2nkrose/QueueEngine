@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{81408ad5-66e5-4282-a17a-b34a29cca66f}</ProjectGuid>
     <RootNamespace>QueueEngineWindow</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,6 +106,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,6 +122,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,19 +132,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="qBackGround.h" />
+    <ClInclude Include="qIntroScene.h" />
     <ClInclude Include="qLoadResources.h" />
     <ClInclude Include="qLoadScene.h" />
     <ClInclude Include="qEndScene.h" />
     <ClInclude Include="qPlayer.h" />
     <ClInclude Include="qPlayerScript.h" />
     <ClInclude Include="qPlayScene.h" />
+    <ClInclude Include="qStage.h" />
     <ClInclude Include="qTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="qBackGround.cpp" />
     <ClCompile Include="qEndScene.cpp" />
+    <ClCompile Include="qIntroScene.cpp" />
     <ClCompile Include="qPlayer.cpp" />
     <ClCompile Include="qPlayerScript.cpp" />
     <ClCompile Include="qPlayScene.cpp" />
+    <ClCompile Include="qStage.cpp" />
     <ClCompile Include="qTitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -64,6 +64,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qRenderer.cpp">
       <Filter>Component\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
@@ -138,6 +140,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qRenderer.h">
       <Filter>Component\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">

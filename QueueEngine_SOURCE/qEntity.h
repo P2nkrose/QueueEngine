@@ -2,6 +2,7 @@
 #include <iostream>
 #include "CommonInclude.h"
 
+using namespace Q::math;
 
 namespace Q
 {

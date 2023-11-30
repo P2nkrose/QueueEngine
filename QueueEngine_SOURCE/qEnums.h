@@ -7,6 +7,7 @@ namespace Q::enums
 	{
 		Transform,
 		SpriteRenderer,
+		Animator,
 		Script,
 		Camera,
 		End,
@@ -16,8 +17,9 @@ namespace Q::enums
 	{
 		None,
 		BackGround,
+		Stage,
 		Player,
-		Title,
+		Particle,
 		Max = 16,
 	};
 
@@ -26,7 +28,8 @@ namespace Q::enums
 	{
 		Texture,
 		AudioClip,
-		Prefab,
+		Animation,
+		Prefab,	// 게임오브젝트 저장할 데이터
 		End
 	};
 }

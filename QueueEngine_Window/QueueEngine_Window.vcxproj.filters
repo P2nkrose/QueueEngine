@@ -20,6 +20,15 @@
       <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="qLoadResources.h" />
+    <ClInclude Include="qBackGround.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="qIntroScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="qStage.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -36,6 +45,15 @@
     </ClCompile>
     <ClCompile Include="qPlayerScript.cpp">
       <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="qBackGround.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="qIntroScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="qStage.cpp">
+      <Filter>Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

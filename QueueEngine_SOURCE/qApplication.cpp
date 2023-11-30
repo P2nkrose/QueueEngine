@@ -3,10 +3,13 @@
 #include "qTime.h"
 #include "qSceneManager.h"
 
+#include <dshow.h>
+#pragma comment(lib, "Strmiids.lib")
+
 namespace Q
 {
 	Application::Application()
-	   :mHwnd(nullptr),
+		:mHwnd(nullptr),
 		mHdc(nullptr),
 		mWidth(0),
 		mHeight(0),
@@ -34,7 +37,7 @@ namespace Q
 		mWidth = rect.right - rect.left;
 		mHeight = rect.bottom - rect.top;
 
-		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+		SetWindowPos(mHwnd, nullptr, 540, 100, mWidth, mHeight, 0);
 		ShowWindow(mHwnd, true);
 
 		// 윈도우 해상도에 맞는 하나 더 만든 비트맵(도화지) 생성
@@ -51,6 +54,12 @@ namespace Q
 
 		Input::Initialize();
 		Time::Initialize();
+
+
+		////////////////////////////////////////////////
+
+
+
 	}
 
 	void Application::Run()
@@ -109,7 +118,7 @@ namespace Q
 	{
 		clearRenderTarget();
 
-		Time::Render(mBackHdc);
+		//Time::Render(mBackHdc);
 
 		SceneManager::Render(mBackHdc);
 

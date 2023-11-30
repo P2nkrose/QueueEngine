@@ -6,6 +6,16 @@ namespace Q
 	class PlayerScript : public Script
 	{
 	public:
+
+		enum class eState
+		{
+			Stand,
+			Walk,
+			SitDown,
+			Jump,
+			Eat
+		};
+
 		PlayerScript();
 		~PlayerScript();
 
@@ -15,7 +25,12 @@ namespace Q
 		void Render(HDC hdc) override;
 
 	private:
+		void stand();
+		void move();
 
+	private:
+		eState mState;
+		class Animator* mAnimator;
 	};
 }
 
