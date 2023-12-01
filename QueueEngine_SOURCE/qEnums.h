@@ -18,6 +18,7 @@ namespace Q::enums
 		None,
 		BackGround,
 		Stage,
+		Monster,
 		Player,
 		Particle,
 		Max = 16,

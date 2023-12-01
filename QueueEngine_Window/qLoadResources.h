@@ -32,6 +32,10 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Boss\\Boss.bmp");
 
 		// Enemy
+
+		Resources::Load<graphics::Texture>(L"LeftDee", L"..\\Resources\\img\\Enemy\\LeftDee1.bmp");
+		Resources::Load<graphics::Texture>(L"RightDee", L"..\\Resources\\img\\Enemy\\RightDee1.bmp");
+
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Enemy\\AllEnemy.bmp");
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Enemy\\AnimalEnemy.bmp");
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Enemy\\NormalEnemy1.bmp");

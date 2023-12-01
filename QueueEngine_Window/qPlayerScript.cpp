@@ -90,7 +90,7 @@ namespace Q
 		if (Input::GetKeyUp(eKeyCode::Left) || Input::GetKeyUp(eKeyCode::Right))
 		{
 			mState = PlayerScript::eState::Stand;
-			mAnimator->PlayAnimation(L"Stand", false);
+			mAnimator->PlayAnimation(L"Stand", true);
 		}
 	}
 }

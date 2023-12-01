@@ -17,6 +17,8 @@
 #include "qBackGround.h"
 #include "qStage.h"
 #include "qAnimator.h"
+#include "qWaddleDee.h"
+#include "qWaddleDeeScript.h"
 
 namespace Q
 {
@@ -40,7 +42,6 @@ namespace Q
 		renderer::mainCamera = cameraComp;
 		
 		// 배경
-
 		mBackGround = object::Instantiate<BackGround>(enums::eLayerType::BackGround);
 		SpriteRenderer* bgsr = mBackGround->AddComponent<SpriteRenderer>();
 
@@ -49,7 +50,6 @@ namespace Q
 		bgsr->SetSize(Vector2::Half);
 
 		// 맵
-
 		mStage = object::Instantiate<Stage>(enums::eLayerType::Stage);
 		SpriteRenderer* stageSr = mStage->AddComponent<SpriteRenderer>();
 		stageSr->SetSize(Vector2::Half);
@@ -58,7 +58,7 @@ namespace Q
 		stageSr->SetTexture(stageTexture);
 
 		// 커비
-
+		
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		mPlayer->AddComponent<PlayerScript>();
 
@@ -74,13 +74,30 @@ namespace Q
 
 		animator->CreateAnimation(L"LeftWalk", leftTexture,
 			Vector2(0.0f, 0.0f), Vector2(28.65f, 32.0f), Vector2::Zero, 10, 0.2f);
-		
-		
-		
+
 		animator->PlayAnimation(L"Stand", true);
 
 		mPlayer->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
 		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(30.0f, 269.0f));
+		
+		// 몬스터 (Waddle Dee)
+		WaddleDee* wd = object::Instantiate<WaddleDee>(enums::eLayerType::Monster);
+		wd->AddComponent<WaddleDeeScript>();
+		
+		graphics::Texture* leftDeeTex = Resources::Find<graphics::Texture>(L"LeftDee");
+		graphics::Texture* rightDeeTex = Resources::Find<graphics::Texture>(L"RightDee");
+
+		Animator* deeAnimator = wd->AddComponent<Animator>();
+		deeAnimator->CreateAnimation(L"LeftDee", leftDeeTex,
+			Vector2::Zero, Vector2(24.0f, 23.5f), Vector2::Zero, 8, 0.3f);
+
+		deeAnimator->CreateAnimation(L"RightDee", rightDeeTex,
+			Vector2::Zero, Vector2(23.8f, 23.0f), Vector2::Zero, 8, 0.3f);
+
+		deeAnimator->PlayAnimation(L"LeftDee", true);
+
+		wd->GetComponent<Transform>()->SetScale(Vector2(1.7f, 1.7f));
+		wd->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 269.0f));
 
 		// 이펙트
 		//mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
