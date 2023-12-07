@@ -3,57 +3,43 @@
 
 namespace Q
 {
-	class PlayerScript : public Script
+	class WindObjectScript : public Script
 	{
 	public:
 
 		enum class eState
 		{
-			Stand,
-			Walk,
-			Down,
-			Tackle,
-			Jump,
-			Wind,
-			Wind2
+			WindObject,
+			False,
 		};
 
 		enum class eDirection
 		{
 			Right,
 			Left,
-			Down,
 		};
 
-		PlayerScript();
-		~PlayerScript();
+		WindObjectScript();
+		~WindObjectScript();
 
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-		void Wind2();
-
-		void WindEffect();
+		void SetEffect(GameObject* effect) { mEffect = effect; }
 
 	private:
-		void Stand();
-		void Walk();
-		void Down();
-		void Wind();
-		void Tackle();
-
+		void WindObject();
 
 	private:
+
 		eState mState;
 		eDirection mDirection;
 		class Animator* mAnimator;
-		bool oneTime;
 
-		//void (*StartEvent)();
-		//void (*CompleteEvent)();
-		//void (*EndEvent)();
+		GameObject* mEffect;
+
 	};
 }
 

@@ -3,7 +3,7 @@
 
 namespace Q
 {
-	class Player : public GameObject
+	class WindObject : public GameObject
 	{
 	public:
 
@@ -11,11 +11,10 @@ namespace Q
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
+		
 
 	private:
-
 	};
+
+
 }
-
-
-

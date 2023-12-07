@@ -18,9 +18,11 @@ namespace Q
 		, mbComplete(false)
 	{
 	}
+
 	Animation::~Animation()
 	{
 	}
+
 	HRESULT Animation::Load(const std::wstring& path)
 	{
 		return E_NOTIMPL;

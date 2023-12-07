@@ -58,7 +58,7 @@ namespace Q
 			Gdiplus::Graphics graphics(hdc);
 
 			graphics.TranslateTransform(pos.x, pos.y);
-			graphics.RotateTransform(rot);
+			graphics.RotateTransform(rot);  // 회전시키는 함수
 			graphics.TranslateTransform(-pos.x, -pos.y);
 
 

@@ -19,6 +19,8 @@
 #include "qAnimator.h"
 #include "qWaddleDee.h"
 #include "qWaddleDeeScript.h"
+#include "qWindObject.h"
+#include "qWindObjectScript.h"
 
 namespace Q
 {
@@ -40,6 +42,9 @@ namespace Q
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(277.5f, 425.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
+
+
+		
 		
 		// 배경
 		mBackGround = object::Instantiate<BackGround>(enums::eLayerType::BackGround);
@@ -60,26 +65,75 @@ namespace Q
 		// 커비
 		
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
-		mPlayer->AddComponent<PlayerScript>();
+		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 
-		graphics::Texture* standTexture = Resources::Find<graphics::Texture>(L"StandKirby");
-		graphics::Texture* rightTexture = Resources::Find<graphics::Texture>(L"RightWalkKirby");
-		graphics::Texture* leftTexture = Resources::Find<graphics::Texture>(L"LeftWalkKirby");
+		//cameraComp->SetTarget(mPlayer);
+
+		graphics::Texture* RightStandKirbyTex = Resources::Find<graphics::Texture>(L"RightStandKirby");
+		graphics::Texture* LeftStandKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandKirby");
+		graphics::Texture* RightDownKirbyTex = Resources::Find<graphics::Texture>(L"RightDownKirby");
+		graphics::Texture* LefttDownKirbyTex = Resources::Find<graphics::Texture>(L"LeftDownKirby");
+		graphics::Texture* RightWalkKirbyTex = Resources::Find<graphics::Texture>(L"RightWalkKirby");
+		graphics::Texture* LeftWalkKirbyTex = Resources::Find<graphics::Texture>(L"LeftWalkKirby");
+		graphics::Texture* LeftWindKirbyTex = Resources::Find<graphics::Texture>(L"LeftWindKirby");
+		graphics::Texture* LeftWindKirbyTex2 = Resources::Find<graphics::Texture>(L"LeftWindKirby2");
+		graphics::Texture* RightWindKirbyTex = Resources::Find<graphics::Texture>(L"RightWindKirby");
+		graphics::Texture* RightWindKirbyTex2 = Resources::Find<graphics::Texture>(L"RightWindKirby2");
+		graphics::Texture* RightTackleKirbyTex = Resources::Find<graphics::Texture>(L"RightTackleKirby");
+		graphics::Texture* LeftTackleKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleKirby");
+
+
+
 		Animator* animator = mPlayer->AddComponent<Animator>();
-		animator->CreateAnimation(L"Stand", standTexture,
+		animator->CreateAnimation(L"RightStandKirby", RightStandKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(29.26262627f, 32.0f), Vector2::Zero, 3, 0.5f);
+
+		animator->CreateAnimation(L"LeftStandKirby", LeftStandKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(29.26262627f, 32.0f), Vector2::Zero, 3, 0.5f);
+
+		animator->CreateAnimation(L"RightDownKirby", RightDownKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(34.0f, 32.0f), Vector2::Zero, 3, 0.5f);
+
+		animator->CreateAnimation(L"LeftDownKirby", LefttDownKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(34.0f, 32.0f), Vector2::Zero, 3, 0.5f);
 		
-		animator->CreateAnimation(L"RightWalk", rightTexture,
+		animator->CreateAnimation(L"RightWalkKirby", RightWalkKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(28.65f, 32.0f), Vector2::Zero, 10, 0.2f);
 
-		animator->CreateAnimation(L"LeftWalk", leftTexture,
+		animator->CreateAnimation(L"LeftWalkKirby", LeftWalkKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(28.65f, 32.0f), Vector2::Zero, 10, 0.2f);
 
-		animator->PlayAnimation(L"Stand", true);
+		animator->CreateAnimation(L"LeftWindKirby", LeftWindKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(33.6f, 30.0f), Vector2::Zero, 5, 0.1f);
+
+		animator->CreateAnimation(L"RightWindKirby", RightWindKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(33.6f, 30.0f), Vector2::Zero, 5, 0.1f);
+
+		animator->CreateAnimation(L"LeftWindKirby2", LeftWindKirbyTex2,
+			Vector2(0.0f, 0.0f), Vector2(34.5f, 31.0f), Vector2::Zero, 2, 0.1f);
+
+		animator->CreateAnimation(L"RightWindKirby2", RightWindKirbyTex2,
+			Vector2(0.0f, 0.0f), Vector2(34.5f, 31.0f), Vector2::Zero, 2, 0.1f);
+
+		animator->CreateAnimation(L"LeftTackleKirby", LeftTackleKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(39.5f, 30.0f), Vector2::Zero, 2, 0.1f);
+
+		animator->CreateAnimation(L"RightTackleKirby", RightTackleKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(39.5f, 30.0f), Vector2::Zero, 2, 0.1f);
+
+		animator->GetCompleteEvent(L"RightWindKirby") = std::bind(&PlayerScript::Wind2, plScript);
+		animator->GetCompleteEvent(L"LeftWindKirby") = std::bind(&PlayerScript::Wind2, plScript);
+
+
+
+		animator->PlayAnimation(L"RightStandKirby", true);
 
 		mPlayer->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(30.0f, 269.0f));
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(30.0f, 260.0f));
 		
+
+
+
 		// 몬스터 (Waddle Dee)
 		WaddleDee* wd = object::Instantiate<WaddleDee>(enums::eLayerType::Monster);
 		wd->AddComponent<WaddleDeeScript>();
@@ -97,7 +151,10 @@ namespace Q
 		deeAnimator->PlayAnimation(L"LeftDee", true);
 
 		wd->GetComponent<Transform>()->SetScale(Vector2(1.7f, 1.7f));
-		wd->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 269.0f));
+		wd->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 260.0f));
+
+
+
 
 		// 이펙트
 		//mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);

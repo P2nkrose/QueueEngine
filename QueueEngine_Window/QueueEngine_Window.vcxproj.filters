@@ -35,6 +35,12 @@
     <ClInclude Include="qWaddleDeeScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="qWindObject.h">
+      <Filter>Contents\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="qWindObjectScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -67,6 +73,12 @@
     <ClCompile Include="qWaddleDeeScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
+    <ClCompile Include="qWindObject.cpp">
+      <Filter>Contents\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="qWindObjectScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -80,6 +92,9 @@
     </Filter>
     <Filter Include="Contents\Map">
       <UniqueIdentifier>{de43464b-5b38-4ba3-ac50-dcba10817784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Effect">
+      <UniqueIdentifier>{668f6177-c0f6-4523-b3c4-3293b1648b09}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

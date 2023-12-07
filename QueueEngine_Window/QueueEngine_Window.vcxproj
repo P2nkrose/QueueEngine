@@ -144,6 +144,8 @@
     <ClInclude Include="qTitleScene.h" />
     <ClInclude Include="qWaddleDee.h" />
     <ClInclude Include="qWaddleDeeScript.h" />
+    <ClInclude Include="qWindObject.h" />
+    <ClInclude Include="qWindObjectScript.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qBackGround.cpp" />
@@ -156,6 +158,8 @@
     <ClCompile Include="qTitleScene.cpp" />
     <ClCompile Include="qWaddleDee.cpp" />
     <ClCompile Include="qWaddleDeeScript.cpp" />
+    <ClCompile Include="qWindObject.cpp" />
+    <ClCompile Include="qWindObjectScript.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

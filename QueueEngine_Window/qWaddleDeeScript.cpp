@@ -61,7 +61,6 @@ namespace Q
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		translate(tr);
 
-
 		
 	}
 	void WaddleDeeScript::playWalkAnimationBydirection(eDirection dir)

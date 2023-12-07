@@ -20,6 +20,7 @@ namespace Q::enums
 		Stage,
 		Monster,
 		Player,
+		Effect,
 		Particle,
 		Max = 16,
 	};
