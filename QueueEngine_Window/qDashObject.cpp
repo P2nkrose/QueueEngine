@@ -1,26 +1,26 @@
-#include "qWaddleDee.h"
+#include "qDashObject.h"
 #include "qInput.h"
 #include "qTransform.h"
 #include "qTime.h"
 
 namespace Q
 {
-	void WaddleDee::Initialize()
+	void DashObject::Initialize()
 	{
 		GameObject::Initialize();
 	}
 
-	void WaddleDee::Update()
+	void DashObject::Update()
 	{
 		GameObject::Update();
 	}
 
-	void WaddleDee::LateUpdate()
+	void DashObject::LateUpdate()
 	{
 		GameObject::LateUpdate();
 	}
 
-	void WaddleDee::Render(HDC hdc)
+	void DashObject::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
 	}

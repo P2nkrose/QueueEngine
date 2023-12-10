@@ -46,13 +46,13 @@ namespace Q
 
 		//
 
-		titleUnder = object::Instantiate<BackGround>(enums::eLayerType::BackGround, Vector2(0.0f, 405.0f));
-		SpriteRenderer* titleudsr = titleUnder->AddComponent<SpriteRenderer>();
+		//titleUnder = object::Instantiate<BackGround>(enums::eLayerType::BackGround, Vector2(0.0f, 405.0f));
+		//SpriteRenderer* titleudsr = titleUnder->AddComponent<SpriteRenderer>();
 
-		graphics::Texture* TitleUnderTexture = Resources::Find<graphics::Texture>(L"Under");
-		titleudsr->SetTexture(TitleUnderTexture);
+		//graphics::Texture* TitleUnderTexture = Resources::Find<graphics::Texture>(L"Under");
+		//titleudsr->SetTexture(TitleUnderTexture);
 
-		titleudsr->SetSize(Vector2::Half);
+		//titleudsr->SetSize(Vector2::Half);
 
 
 		Scene::Initialize();

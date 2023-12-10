@@ -1,6 +1,7 @@
 #pragma once
 #include "CommonInclude.h"
 #include "qComponent.h"
+//#include "qObject.h"
 
 
 namespace Q
@@ -8,6 +9,17 @@ namespace Q
 	class GameObject
 	{
 	public:
+
+		//friend void object::Destroy(GameObject* obj);
+
+		enum class eState
+		{
+			Active,
+			Paused,
+			Dead,
+			End
+		};
+
 		GameObject();
 		~GameObject();
 
@@ -27,7 +39,6 @@ namespace Q
 
 			return comp;
 		}
-
 		template<typename T>
 		T* GetComponent()
 		{
@@ -44,10 +55,27 @@ namespace Q
 			return component;
 		}
 
+
+		eState GetActive() { return mState; }
+		void SetActive(bool power)
+		{
+			if (power == true)
+			{
+				mState = eState::Active;
+			}
+			if (power == false)
+			{
+				mState = eState::Paused;
+			}
+		}
+		void Death() { mState = eState::Dead; }
+
 	private:
 		void initializeTransform();
 
+
 	private:
+		eState mState;
 		std::vector<Component*> mComponents;
 	};
 }

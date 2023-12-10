@@ -3,46 +3,52 @@
 
 namespace Q
 {
-	class WindObjectScript : public Script
+	class IceKirbyScript : public Script
 	{
 	public:
 
 		enum class eState
 		{
-			WindObject,
-			False,
+			Stand,
+			Walk,
+			Down,
+			Tackle,
+			Jump,
+			Effect,
+			Effect2,
 		};
+
 
 		enum class eDirection
 		{
 			Right,
 			Left,
+			Down,
 		};
 
-		WindObjectScript();
-		~WindObjectScript();
+		IceKirbyScript();
+		~IceKirbyScript();
 
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-		void SetEffect(GameObject* effect) { mEffect = effect; };
-
-		///static Animator* GetEffectAnimator() { return mEffectAnimator; }
+		void Effect2();
 
 	private:
-		void WindObject();
-		void False();
+		void Stand();
+		void Walk();
+		void Down();
+		void Effect();
+		void Tackle();
 
 	private:
-
 		eState mState;
 		eDirection mDirection;
-		class Animator* mEffectAnimator;
-
-		GameObject* mEffect;
-
+		class Animator* mAnimator;
+		bool mOneTime;
+		float mDeathTime;
 	};
 }
 

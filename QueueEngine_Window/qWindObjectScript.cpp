@@ -24,12 +24,14 @@ namespace Q
 	{
 	}
 
+
 	void WindObjectScript::Update()
 	{
-		if (mAnimator == nullptr)
+		if (mEffectAnimator == nullptr)
 		{
-			mAnimator = GetOwner()->GetComponent<Animator>();
+			mEffectAnimator = GetOwner()->GetComponent<Animator>();
 		}
+
 
 		switch (mState)
 		{
@@ -37,11 +39,12 @@ namespace Q
 			WindObject();
 			break;
 		case Q::WindObjectScript::eState::False:
+			False();
 			break;
 		default:
 			break;
-		}
-	}
+		};
+	};
 
 	void WindObjectScript::LateUpdate()
 	{
@@ -56,11 +59,20 @@ namespace Q
 		mState = WindObjectScript::eState::WindObject;
 		if (mDirection == WindObjectScript::eDirection::Right)
 		{
-			mAnimator->PlayAnimation(L"RightWindEffect");
+			mEffectAnimator->PlayAnimation(L"RightWindEffect");
 		}
 		else if (mDirection == WindObjectScript::eDirection::Left)
 		{
-			mAnimator->PlayAnimation(L"LeftWindEffect");
+			mEffectAnimator->PlayAnimation(L"LeftWindEffect");
+		}
+	}
+
+	void WindObjectScript::False()
+	{
+		mState = WindObjectScript::eState::False;
+		if (Input::GetKeyUp(eKeyCode::Z))
+		{
+			object::Destroy(GetOwner());
 		}
 	}
 }

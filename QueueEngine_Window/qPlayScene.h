@@ -18,7 +18,14 @@ namespace Q
 		void OnExit() override;
 
 	private:
-		class Player* mPlayer;
+		// 노말커비
+		class Player* mKirby;
+		class WindObject* windObject;
+
+		// 아이스커비
+		class Player* mIceKirby;
+		
+		// 타이틀
 		class Stage* mStage;
 		class BackGround* mBackGround;
 		class BackGround* titleUnder;

@@ -67,6 +67,8 @@ namespace Q
 		Update();
 		LateUpdate();
 		Render();
+
+		Destroy();
 	}
 
 	void Application::Update()
@@ -144,6 +146,12 @@ namespace Q
 		copyRenderTarget(mBackHdc, mHdc);
 
 	}
+
+	void Application::Destroy()
+	{
+		SceneManager::Destroy();
+	}
+
 	void Application::clearRenderTarget()
 	{
 		// clear

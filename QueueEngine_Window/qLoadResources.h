@@ -51,22 +51,43 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Etc\\LevelSelect.bmp");
 
 		// Kirby
-		Resources::Load<graphics::Texture>(L"RightStandKirby", L"..\\Resources\\img\\Kirby\\RightStandKirby.bmp");
-		Resources::Load<graphics::Texture>(L"LeftStandKirby", L"..\\Resources\\img\\Kirby\\LeftStandKirby.bmp");
-		Resources::Load<graphics::Texture>(L"RightDownKirby", L"..\\Resources\\img\\Kirby\\RightDownKirby.bmp");
-		Resources::Load<graphics::Texture>(L"LeftDownKirby", L"..\\Resources\\img\\Kirby\\LeftDownKirby.bmp");
-		Resources::Load<graphics::Texture>(L"RightWalkKirby", L"..\\Resources\\img\\Kirby\\RightWalkKirby.bmp");
-		Resources::Load<graphics::Texture>(L"LeftWalkKirby", L"..\\Resources\\img\\Kirby\\LeftWalkKirby.bmp");
-		Resources::Load<graphics::Texture>(L"LeftWindKirby", L"..\\Resources\\img\\Kirby\\LeftWindKirby.bmp");
-		Resources::Load<graphics::Texture>(L"RightWindKirby", L"..\\Resources\\img\\Kirby\\RightWindKirby.bmp");
-		Resources::Load<graphics::Texture>(L"RightWindKirby2", L"..\\Resources\\img\\Kirby\\RightWindKirby2.bmp");
-		Resources::Load<graphics::Texture>(L"LeftWindKirby2", L"..\\Resources\\img\\Kirby\\LeftWindKirby2.bmp");
-		Resources::Load<graphics::Texture>(L"RightTackleKirby", L"..\\Resources\\img\\Kirby\\RightTackleKirby.bmp");
-		Resources::Load<graphics::Texture>(L"LeftTackleKirby", L"..\\Resources\\img\\Kirby\\LeftTackleKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightStandKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightStandKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStandKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftStandKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDownKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightDownKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDownKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftDownKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWalkKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightWalkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWalkKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftWalkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWindKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftWindKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWindKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightWindKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWindKirby2", L"..\\Resources\\img\\Kirby\\Normal\\RightWindKirby2.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWindKirby2", L"..\\Resources\\img\\Kirby\\Normal\\LeftWindKirby2.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightTackleKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftTackleKirby.bmp");
 
 		// Effect
 		Resources::Load<graphics::Texture>(L"RightWindEffect", L"..\\Resources\\img\\Etc\\RightWindEffect.bmp");
 		Resources::Load<graphics::Texture>(L"LeftWindEffect", L"..\\Resources\\img\\Etc\\LeftWindEffect.bmp");
+		Resources::Load<graphics::Texture>(L"RightDashEffect", L"..\\Resources\\img\\Etc\\RightDashEffect.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDashEffect", L"..\\Resources\\img\\Etc\\LeftDashEffect.bmp");
+
+		// IceKirby
+		Resources::Load<graphics::Texture>(L"RightStandIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\RightStandIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStandIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftStandIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDownIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\RightDownIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDownIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftDownIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWalkIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\RightWalkIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWalkIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftWalkIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\RightTackleIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftTackleIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightEffectIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\RightEffectIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightEffectIceKirby2", L"..\\Resources\\img\\Kirby\\Ice\\RightEffectIceKirby2.bmp");
+		Resources::Load<graphics::Texture>(L"LeftEffectIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftEffectIceKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftEffectIceKirby2", L"..\\Resources\\img\\Kirby\\Ice\\LeftEffectIceKirby2.bmp");
+
+
+		
+		
+
 
 
 		// stage

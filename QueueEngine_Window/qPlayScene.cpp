@@ -17,15 +17,16 @@
 #include "qBackGround.h"
 #include "qStage.h"
 #include "qAnimator.h"
-#include "qWaddleDee.h"
+#include "qMonster.h"
 #include "qWaddleDeeScript.h"
 #include "qWindObject.h"
 #include "qWindObjectScript.h"
+#include "qIceKirbyScript.h"
 
 namespace Q
 {
 	PlayScene::PlayScene()
-		: mPlayer(nullptr)
+		: mKirby(nullptr)
 		, titleUnder(nullptr)
 		, mStage(nullptr)
 		, mBackGround(nullptr)
@@ -34,15 +35,15 @@ namespace Q
 	}
 	PlayScene::~PlayScene()
 	{
+
 	}
 	void PlayScene::Initialize()
 	{
 
 		// 카메라
-		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(277.5f, 425.0f));
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None/*, Vector2(50.0f, 420.0f)*/);
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
-
 
 		
 		
@@ -52,22 +53,33 @@ namespace Q
 
 		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"BackGround");
 		bgsr->SetTexture(bgTexture);
-		bgsr->SetSize(Vector2::Half);
+		bgsr->SetSize(Vector2::Two);
+		mBackGround->GetComponent<Transform>()->SetPosition(Vector2(-318.0f, 70.0f));
 
 		// 맵
 		mStage = object::Instantiate<Stage>(enums::eLayerType::Stage);
 		SpriteRenderer* stageSr = mStage->AddComponent<SpriteRenderer>();
-		stageSr->SetSize(Vector2::Half);
+		stageSr->SetSize(Vector2::Two);
 
 		graphics::Texture* stageTexture = Resources::Find<graphics::Texture>(L"Stage");
 		stageSr->SetTexture(stageTexture);
 
+		mStage->GetComponent<Transform>()->SetPosition(Vector2(-318.0f, 70.0f));
+
 		// 커비
 		
-		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
-		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
+		mKirby = object::Instantiate<Player>(enums::eLayerType::Player);
+		PlayerScript* kirbyScript = mKirby->AddComponent<PlayerScript>();
 
-		//cameraComp->SetTarget(mPlayer);
+		// 카메라 커비타겟
+		cameraComp->SetTarget(mKirby);
+
+		//Transform* stageTr = mStage->GetComponent<Transform>();
+
+		//mPlayer->GetComponent<Transform>()->SetPosition(stageTr->GetPosition() + Vector2(50.0f, 360.0f));
+		
+		mKirby->GetComponent<Transform>()->SetPosition(Vector2(20.0f, 420.0f));
+
 
 		graphics::Texture* RightStandKirbyTex = Resources::Find<graphics::Texture>(L"RightStandKirby");
 		graphics::Texture* LeftStandKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandKirby");
@@ -84,7 +96,7 @@ namespace Q
 
 
 
-		Animator* animator = mPlayer->AddComponent<Animator>();
+		Animator* animator = mKirby->AddComponent<Animator>();
 		animator->CreateAnimation(L"RightStandKirby", RightStandKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(29.26262627f, 32.0f), Vector2::Zero, 3, 0.5f);
 
@@ -98,10 +110,10 @@ namespace Q
 			Vector2(0.0f, 0.0f), Vector2(34.0f, 32.0f), Vector2::Zero, 3, 0.5f);
 		
 		animator->CreateAnimation(L"RightWalkKirby", RightWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(28.65f, 32.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.2f);
 
 		animator->CreateAnimation(L"LeftWalkKirby", LeftWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(28.65f, 32.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.2f);
 
 		animator->CreateAnimation(L"LeftWindKirby", LeftWindKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(33.6f, 30.0f), Vector2::Zero, 5, 0.1f);
@@ -121,21 +133,91 @@ namespace Q
 		animator->CreateAnimation(L"RightTackleKirby", RightTackleKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(39.5f, 30.0f), Vector2::Zero, 2, 0.1f);
 
-		animator->GetCompleteEvent(L"RightWindKirby") = std::bind(&PlayerScript::Wind2, plScript);
-		animator->GetCompleteEvent(L"LeftWindKirby") = std::bind(&PlayerScript::Wind2, plScript);
+		animator->GetCompleteEvent(L"RightWindKirby") = std::bind(&PlayerScript::Wind2, kirbyScript);
+		animator->GetCompleteEvent(L"LeftWindKirby") = std::bind(&PlayerScript::Wind2, kirbyScript);
 
 
 
 		animator->PlayAnimation(L"RightStandKirby", true);
 
-		mPlayer->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(30.0f, 260.0f));
+		mKirby->GetComponent<Transform>()->SetScale(Vector2::Two);
 		
+
+		
+		// 아이스커비
+		mIceKirby = object::Instantiate<Player>(enums::eLayerType::Player);
+		IceKirbyScript * icekirbyScript = mIceKirby->AddComponent<IceKirbyScript>();
+
+		graphics::Texture* RightStandIceKirbyTex = Resources::Find<graphics::Texture>(L"RightStandIceKirby");
+		graphics::Texture* LeftStandIceKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandIceKirby");
+		graphics::Texture* RightDownIceKirbyTex = Resources::Find<graphics::Texture>(L"RightDownIceKirby");
+		graphics::Texture* LefttDownIceKirbyTex = Resources::Find<graphics::Texture>(L"LeftDownIceKirby");
+		graphics::Texture* RightWalkIceKirbyTex = Resources::Find<graphics::Texture>(L"RightWalkIceKirby");
+		graphics::Texture* LeftWalkIceKirbyTex = Resources::Find<graphics::Texture>(L"LeftWalkIceKirby");
+		graphics::Texture* LeftEffectIceKirbyTex = Resources::Find<graphics::Texture>(L"LeftEffectIceKirby");
+		graphics::Texture* RightEffectIceKirbyTex = Resources::Find<graphics::Texture>(L"RightEffectIceKirby");
+		graphics::Texture* RightEffectIceKirbyTex2 = Resources::Find<graphics::Texture>(L"RightEffectIceKirby2");
+		graphics::Texture* LeftEffectIceKirbyTex2 = Resources::Find<graphics::Texture>(L"LeftEffectIceKirby2");
+		graphics::Texture* RightTackleIceKirbyTex = Resources::Find<graphics::Texture>(L"RightTackleIceKirby");
+		graphics::Texture* LeftTackleIceKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleIceKirby");
+		
+		Animator* IceAnimator = mIceKirby->AddComponent<Animator>();
+
+		IceAnimator->CreateAnimation(L"RightStandIceKirby", RightStandIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 2, 0.5f);
+
+		IceAnimator->CreateAnimation(L"LeftStandIceKirby", LeftStandIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 3, 0.5f);
+
+		IceAnimator->CreateAnimation(L"RightDownIceKirby", RightDownIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(31.0f, 24.0f), Vector2::Zero, 2, 0.5f);
+
+		IceAnimator->CreateAnimation(L"LeftDownIceKirby", LefttDownIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(31.0f, 24.0f), Vector2::Zero, 2, 0.5f);
+
+		IceAnimator->CreateAnimation(L"RightWalkIceKirby", RightWalkIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 32.0f), Vector2::Zero, 10, 0.2f);
+
+		IceAnimator->CreateAnimation(L"LeftWalkIceKirby", LeftWalkIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 32.0f), Vector2::Zero, 10, 0.2f);
+
+		IceAnimator->CreateAnimation(L"LeftEffectIceKirby", LeftEffectIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 33.0f), Vector2::Zero, 4, 0.1f);
+
+		IceAnimator->CreateAnimation(L"RightEffectIceKirby", RightEffectIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 33.0f), Vector2::Zero, 4, 0.1f);
+
+		IceAnimator->CreateAnimation(L"LeftEffectIceKirby2", LeftEffectIceKirbyTex2,
+			Vector2(0.0f, 0.0f), Vector2(100.0f, 47.0f), Vector2::Zero, 4, 0.1f);
+
+		IceAnimator->CreateAnimation(L"RightEffectIceKirby2", RightEffectIceKirbyTex2,
+			Vector2(0.0f, 0.0f), Vector2(100.0f, 47.0f), Vector2::Zero, 4, 0.1f);
+
+		IceAnimator->CreateAnimation(L"LeftTackleIceKirby", LeftTackleIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(37.0f, 28.0f), Vector2::Zero, 2, 0.2f);
+
+		IceAnimator->CreateAnimation(L"RightTackleIceKirby", RightTackleIceKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(37.0f, 28.0f), Vector2::Zero, 2, 0.2f);
+
+
+		
+
+
+		if (Input::GetKeyDown(eKeyCode::SPACE))
+		{
+			IceAnimator->PlayAnimation(L"RightStandIceKirby", true);
+			Transform* kirbyTr = mKirby->GetComponent<Transform>();
+			mIceKirby->GetComponent<Transform>()->SetPosition(kirbyTr->GetPosition());
+		}
+
+
+		// 이펙트
+
 
 
 
 		// 몬스터 (Waddle Dee)
-		WaddleDee* wd = object::Instantiate<WaddleDee>(enums::eLayerType::Monster);
+		Monster* wd = object::Instantiate<Monster>(enums::eLayerType::Monster);
 		wd->AddComponent<WaddleDeeScript>();
 		
 		graphics::Texture* leftDeeTex = Resources::Find<graphics::Texture>(L"LeftDee");
@@ -150,8 +232,8 @@ namespace Q
 
 		deeAnimator->PlayAnimation(L"LeftDee", true);
 
-		wd->GetComponent<Transform>()->SetScale(Vector2(1.7f, 1.7f));
-		wd->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 260.0f));
+		wd->GetComponent<Transform>()->SetScale(Vector2(2.5f, 2.5f));
+		wd->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 420.0f));
 
 
 
@@ -185,12 +267,12 @@ namespace Q
 
 		// 아래화면
 
-		titleUnder = object::Instantiate<BackGround>(enums::eLayerType::BackGround, Vector2(0.0f, 405.0f));
-		SpriteRenderer* titleudsr = titleUnder->AddComponent<SpriteRenderer>();
+		//titleUnder = object::Instantiate<BackGround>(enums::eLayerType::BackGround, Vector2(0.0f, 405.0f));
+		//SpriteRenderer* titleudsr = titleUnder->AddComponent<SpriteRenderer>();
 
-		graphics::Texture* TitleUnderTexture = Resources::Find<graphics::Texture>(L"Under");
-		titleudsr->SetSize(Vector2::Half);
-		titleudsr->SetTexture(TitleUnderTexture);
+		//graphics::Texture* TitleUnderTexture = Resources::Find<graphics::Texture>(L"Under");
+		//titleudsr->SetSize(Vector2::Half);
+		//titleudsr->SetTexture(TitleUnderTexture);
 
 		
 		Scene::Initialize();

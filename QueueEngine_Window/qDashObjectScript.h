@@ -3,13 +3,12 @@
 
 namespace Q
 {
-	class WindObjectScript : public Script
+	class DashObjectScript : public Script
 	{
 	public:
-
 		enum class eState
 		{
-			WindObject,
+			DashObject,
 			False,
 		};
 
@@ -19,8 +18,8 @@ namespace Q
 			Left,
 		};
 
-		WindObjectScript();
-		~WindObjectScript();
+		DashObjectScript();
+		~DashObjectScript();
 
 		void Initialize() override;
 		void Update() override;
@@ -29,10 +28,8 @@ namespace Q
 
 		void SetEffect(GameObject* effect) { mEffect = effect; };
 
-		///static Animator* GetEffectAnimator() { return mEffectAnimator; }
-
 	private:
-		void WindObject();
+		void DashObject();
 		void False();
 
 	private:
@@ -42,9 +39,8 @@ namespace Q
 		class Animator* mEffectAnimator;
 
 		GameObject* mEffect;
-
 	};
-}
 
+}
 
 

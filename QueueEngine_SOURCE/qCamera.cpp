@@ -29,7 +29,7 @@ namespace Q
 		if (mTarget)
 		{
 			Transform* tr = mTarget->GetComponent<Transform>();
-			mLookPosition = tr->GetPosition();
+			mLookPosition = tr->GetPosition() - Vector2(-100.0f, 60.0f);
 		}
 		else
 		{

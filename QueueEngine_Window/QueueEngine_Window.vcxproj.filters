@@ -16,9 +16,6 @@
     <ClInclude Include="qEndScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="qPlayerScript.h">
-      <Filter>Scripts</Filter>
-    </ClInclude>
     <ClInclude Include="qLoadResources.h" />
     <ClInclude Include="qIntroScene.h">
       <Filter>Scenes</Filter>
@@ -29,17 +26,29 @@
     <ClInclude Include="qBackGround.h">
       <Filter>Contents\Map</Filter>
     </ClInclude>
-    <ClInclude Include="qWaddleDee.h">
+    <ClInclude Include="qMonster.h">
       <Filter>Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="qWaddleDeeScript.h">
-      <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="qWindObject.h">
       <Filter>Contents\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="qDashObject.h">
+      <Filter>Contents\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="qDashObjectScript.h">
+      <Filter>Scripts\Effect</Filter>
+    </ClInclude>
     <ClInclude Include="qWindObjectScript.h">
-      <Filter>Scripts</Filter>
+      <Filter>Scripts\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="qPlayerScript.h">
+      <Filter>Scripts\Kirby</Filter>
+    </ClInclude>
+    <ClInclude Include="qIceKirbyScript.h">
+      <Filter>Scripts\Kirby</Filter>
+    </ClInclude>
+    <ClInclude Include="qWaddleDeeScript.h">
+      <Filter>Scripts\Moster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +64,6 @@
     <ClCompile Include="qEndScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="qPlayerScript.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
     <ClCompile Include="qIntroScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
@@ -67,17 +73,29 @@
     <ClCompile Include="qBackGround.cpp">
       <Filter>Contents\Map</Filter>
     </ClCompile>
-    <ClCompile Include="qWaddleDee.cpp">
+    <ClCompile Include="qMonster.cpp">
       <Filter>Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="qWaddleDeeScript.cpp">
-      <Filter>Scripts</Filter>
     </ClCompile>
     <ClCompile Include="qWindObject.cpp">
       <Filter>Contents\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="qDashObject.cpp">
+      <Filter>Contents\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="qDashObjectScript.cpp">
+      <Filter>Scripts\Effect</Filter>
+    </ClCompile>
     <ClCompile Include="qWindObjectScript.cpp">
-      <Filter>Scripts</Filter>
+      <Filter>Scripts\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="qIceKirbyScript.cpp">
+      <Filter>Scripts\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlayerScript.cpp">
+      <Filter>Scripts\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qWaddleDeeScript.cpp">
+      <Filter>Scripts\Moster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +113,15 @@
     </Filter>
     <Filter Include="Contents\Effect">
       <UniqueIdentifier>{668f6177-c0f6-4523-b3c4-3293b1648b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Kirby">
+      <UniqueIdentifier>{782a669f-53bb-43c6-8f12-6f675bb0475d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Moster">
+      <UniqueIdentifier>{3ff8789b-8e54-4c98-8bfb-402dda5786a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Effect">
+      <UniqueIdentifier>{4a5f641e-4fc4-44d9-8134-847268207c38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

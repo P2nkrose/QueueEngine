@@ -45,4 +45,9 @@ namespace Q
 	{
 		mActiveScene->Render(hdc);
 	}
+
+	void SceneManager::Destroy()
+	{
+		mActiveScene->Destroy();
+	}
 }

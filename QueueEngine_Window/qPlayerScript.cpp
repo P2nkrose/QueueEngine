@@ -8,6 +8,8 @@
 #include "qWindObjectScript.h"
 #include "qObject.h"
 #include "qResources.h"
+#include "qDashObject.h"
+#include "qDashObjectScript.h"
 
 
 namespace Q
@@ -15,7 +17,8 @@ namespace Q
 	PlayerScript::PlayerScript()
 		: mState(PlayerScript::eState::Stand)
 		, mDirection(PlayerScript::eDirection::Right)
-		, oneTime(false)
+		, mOneTime(false)
+		, mDeathTime(0.0f)
 	{
 	}
 	PlayerScript::~PlayerScript()
@@ -74,31 +77,7 @@ namespace Q
 	void PlayerScript::Stand()
 	{
 
-		// 이펙트
-		WindObject* windObject = object::Instantiate<WindObject>(enums::eLayerType::Effect);
-		WindObjectScript* windSrc = windObject->AddComponent<WindObjectScript>();
-
-
-		graphics::Texture* rightWindEffectTex = Resources::Find<graphics::Texture>(L"RightWindEffect");
-		graphics::Texture* leftWindEffectTex = Resources::Find<graphics::Texture>(L"LeftWindEffect");
-
-		Animator* windEffectAnimator = windObject->AddComponent<Animator>();
-
-		windEffectAnimator->CreateAnimation(L"RightWindEffect", rightWindEffectTex,
-			Vector2(0.0f, 0.0f), Vector2(50.0f, 30.0f), Vector2::Zero, 2, 0.1f);
-
-		windEffectAnimator->CreateAnimation(L"LeftWindEffect", leftWindEffectTex,
-			Vector2(0.0f, 0.0f), Vector2(50.0f, 30.0f), Vector2::Zero, 2, 0.1f);
-
-		windEffectAnimator->PlayAnimation(L"RightWindEffect", false);
-
-		Transform* tr = GetOwner()->GetComponent<Transform>();
-
-		windObject->GetComponent<Transform>()->SetPosition(tr->GetPosition() + Vector2(50.0f, 0.0f));
-		windObject->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
-
 		
-
 		
 		// 마우스
 		if (Input::GetKey(eKeyCode::LButton))
@@ -137,7 +116,7 @@ namespace Q
 		if (Input::GetKeyDown(eKeyCode::Z))
 		{
 			mState = PlayerScript::eState::Wind;
-			oneTime = false;
+			mOneTime = false;
 			if (mDirection == PlayerScript::eDirection::Right)
 			{
 				mAnimator->PlayAnimation(L"RightWindKirby", false);
@@ -161,11 +140,6 @@ namespace Q
 		{
 			mDirection == PlayerScript::eDirection::Right;
 			mAnimator->PlayAnimation(L"RightDownKirby", true);
-			if (Input::GetKeyDown(eKeyCode::Left))
-			{
-				mDirection == PlayerScript::eDirection::Left;
-				mAnimator->PlayAnimation(L"LeftDownKirby", true);
-			}
 		}
 		else if (Input::GetKeyDown(eKeyCode::Left))
 		{
@@ -244,6 +218,7 @@ namespace Q
 	{
 		if (Input::GetKeyUp(eKeyCode::Z))
 		{
+			object::Destroy(GetOwner());
 			mState = PlayerScript::eState::Stand;
 			if (mDirection == PlayerScript::eDirection::Right)
 			{
@@ -257,26 +232,155 @@ namespace Q
 		}
 	}
 
+
+	// 윈드2
+
+	void PlayerScript::Wind2()
+	{
+
+		// 이펙트
+		WindObject* rightWindObject = object::Instantiate<WindObject>(enums::eLayerType::Effect);
+		WindObject* leftWindObject = object::Instantiate<WindObject>(enums::eLayerType::Effect);
+		WindObjectScript* rightWindSrc = rightWindObject->AddComponent<WindObjectScript>();
+		WindObjectScript* leftWindSrc = leftWindObject->AddComponent<WindObjectScript>();
+
+		rightWindSrc->SetEffect(GetOwner());
+		leftWindSrc->SetEffect(GetOwner());
+
+		graphics::Texture* rightWindEffectTex = Resources::Find<graphics::Texture>(L"RightWindEffect");
+		graphics::Texture* leftWindEffectTex = Resources::Find<graphics::Texture>(L"LeftWindEffect");
+
+		Animator* rightWindEffectAnimator = rightWindObject->AddComponent<Animator>();
+		Animator* leftWindEffectAnimator = leftWindObject->AddComponent<Animator>();
+
+		rightWindEffectAnimator->CreateAnimation(L"RightWindEffect", rightWindEffectTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 30.0f), Vector2::Zero, 2, 0.1f);
+
+		leftWindEffectAnimator->CreateAnimation(L"LeftWindEffect", leftWindEffectTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 30.0f), Vector2::Zero, 2, 0.1f);
+
+		Transform* tr = GetOwner()->GetComponent<Transform>();
+
+		rightWindObject->GetComponent<Transform>()->SetPosition(tr->GetPosition() + Vector2(70.0f, 0.0f));
+		leftWindObject->GetComponent<Transform>()->SetPosition(tr->GetPosition() + Vector2(-80.0f, 0.0f));
+		
+		rightWindObject->GetComponent<Transform>()->SetScale(Vector2::Two);
+		leftWindObject->GetComponent<Transform>()->SetScale(Vector2::Two);
+
+
+
+		if (Input::GetKey(eKeyCode::Z))
+		{
+			mState = PlayerScript::eState::Wind2;
+
+			if (mDirection == PlayerScript::eDirection::Right && mOneTime == false)
+			{
+				// 한번만 실행되게 조건을 걸어야 함(if문이나 bool)
+				mAnimator->PlayAnimation(L"RightWindKirby2", true);
+				rightWindEffectAnimator->PlayAnimation(L"RightWindEffect", true);
+				
+			}
+			else if (mDirection == PlayerScript::eDirection::Left && mOneTime == false)
+			{
+				mAnimator->PlayAnimation(L"LeftWindKirby2", true);
+				leftWindEffectAnimator->PlayAnimation(L"LeftWindEffect", true);
+			}
+			mOneTime = true;
+		}
+
+
+		if (Input::GetKeyUp(eKeyCode::Z))
+		{
+			mState = PlayerScript::eState::Stand;
+			if (mDirection == PlayerScript::eDirection::Right)
+			{
+				mAnimator->PlayAnimation(L"RightStandKirby", true);
+				
+			}
+			else if (mDirection == PlayerScript::eDirection::Left)
+			{
+				mAnimator->PlayAnimation(L"LeftStandKirby", true);
+			}
+		}
+	}
+
+
+
+	void PlayerScript::WindEffect()
+	{
+		
+
+
+	}
+
+
+
 	// 태클
 
 	void PlayerScript::Tackle()
 	{
+		// 태클 이펙트
+
+		//DashObject* rightDashObject = object::Instantiate<DashObject>(enums::eLayerType::Effect);
+		//DashObject* leftDashObject = object::Instantiate<DashObject>(enums::eLayerType::Effect);
+		//DashObjectScript* rightDashSrc = rightDashObject->AddComponent<DashObjectScript>();
+		//DashObjectScript* leftDashSrc = leftDashObject->AddComponent<DashObjectScript>();
+
+		//rightDashSrc->SetEffect(GetOwner());
+		//leftDashSrc->SetEffect(GetOwner());
+
+		//graphics::Texture* rightDashEffectTex = Resources::Find<graphics::Texture>(L"RightDashEffect");
+		//graphics::Texture* leftDashEffectTex = Resources::Find<graphics::Texture>(L"LeftDashEffect");
+
+		//Animator* rightDashEffectAnimator = rightDashObject->AddComponent<Animator>();
+		//Animator* leftDashEffectAnimator = leftDashObject->AddComponent<Animator>();
+
+		//rightDashEffectAnimator->CreateAnimation(L"RightDashEffect", rightDashEffectTex,
+		//	Vector2(0.0f, 0.0f), Vector2(25.0f, 25.0f), Vector2::Zero, 6, 0.1f);
+
+		//leftDashEffectAnimator->CreateAnimation(L"LeftDashEffect", leftDashEffectTex,
+		//	Vector2(0.0f, 0.0f), Vector2(25.0f, 25.0f), Vector2::Zero, 6, 0.1f);
+
+		//Transform* tr2 = GetOwner()->GetComponent<Transform>();
+
+		//rightDashObject->GetComponent<Transform>()->SetPosition(tr2->GetPosition() + Vector2(-40.0f, 0.0f));
+		//leftDashObject->GetComponent<Transform>()->SetPosition(tr2->GetPosition() + Vector2(40.0f, 0.0f));
+
+		//rightDashObject->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
+		//leftDashObject->GetComponent<Transform>()->SetScale(Vector2(1.5f, 1.5f));
+
+
+		// 플레이애니메이션 써먹기
+
+		//rightDashEffectAnimator->PlayAnimation(L"RightDashEffect", false);
+
+		//leftDashEffectAnimator->PlayAnimation(L"LeftDashEffect", false);
+
+
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+
 		if (Input::GetKey(eKeyCode::X))
 		{
 			if (mDirection == PlayerScript::eDirection::Right)
 			{
+				
 				pos.x += 300.0f * Time::DeltaTime();
 				
 			}
 			else if (mDirection == PlayerScript::eDirection::Left)
 			{
+				
 				pos.x -= 300.0f * Time::DeltaTime();
 			}
 		}
 
 		tr->SetPosition(pos);
+
+
+		
+
+
 
 		if (Input::GetKeyUp(eKeyCode::X))
 		{
@@ -309,47 +413,8 @@ namespace Q
 	
 	}
 	
-	// 윈드2
+	
 
-	void PlayerScript::Wind2()
-	{
-		if (Input::GetKey(eKeyCode::Z))
-		{
-			mState = PlayerScript::eState::Wind2;
-
-			if (mDirection == PlayerScript::eDirection::Right && oneTime == false)
-			{
-				// 한번만 실행되게 조건을 걸어야 함(if문이나 bool)
-				mAnimator->PlayAnimation(L"RightWindKirby2", true);
-			}
-			else if (mDirection == PlayerScript::eDirection::Left && oneTime == false)
-			{
-				mAnimator->PlayAnimation(L"LeftWindKirby2", true);
-			}
-			oneTime = true;
-		}
-
-
-		if (Input::GetKeyUp(eKeyCode::Z))
-		{
-			mState = PlayerScript::eState::Stand;
-			if (mDirection == PlayerScript::eDirection::Right)
-			{
-				mAnimator->PlayAnimation(L"RightStandKirby", true);
-
-			}
-			else if (mDirection == PlayerScript::eDirection::Left)
-			{
-				mAnimator->PlayAnimation(L"LeftStandKirby", true);
-			}
-		}
-	}
-
-	void PlayerScript::WindEffect()
-	{
-
-
-	}
 
 
 

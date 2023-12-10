@@ -74,6 +74,19 @@ namespace Q
 		}
 	}
 
+	void Scene::Destroy()
+	{
+		for (Layer* Layer : mLayers)
+		{
+			if (Layer == nullptr)
+			{
+				continue;
+			}
+
+			Layer->Destroy();
+		}
+	}
+
 	void Scene::OnEnter()
 	{
 

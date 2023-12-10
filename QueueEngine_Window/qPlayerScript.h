@@ -1,5 +1,6 @@
 #pragma once
 #include "qScript.h"
+#include "qWindObjectScript.h"
 
 namespace Q
 {
@@ -49,7 +50,8 @@ namespace Q
 		eState mState;
 		eDirection mDirection;
 		class Animator* mAnimator;
-		bool oneTime;
+		bool mOneTime;
+		float mDeathTime;
 
 		//void (*StartEvent)();
 		//void (*CompleteEvent)();
