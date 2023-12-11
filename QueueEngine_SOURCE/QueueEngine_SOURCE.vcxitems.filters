@@ -66,6 +66,18 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qCollider.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qBoxCollider2D.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qCircleCollider2D.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qCollisionManager.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
@@ -142,6 +154,18 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qCollider.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qBoxCollider2D.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qCircleCollider2D.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qCollisionManager.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -191,6 +215,9 @@
     </Filter>
     <Filter Include="Component\Renderer">
       <UniqueIdentifier>{2f2864f2-3281-44c6-88fc-21808dbf5bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider">
+      <UniqueIdentifier>{543cd863-724b-4390-8be6-a24d1f3ddad8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

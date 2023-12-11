@@ -22,6 +22,8 @@
 #include "qWindObject.h"
 #include "qWindObjectScript.h"
 #include "qIceKirbyScript.h"
+#include "qBoxCollider2D.h"
+#include "qCollisionManager.h"
 
 namespace Q
 {
@@ -40,8 +42,10 @@ namespace Q
 	void PlayScene::Initialize()
 	{
 
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Monster, true);
+
 		// 카메라
-		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None/*, Vector2(50.0f, 420.0f)*/);
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(50.0f, 420.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
 
@@ -74,11 +78,17 @@ namespace Q
 		// 카메라 커비타겟
 		cameraComp->SetTarget(mKirby);
 
+		
+
 		//Transform* stageTr = mStage->GetComponent<Transform>();
 
 		//mPlayer->GetComponent<Transform>()->SetPosition(stageTr->GetPosition() + Vector2(50.0f, 360.0f));
 		
 		mKirby->GetComponent<Transform>()->SetPosition(Vector2(20.0f, 420.0f));
+
+		// 커비 콜라이더
+		BoxCollider2D* collider = mKirby->AddComponent<BoxCollider2D>();
+		collider->SetOffset(Vector2(235.0f, -80.0f));
 
 
 		graphics::Texture* RightStandKirbyTex = Resources::Find<graphics::Texture>(L"RightStandKirby");
@@ -139,6 +149,7 @@ namespace Q
 
 
 		animator->PlayAnimation(L"RightStandKirby", true);
+		mKirby->SetActive(true);
 
 		mKirby->GetComponent<Transform>()->SetScale(Vector2::Two);
 		
@@ -201,14 +212,15 @@ namespace Q
 
 
 		
+		
+		//if (Input::GetKeyDown(eKeyCode::SPACE))
+		//{
 
-
-		if (Input::GetKeyDown(eKeyCode::SPACE))
-		{
-			IceAnimator->PlayAnimation(L"RightStandIceKirby", true);
-			Transform* kirbyTr = mKirby->GetComponent<Transform>();
-			mIceKirby->GetComponent<Transform>()->SetPosition(kirbyTr->GetPosition());
-		}
+		//	IceAnimator->PlayAnimation(L"RightStandIceKirby", true);
+		//	Transform* kirbyTr = mKirby->GetComponent<Transform>();
+		//	mIceKirby->GetComponent<Transform>()->SetPosition(kirbyTr->GetPosition());
+		//	mIceKirby->SetActive(true);
+		//}
 
 
 		// 이펙트
@@ -235,7 +247,10 @@ namespace Q
 		wd->GetComponent<Transform>()->SetScale(Vector2(2.5f, 2.5f));
 		wd->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 420.0f));
 
+		// 몬스터 콜라이더
 
+		BoxCollider2D* colliderWD = wd->AddComponent<BoxCollider2D>();
+		colliderWD->SetOffset(Vector2(245.0f, -80.0f));
 
 
 		// 이펙트

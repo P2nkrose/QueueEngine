@@ -9,6 +9,16 @@ namespace Q
 
 	Layer::~Layer()
 	{
+		for (GameObject* gameObj : mGameObjects)
+		{
+			if (gameObj == nullptr)
+			{
+				continue;
+			}
+
+			delete gameObj;
+			gameObj = nullptr;
+		}
 	}
 
 	void Layer::Initialize()
@@ -33,6 +43,12 @@ namespace Q
 				continue;
 			}
 
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
+			{
+				continue;
+			}
+
 			gameObj->Update();
 		}
 	}
@@ -42,6 +58,11 @@ namespace Q
 		for (GameObject* gameObj : mGameObjects)
 		{
 			if (gameObj == nullptr)
+			{
+				continue;
+			}
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
 			{
 				continue;
 			}
@@ -55,6 +76,11 @@ namespace Q
 		for (GameObject* gameObj : mGameObjects)
 		{
 			if (gameObj == nullptr)
+			{
+				continue;
+			}
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
 			{
 				continue;
 			}

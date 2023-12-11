@@ -6,9 +6,10 @@ namespace Q::enums
 	enum class eComponentType
 	{
 		Transform,
+		Collider,
+		Script,
 		SpriteRenderer,
 		Animator,
-		Script,
 		Camera,
 		End,
 	};
@@ -24,6 +25,7 @@ namespace Q::enums
 		Particle,
 		Max = 16,
 	};
+
 
 
 	enum class eResourceType

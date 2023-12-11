@@ -32,6 +32,9 @@ namespace Q
 	private:
 		void clearRenderTarget();
 		void copyRenderTarget(HDC source, HDC dest);
+		void adjustWindowRect(HWND hwnd, UINT width, UINT height);
+		void createBuffer(UINT width, UINT height);
+		void initializeEtc();
 
 
 	private:

@@ -1,11 +1,46 @@
 #include "qTexture.h"
 #include "qApplication.h"
+#include "qResources.h"
 
 // 해당 전역변수가 존재함을 알리는 키워드 extern
 extern Q::Application application;
 
 namespace Q::graphics
 {
+	Texture* Texture::Create(const std::wstring& name, UINT width, UINT height)
+	{
+		Texture* image = Resources::Find<Texture>(name);
+		if (image)
+		{
+			return image;
+		}
+		
+		image = new Texture();
+		image->SetName(name);
+		image->SetWidth(width);
+		image->SetHeight(height);
+
+		HDC hdc = application.GetHdc();
+		HWND hwnd = application.GetHwnd();
+
+		image->mBitmap = CreateCompatibleBitmap(hdc, width, height);
+		image->mHdc = CreateCompatibleDC(hdc);
+
+
+		HBRUSH transparentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
+		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
+		Rectangle(image->mHdc, -1, -1, image->GetWidth() + 1, image->GetHeight() + 1);
+
+		SelectObject(hdc, oldBrush);
+
+
+
+		HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
+		DeleteObject(oldBitmap);
+
+		Resources::Insert(name, image);
+	}
+
 	Texture::Texture()
 		: Resource(enums::eResourceType::Texture)
 	{
@@ -23,7 +58,8 @@ namespace Q::graphics
 		if (ext == L"bmp")
 		{
 			mType = eTextureType::Bmp;
-			mBitmap = (HBITMAP)LoadImageW(nullptr, path.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+			mBitmap = (HBITMAP)LoadImageW(nullptr, path.c_str(), IMAGE_BITMAP
+				, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
 
 			if (mBitmap == nullptr)
 			{
@@ -35,6 +71,11 @@ namespace Q::graphics
 
 			mWidth = info.bmWidth;
 			mHeight = info.bmHeight;
+
+			if (info.bmBitsPixel == 32)
+				mbAlpha = true;
+			else if (info.bmBitsPixel == 24)
+				mbAlpha = false;
 
 			HDC mainDC = application.GetHdc();
 			mHdc = CreateCompatibleDC(mainDC);
