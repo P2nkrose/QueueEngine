@@ -74,6 +74,15 @@
     <ClInclude Include="qMetalKirby.h">
       <Filter>Contents\Kirby</Filter>
     </ClInclude>
+    <ClInclude Include="qMetalKirbyScript.h">
+      <Filter>Scripts\Kirby</Filter>
+    </ClInclude>
+    <ClInclude Include="qNinjaKirby.h">
+      <Filter>Contents\Kirby</Filter>
+    </ClInclude>
+    <ClInclude Include="qNinjaKirbyScript.h">
+      <Filter>Scripts\Kirby</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -144,6 +153,15 @@
     </ClCompile>
     <ClCompile Include="qMetalKirby.cpp">
       <Filter>Contents\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qMetalKirbyScript.cpp">
+      <Filter>Scripts\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qNinjaKirby.cpp">
+      <Filter>Contents\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qNinjaKirbyScript.cpp">
+      <Filter>Scripts\Kirby</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

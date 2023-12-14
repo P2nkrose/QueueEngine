@@ -8,7 +8,6 @@
 #include "qGameObject.h"
 #include "qAnimator.h"
 #include "qObject.h"
-#include "qKirbyTypeManager.h"
 #include "qRenderer.h"
 
 namespace Q
@@ -117,10 +116,16 @@ namespace Q
 			KirbyTypeManager::ChangeKirby(L"Normal");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
-		else if (Input::GetKeyDown(eKeyCode::Num2))
+		if (Input::GetKeyDown(eKeyCode::Num2))
 		{
 			KirbyTypeManager::ChangeKirby(L"Ice");
 		}
+		if (Input::GetKeyDown(eKeyCode::Num4))
+		{
+			KirbyTypeManager::ChangeKirby(L"Metal");
+		}
+
+
 	}
 
 	void SparkKirbyScript::Walk()

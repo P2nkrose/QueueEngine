@@ -146,6 +146,9 @@
     <ClInclude Include="qEndScene.h" />
     <ClInclude Include="qKirby.h" />
     <ClInclude Include="qMetalKirby.h" />
+    <ClInclude Include="qMetalKirbyScript.h" />
+    <ClInclude Include="qNinjaKirby.h" />
+    <ClInclude Include="qNinjaKirbyScript.h" />
     <ClInclude Include="qPlayerScript.h" />
     <ClInclude Include="qPlayScene.h" />
     <ClInclude Include="qPlayScene2.h" />
@@ -171,6 +174,9 @@
     <ClCompile Include="qKirby.cpp" />
     <ClCompile Include="qKirbyTypeManager.cpp" />
     <ClCompile Include="qMetalKirby.cpp" />
+    <ClCompile Include="qMetalKirbyScript.cpp" />
+    <ClCompile Include="qNinjaKirby.cpp" />
+    <ClCompile Include="qNinjaKirbyScript.cpp" />
     <ClCompile Include="qPlayerScript.cpp" />
     <ClCompile Include="qPlayScene.cpp" />
     <ClCompile Include="qPlayScene2.cpp" />

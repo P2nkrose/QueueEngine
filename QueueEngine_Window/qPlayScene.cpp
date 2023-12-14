@@ -29,6 +29,8 @@
 #include "qKirbyTypeManager.h"
 #include "qSparkKirby.h"
 #include "qSparkKirbyScript.h"
+#include "qMetalKirbyScript.h"
+#include "qMetalKirby.h"
 
 namespace Q
 {
@@ -129,10 +131,10 @@ namespace Q
 			Vector2(0.0f, 0.0f), Vector2(34.0f, 32.0f), Vector2::Zero, 3, 0.5f);
 		
 		animator->CreateAnimation(L"RightWalkKirby", RightWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.15f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.1f);
 
 		animator->CreateAnimation(L"LeftWalkKirby", LeftWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.15f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.1f);
 
 		animator->CreateAnimation(L"LeftWindKirby", LeftWindKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(33.6f, 30.0f), Vector2::Zero, 5, 0.1f);
@@ -208,10 +210,10 @@ namespace Q
 			Vector2(0.0f, 0.0f), Vector2(31.0f, 30.0f), Vector2::Zero, 2, 0.5f);
 
 		IceAnimator->CreateAnimation(L"RightWalkIceKirby", RightWalkIceKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 10, 0.1f);
 
 		IceAnimator->CreateAnimation(L"LeftWalkIceKirby", LeftWalkIceKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(26.0f, 30.0f), Vector2::Zero, 10, 0.1f);
 
 		IceAnimator->CreateAnimation(L"LeftEffectIceKirby", LeftEffectIceKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 4, 0.1f);
@@ -292,10 +294,10 @@ namespace Q
 			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
 
 		SparkAnimator->CreateAnimation(L"RightWalkSparkKirby", RightWalkSparkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 19, 0.08f);
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 19, 0.05f);
 
 		SparkAnimator->CreateAnimation(L"LeftWalkSparkKirby", LeftWalkSparkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 18, 0.08f);
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 18, 0.05f);
 
 		SparkAnimator->CreateAnimation(L"LeftEffectSparkKirby", LeftEffectSparkKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 7, 0.1f);
@@ -317,6 +319,79 @@ namespace Q
 		SparkkirbyTr->SetScale(Vector2(2.5f, 2.5f));
 
 		mSparkKirby->SetActive(false);
+
+
+
+		// ¸ÞÅ» Ä¿ºñ
+		mMetalKirby = object::Instantiate<MetalKirby>(enums::eLayerType::Kirby);
+		MetalKirbyScript* metalkirbyScript = mMetalKirby->AddComponent<MetalKirbyScript>();
+
+		graphics::Texture* RightStandMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightStandMetalKirby");
+		graphics::Texture* LeftStandMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandMetalKirby");
+		graphics::Texture* RightDownMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightDownMetalKirby");
+		graphics::Texture* LefttDownMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftDownMetalKirby");
+		graphics::Texture* RightWalkMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightWalkMetalKirby");
+		graphics::Texture* LeftWalkMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftWalkMetalKirby");
+		graphics::Texture* LeftEffectModeWalkMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftEffectModeWalkMetalKirby");
+		graphics::Texture* RightEffectModeWalkMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightEffectModeWalkMetalKirby");
+		graphics::Texture* LeftEffectModeStandMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftEffectModeStandMetalKirby");
+		graphics::Texture* RightEffectModeStandMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightEffectModeStandMetalKirby");
+		graphics::Texture* RightTackleMetalKirbyTex = Resources::Find<graphics::Texture>(L"RightTackleMetalKirby");
+		graphics::Texture* LeftTackleMetalKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleMetalKirby");
+
+
+
+		Animator* MetalAnimator = mMetalKirby->AddComponent<Animator>();
+
+		MetalAnimator->CreateAnimation(L"RightStandMetalKirby", RightStandMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.5f);
+
+		MetalAnimator->CreateAnimation(L"LeftStandMetalKirby", LeftStandMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.5f);
+
+		MetalAnimator->CreateAnimation(L"RightDownMetalKirby", RightDownMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.5f);
+
+		MetalAnimator->CreateAnimation(L"LeftDownMetalKirby", LefttDownMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.5f);
+
+		MetalAnimator->CreateAnimation(L"RightWalkMetalKirby", RightWalkMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+
+		MetalAnimator->CreateAnimation(L"LeftWalkMetalKirby", LeftWalkMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+
+		MetalAnimator->CreateAnimation(L"LeftEffectModeWalkMetalKirby", LeftEffectModeWalkMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 7, 0.1f);
+
+		MetalAnimator->CreateAnimation(L"RightEffectModeWalkMetalKirby", RightEffectModeWalkMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 7, 0.1f);
+
+		MetalAnimator->CreateAnimation(L"LeftEffectModeStandMetalKirby", LeftEffectModeStandMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 1, 0.1f);
+
+		MetalAnimator->CreateAnimation(L"RightEffectModeStandMetalKirby", RightEffectModeStandMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 1, 0.1f);
+
+		MetalAnimator->CreateAnimation(L"LeftTackleMetalKirby", LeftTackleMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.2f);
+
+		MetalAnimator->CreateAnimation(L"RightTackleMetalKirby", RightTackleMetalKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(32.0f, 30.0f), Vector2::Zero, 2, 0.2f);
+
+
+		MetalAnimator->PlayAnimation(L"RightStandMetalKirby", true);
+		Transform* MetalkirbyTr = mMetalKirby->GetComponent<Transform>();
+
+		MetalkirbyTr->SetPosition(Vector2(50.0f, 414.0f));
+		MetalkirbyTr->SetScale(Vector2(2.3f, 2.3f));
+
+		mMetalKirby->SetActive(true);
+
+		MetalAnimator->GetCompleteEvent(L"RightEffectModeStandMetalKirby") = std::bind(&MetalKirbyScript::Effect, metalkirbyScript);
+		MetalAnimator->GetCompleteEvent(L"LeftEffectModeStandMetalKirby") = std::bind(&MetalKirbyScript::Effect, metalkirbyScript);
+
+
 
 
 
@@ -387,6 +462,8 @@ namespace Q
 		KirbyTypeManager::Insert(L"Normal", mKirby);
 		KirbyTypeManager::Insert(L"Ice", mIceKirby);
 		KirbyTypeManager::Insert(L"Spark", mSparkKirby);
+		KirbyTypeManager::Insert(L"Metal", mMetalKirby);
+
 
 		
 		Scene::Initialize();

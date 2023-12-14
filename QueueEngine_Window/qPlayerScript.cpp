@@ -137,6 +137,8 @@ namespace Q
 			}
 		}
 
+		// 커비 바꾸기
+
 		if (Input::GetKeyDown(eKeyCode::Num2))
 		{
 			KirbyTypeManager::ChangeKirby(L"Ice");
@@ -148,6 +150,15 @@ namespace Q
 			KirbyTypeManager::ChangeKirby(L"Spark");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
+
+		if (Input::GetKeyDown(eKeyCode::Num4))
+		{
+			KirbyTypeManager::ChangeKirby(L"Metal");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
+
+
+
 		
 	}
 
