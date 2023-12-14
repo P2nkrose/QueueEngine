@@ -68,6 +68,12 @@
     <ClInclude Include="qSparkKirby.h">
       <Filter>Contents\Kirby</Filter>
     </ClInclude>
+    <ClInclude Include="qSparkKirbyScript.h">
+      <Filter>Scripts\Kirby</Filter>
+    </ClInclude>
+    <ClInclude Include="qMetalKirby.h">
+      <Filter>Contents\Kirby</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -131,6 +137,12 @@
       <Filter>Scripts\Effect</Filter>
     </ClCompile>
     <ClCompile Include="qSparkKirby.cpp">
+      <Filter>Contents\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qSparkKirbyScript.cpp">
+      <Filter>Scripts\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qMetalKirby.cpp">
       <Filter>Contents\Kirby</Filter>
     </ClCompile>
   </ItemGroup>

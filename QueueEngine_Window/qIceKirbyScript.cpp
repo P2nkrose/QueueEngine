@@ -80,7 +80,7 @@ namespace Q
 	}
 
 
-
+	// 스탠드
 	void IceKirbyScript::Stand()
 	{
 		if (Input::GetKey(eKeyCode::Right))
@@ -131,9 +131,15 @@ namespace Q
 			KirbyTypeManager::ChangeKirby(L"Normal");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
+
+		if (Input::GetKeyDown(eKeyCode::Num3))
+		{
+			KirbyTypeManager::ChangeKirby(L"Spark");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
 	}
 
-
+	// 다운
 	void IceKirbyScript::Down()
 	{
 		if (Input::GetKeyDown(eKeyCode::Right))
@@ -176,6 +182,7 @@ namespace Q
 		}
 	}
 
+	// 워크
 	void IceKirbyScript::Walk()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
@@ -300,7 +307,7 @@ namespace Q
 	}
 
 
-
+	// 태클
 	void IceKirbyScript::Tackle()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();

@@ -27,6 +27,8 @@
 #include "qCircleCollider2D.h"
 #include "qCollisionManager.h"
 #include "qKirbyTypeManager.h"
+#include "qSparkKirby.h"
+#include "qSparkKirbyScript.h"
 
 namespace Q
 {
@@ -127,10 +129,10 @@ namespace Q
 			Vector2(0.0f, 0.0f), Vector2(34.0f, 32.0f), Vector2::Zero, 3, 0.5f);
 		
 		animator->CreateAnimation(L"RightWalkKirby", RightWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.15f);
 
 		animator->CreateAnimation(L"LeftWalkKirby", LeftWalkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(30.0f, 30.0f), Vector2::Zero, 10, 0.15f);
 
 		animator->CreateAnimation(L"LeftWindKirby", LeftWindKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(33.6f, 30.0f), Vector2::Zero, 5, 0.1f);
@@ -239,7 +241,10 @@ namespace Q
 		
 
 		IceAnimator->PlayAnimation(L"RightStandIceKirby", true);
-		Transform* kirbyTr = mKirby->GetComponent<Transform>();
+		Transform* IcekirbyTr = mIceKirby->GetComponent<Transform>();
+
+		IcekirbyTr->SetPosition(Vector2(0.0f, 410.0f));
+		IcekirbyTr->SetScale(Vector2(2.5f, 2.5f));
 
 		// 이펙트 이어지기
 		IceAnimator->GetCompleteEvent(L"RightEffectIceKirby") = std::bind(&IceKirbyScript::Effect2, icekirbyScript);
@@ -248,15 +253,70 @@ namespace Q
 		IceAnimator->GetCompleteEvent(L"LeftTackleIceKirby") = std::bind(&IceKirbyScript::Tackle2, icekirbyScript);
 		IceAnimator->GetCompleteEvent(L"RightTackleIceKirby") = std::bind(&IceKirbyScript::Tackle2, icekirbyScript);
 
-
+		// 처음에 안보이기
 		mIceKirby->SetActive(false);
 
-		mIceKirby->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 410.0f));
-		mIceKirby->GetComponent<Transform>()->SetScale(Vector2(2.5f, 2.5f));
+		
 
 
-		// 이펙트
 
+
+		// 스파크(전기) 커비
+		mSparkKirby = object::Instantiate<SparkKirby>(enums::eLayerType::Kirby);
+		SparkKirbyScript* sparkKirbyScript = mSparkKirby->AddComponent<SparkKirbyScript>();
+
+		graphics::Texture* RightStandSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightStandSparkKirby");
+		graphics::Texture* LeftStandSparkKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandSparkKirby");
+		graphics::Texture* RightDownSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightDownSparkKirby");
+		graphics::Texture* LefttDownSparkKirbyTex = Resources::Find<graphics::Texture>(L"LeftDownSparkKirby");
+		graphics::Texture* RightWalkSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightWalkSparkKirby");
+		graphics::Texture* LeftWalkSparkKirbyTex = Resources::Find<graphics::Texture>(L"LeftWalkSparkKirby");
+		graphics::Texture* LeftEffectSparkKirbyTex = Resources::Find<graphics::Texture>(L"LeftEffectSparkKirby");
+		graphics::Texture* RightEffectSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightEffectSparkKirby");
+		graphics::Texture* RightTackleSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightTackleSparkKirby");
+		graphics::Texture* LeftTackleSparkKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleSparkKirby");
+
+
+		Animator* SparkAnimator = mSparkKirby->AddComponent<Animator>();
+
+		SparkAnimator->CreateAnimation(L"RightStandSparkKirby", RightStandSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
+
+		SparkAnimator->CreateAnimation(L"LeftStandSparkKirby", LeftStandSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
+
+		SparkAnimator->CreateAnimation(L"RightDownSparkKirby", RightDownSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
+
+		SparkAnimator->CreateAnimation(L"LeftDownSparkKirby", LefttDownSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
+
+		SparkAnimator->CreateAnimation(L"RightWalkSparkKirby", RightWalkSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 19, 0.08f);
+
+		SparkAnimator->CreateAnimation(L"LeftWalkSparkKirby", LeftWalkSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 18, 0.08f);
+
+		SparkAnimator->CreateAnimation(L"LeftEffectSparkKirby", LeftEffectSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 7, 0.1f);
+
+		SparkAnimator->CreateAnimation(L"RightEffectSparkKirby", RightEffectSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 7, 0.1f);
+
+		SparkAnimator->CreateAnimation(L"LeftTackleSparkKirby", LeftTackleSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 5, 0.1f);
+
+		SparkAnimator->CreateAnimation(L"RightTackleSparkKirby", RightTackleSparkKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 5, 0.1f);
+
+
+		SparkAnimator->PlayAnimation(L"RightStandSparkKirby", true);
+		Transform* SparkkirbyTr = mSparkKirby->GetComponent<Transform>();
+
+		SparkkirbyTr->SetPosition(Vector2(0.0f, 385.0f));
+		SparkkirbyTr->SetScale(Vector2(2.5f, 2.5f));
+
+		mSparkKirby->SetActive(false);
 
 
 
@@ -326,6 +386,7 @@ namespace Q
 		// 커비타입 바꾸기
 		KirbyTypeManager::Insert(L"Normal", mKirby);
 		KirbyTypeManager::Insert(L"Ice", mIceKirby);
+		KirbyTypeManager::Insert(L"Spark", mSparkKirby);
 
 		
 		Scene::Initialize();

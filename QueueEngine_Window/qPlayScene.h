@@ -24,6 +24,9 @@ namespace Q
 
 		// 아이스커비
 		class IceKirby* mIceKirby;
+
+		// 스파크커비
+		class SparkKirby* mSparkKirby;
 		
 		// 타이틀
 		class Stage* mStage;

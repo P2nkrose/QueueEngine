@@ -92,7 +92,7 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"LeftIceEffect", L"..\\Resources\\img\\Kirby\\Ice\\LeftIceEffect.bmp");
 		Resources::Load<graphics::Texture>(L"RightIceEffect", L"..\\Resources\\img\\Kirby\\Ice\\RightIceEffect.bmp");
 
-		// SparkKirby
+		// Spark Kirby
 		Resources::Load<graphics::Texture>(L"RightStandSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightStandSparkKirby.bmp");
 		Resources::Load<graphics::Texture>(L"LeftStandSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftStandSparkKirby.bmp");
 		Resources::Load<graphics::Texture>(L"RightDownSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightDownSparkKirby.bmp");
@@ -105,7 +105,17 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"LeftEffectSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftEffectSparkKirby.bmp");
 		
 		
-		
+		// Metal Kirby
+		/*Resources::Load<graphics::Texture>(L"RightStandMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightStandSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStandMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftStandSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDownMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightDownSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDownMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftDownSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWalkMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightWalkSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWalkMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftWalkSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightTackleSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftTackleSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightEffectMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightEffectSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftEffectMetalKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftEffectSparkKirby.bmp");*/
 
 
 

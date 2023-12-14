@@ -142,6 +142,12 @@ namespace Q
 			KirbyTypeManager::ChangeKirby(L"Ice");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
+
+		if (Input::GetKeyDown(eKeyCode::Num3))
+		{
+			KirbyTypeManager::ChangeKirby(L"Spark");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
 		
 	}
 

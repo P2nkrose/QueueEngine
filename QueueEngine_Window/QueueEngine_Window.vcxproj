@@ -145,10 +145,12 @@
     <ClInclude Include="qLoadScene.h" />
     <ClInclude Include="qEndScene.h" />
     <ClInclude Include="qKirby.h" />
+    <ClInclude Include="qMetalKirby.h" />
     <ClInclude Include="qPlayerScript.h" />
     <ClInclude Include="qPlayScene.h" />
     <ClInclude Include="qPlayScene2.h" />
     <ClInclude Include="qSparkKirby.h" />
+    <ClInclude Include="qSparkKirbyScript.h" />
     <ClInclude Include="qStage.h" />
     <ClInclude Include="qTitleScene.h" />
     <ClInclude Include="qMonster.h" />
@@ -168,10 +170,12 @@
     <ClCompile Include="qIntroScene.cpp" />
     <ClCompile Include="qKirby.cpp" />
     <ClCompile Include="qKirbyTypeManager.cpp" />
+    <ClCompile Include="qMetalKirby.cpp" />
     <ClCompile Include="qPlayerScript.cpp" />
     <ClCompile Include="qPlayScene.cpp" />
     <ClCompile Include="qPlayScene2.cpp" />
     <ClCompile Include="qSparkKirby.cpp" />
+    <ClCompile Include="qSparkKirbyScript.cpp" />
     <ClCompile Include="qStage.cpp" />
     <ClCompile Include="qTitleScene.cpp" />
     <ClCompile Include="qMonster.cpp" />
