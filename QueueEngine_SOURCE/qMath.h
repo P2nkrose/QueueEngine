@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 
 namespace Q::math
@@ -33,6 +34,12 @@ namespace Q::math
 			return Vector2(x + other.x, y + other.y);
 		}
 
+		void operator+=(Vector2 other)
+		{
+			x += other.x;
+			y += other.y;
+		}
+
 		Vector2 operator-(Vector2 other)
 		{
 			return Vector2(x - other.x, y - other.y);
@@ -43,6 +50,35 @@ namespace Q::math
 			return Vector2(x / value, y / value);
 		}
 
+		Vector2 operator*(float value)
+		{
+			return Vector2(x * value, y * value);
+		}
+
+		Vector2 operator*(Vector2 v)
+		{
+			return Vector2(x * v.x, y * v.y);
+		}
+
+		void clear()
+		{
+			x = 0.0f;
+			y = 0.0f;
+		}
+
+		float length()
+		{
+			return sqrtf(x * x + y * y);
+		}
+
+		Vector2 normalize()
+		{
+			float len = length();
+			x /= len;
+			y /= len;
+
+			return *this;
+		}
 
 	};
 }

@@ -17,7 +17,7 @@ namespace Q
 	private:
 		class BackGround* title;
 		class BackGround* titleUnder;
-		class Player* mKirby;
+		class Kirby* mKirby;
 
 	};
 }

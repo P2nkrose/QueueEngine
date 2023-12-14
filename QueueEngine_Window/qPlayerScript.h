@@ -14,6 +14,7 @@ namespace Q
 			Walk,
 			Down,
 			Tackle,
+			Tackle2,
 			Jump,
 			Wind,
 			Wind2
@@ -35,8 +36,14 @@ namespace Q
 		void Render(HDC hdc) override;
 
 		void Wind2();
+		void Tackle2();
 
-		void WindEffect();
+	public:
+		void OnCollisionEnter(class Collider* other) override;
+		void OnCollisionStay(class Collider* other) override;
+		void OnCollisionExit(class Collider* other) override;
+
+
 
 	private:
 		void Stand();

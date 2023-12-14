@@ -19,11 +19,11 @@ namespace Q
 
 	private:
 		// 노말커비
-		class Player* mKirby;
+		class Kirby* mKirby;
 		class WindObject* windObject;
 
 		// 아이스커비
-		class Player* mIceKirby;
+		class IceKirby* mIceKirby;
 		
 		// 타이틀
 		class Stage* mStage;

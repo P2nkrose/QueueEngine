@@ -1,6 +1,8 @@
 #include "qBoxCollider2D.h"
 #include "qTransform.h"
 #include "qGameObject.h"
+#include "qCamera.h"
+#include "qRenderer.h"
 
 namespace Q
 {
@@ -23,7 +25,10 @@ namespace Q
 	void BoxCollider2D::Render(HDC hdc)
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
+
 		Vector2 pos = tr->GetPosition();
+
+		pos = renderer::mainCamera->CalculatePosition(pos);
 
 		HBRUSH transparentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
@@ -35,5 +40,8 @@ namespace Q
 			, pos.y + offset.y + 50);
 
 		SelectObject(hdc, oldBrush);
+
+		
+
 	}
 }

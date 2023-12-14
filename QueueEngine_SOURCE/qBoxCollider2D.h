@@ -18,6 +18,7 @@ namespace Q
 
 	private:
 		Vector2 mSize;
+
 	};
 }
 

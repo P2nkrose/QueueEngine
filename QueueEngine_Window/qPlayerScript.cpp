@@ -10,10 +10,17 @@
 #include "qResources.h"
 #include "qDashObject.h"
 #include "qDashObjectScript.h"
+#include "qKirbyTypeManager.h"
+#include "qCamera.h"
+#include "qRenderer.h"
+#include "qIceKirby.h"
+#include "qIceKirbyScript.h"
 
 
 namespace Q
 {
+	extern Camera* mainCamera;
+
 	PlayerScript::PlayerScript()
 		: mState(PlayerScript::eState::Stand)
 		, mDirection(PlayerScript::eDirection::Right)
@@ -26,6 +33,7 @@ namespace Q
 	}
 	void PlayerScript::Initialize()
 	{
+		
 	}
 	void PlayerScript::Update()
 	{
@@ -56,12 +64,12 @@ namespace Q
 		case Q::PlayerScript::eState::Tackle:
 			Tackle();
 			break;
+		case Q::PlayerScript::eState::Tackle2:
+			Tackle2();
+			break;
 		default:
 			break;
 		}
-
-
-
 	}
 
 	void PlayerScript::LateUpdate()
@@ -127,13 +135,17 @@ namespace Q
 				mAnimator->PlayAnimation(L"LeftWindKirby", false);
 				
 			}
+		}
 
+		if (Input::GetKeyDown(eKeyCode::Num2))
+		{
+			KirbyTypeManager::ChangeKirby(L"Ice");
+			//renderer::mainCamera->SetTarget(GetOwner());
 		}
 		
 	}
 
 	// 다운
-
 	void PlayerScript::Down()
 	{
 		if (Input::GetKeyDown(eKeyCode::Right))
@@ -178,7 +190,6 @@ namespace Q
 	}
 
 	// 워크
-
 	void PlayerScript::Walk()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
@@ -213,12 +224,11 @@ namespace Q
 	}
 
 	// 윈드
-
 	void PlayerScript::Wind()
 	{
 		if (Input::GetKeyUp(eKeyCode::Z))
 		{
-			object::Destroy(GetOwner());
+			//object::Destroy(GetOwner());
 			mState = PlayerScript::eState::Stand;
 			if (mDirection == PlayerScript::eDirection::Right)
 			{
@@ -232,9 +242,7 @@ namespace Q
 		}
 	}
 
-
 	// 윈드2
-
 	void PlayerScript::Wind2()
 	{
 
@@ -304,19 +312,7 @@ namespace Q
 		}
 	}
 
-
-
-	void PlayerScript::WindEffect()
-	{
-		
-
-
-	}
-
-
-
 	// 태클
-
 	void PlayerScript::Tackle()
 	{
 		// 태클 이펙트
@@ -359,59 +355,99 @@ namespace Q
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
-
-		if (Input::GetKey(eKeyCode::X))
+		
+		if (mAnimator->IsComplete())
 		{
-			if (mDirection == PlayerScript::eDirection::Right)
+			Tackle2();
+		}
+		else
+		{
+			switch (mDirection)
 			{
-				
-				pos.x += 300.0f * Time::DeltaTime();
-				
-			}
-			else if (mDirection == PlayerScript::eDirection::Left)
-			{
-				
-				pos.x -= 300.0f * Time::DeltaTime();
+			case Q::PlayerScript::eDirection::Right:
+				pos.x += 700.0f * Time::DeltaTime();
+				break;
+			case Q::PlayerScript::eDirection::Left:
+				pos.x -= 700.0f * Time::DeltaTime();
+				break;
+			case Q::PlayerScript::eDirection::Down:
+				break;
+			default:
+				break;
 			}
 		}
 
 		tr->SetPosition(pos);
 
 
-		
-
-
-
 		if (Input::GetKeyUp(eKeyCode::X))
 		{
-			if (Input::GetKey(eKeyCode::Down))
-			{
-				mState = PlayerScript::eState::Down;
-				if (mDirection == PlayerScript::eDirection::Right)
-				{
-					mAnimator->PlayAnimation(L"RightDownKirby", true);
-				}
-				else if (mDirection == PlayerScript::eDirection::Left)
-				{
-					mAnimator->PlayAnimation(L"LeftDownKirby", true);
-				}
-			}
-			else
-			{
-				mState = PlayerScript::eState::Stand;
-				if (mDirection == PlayerScript::eDirection::Right)
-				{
-					mAnimator->PlayAnimation(L"RightStandKirby", true);
-				}
-				else if (mDirection == PlayerScript::eDirection::Left)
-				{
-					mAnimator->PlayAnimation(L"LeftStandKirby", true);
-				}
-			}
+			
 
 		}
-	
+
 	}
+
+	// 태클2 (일어나는모션)
+	void PlayerScript::Tackle2()
+	{
+		if (mDirection == PlayerScript::eDirection::Right)
+		{
+			mAnimator->PlayAnimation(L"RightTackleKirby2", false);
+
+		}
+		else if (mDirection == PlayerScript::eDirection::Left)
+		{
+			mAnimator->PlayAnimation(L"LeftTackleKirby2", false);
+
+		}
+
+
+		if (Input::GetKey(eKeyCode::Down))
+		{
+			mState = PlayerScript::eState::Down;
+			if (mDirection == PlayerScript::eDirection::Right)
+			{
+				mAnimator->PlayAnimation(L"RightDownKirby", true);
+			}
+			else if (mDirection == PlayerScript::eDirection::Left)
+			{
+				mAnimator->PlayAnimation(L"LeftDownKirby", true);
+			}
+		}
+		else
+		{
+			mState = PlayerScript::eState::Stand;
+			if (mDirection == PlayerScript::eDirection::Right)
+			{
+				mAnimator->PlayAnimation(L"RightStandKirby", true);
+			}
+			else if (mDirection == PlayerScript::eDirection::Left)
+			{
+				mAnimator->PlayAnimation(L"LeftStandKirby", true);
+			}
+		}
+	}
+
+
+	void PlayerScript::OnCollisionEnter(Collider* other)
+	{
+		// 충돌하면 뒤로 보내기 이벤트
+	}
+
+	void PlayerScript::OnCollisionStay(Collider* other)
+	{
+
+	}
+
+	void PlayerScript::OnCollisionExit(Collider* other)
+	{
+
+	}
+
+
+
+
 	
 	
 

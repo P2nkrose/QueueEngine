@@ -30,11 +30,13 @@ namespace Q
 		{
 			Transform* tr = mTarget->GetComponent<Transform>();
 			mLookPosition = tr->GetPosition() - Vector2(-100.0f, 60.0f);
+
 		}
 		else
 		{
 			Transform* cameraTr = GetOwner()->GetComponent<Transform>();
 			mLookPosition = cameraTr->GetPosition();
+			// 화면 흰색 안나오기 : if문으로 막기
 		}
 
 		

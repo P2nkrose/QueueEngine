@@ -71,10 +71,10 @@ namespace Q
 
 		bool IsActive() { return mState == eState::Active; }
 		bool IsDead() { return mState == eState::Dead; }
+		void death() { mState = eState::Dead; }
 
 	private:
 		void initializeTransform();
-		void death() { mState = eState::Dead; }
 
 
 	private:

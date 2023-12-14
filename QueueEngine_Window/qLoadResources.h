@@ -62,9 +62,13 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"RightWindKirby2", L"..\\Resources\\img\\Kirby\\Normal\\RightWindKirby2.bmp");
 		Resources::Load<graphics::Texture>(L"LeftWindKirby2", L"..\\Resources\\img\\Kirby\\Normal\\LeftWindKirby2.bmp");
 		Resources::Load<graphics::Texture>(L"RightTackleKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightTackleKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleKirby2", L"..\\Resources\\img\\Kirby\\Normal\\RightTackleKirby2.bmp");
 		Resources::Load<graphics::Texture>(L"LeftTackleKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftTackleKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleKirby2", L"..\\Resources\\img\\Kirby\\Normal\\LeftTackleKirby2.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDashKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftDashKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDashKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightDashKirby.bmp");
 
-		// Effect
+		// Normal Effect
 		Resources::Load<graphics::Texture>(L"RightWindEffect", L"..\\Resources\\img\\Etc\\RightWindEffect.bmp");
 		Resources::Load<graphics::Texture>(L"LeftWindEffect", L"..\\Resources\\img\\Etc\\LeftWindEffect.bmp");
 		Resources::Load<graphics::Texture>(L"RightDashEffect", L"..\\Resources\\img\\Etc\\RightDashEffect.bmp");
@@ -84,7 +88,22 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"LeftEffectIceKirby", L"..\\Resources\\img\\Kirby\\Ice\\LeftEffectIceKirby.bmp");
 		Resources::Load<graphics::Texture>(L"LeftEffectIceKirby2", L"..\\Resources\\img\\Kirby\\Ice\\LeftEffectIceKirby2.bmp");
 
+		// Ice Effect
+		Resources::Load<graphics::Texture>(L"LeftIceEffect", L"..\\Resources\\img\\Kirby\\Ice\\LeftIceEffect.bmp");
+		Resources::Load<graphics::Texture>(L"RightIceEffect", L"..\\Resources\\img\\Kirby\\Ice\\RightIceEffect.bmp");
 
+		// SparkKirby
+		Resources::Load<graphics::Texture>(L"RightStandSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightStandSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStandSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftStandSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDownSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightDownSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDownSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftDownSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWalkSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightWalkSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWalkSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftWalkSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightTackleSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftTackleSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightEffectSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\RightEffectSparkKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftEffectSparkKirby", L"..\\Resources\\img\\Kirby\\Spark\\LeftEffectSparkKirby.bmp");
+		
 		
 		
 

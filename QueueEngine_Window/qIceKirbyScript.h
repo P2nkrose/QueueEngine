@@ -13,6 +13,7 @@ namespace Q
 			Walk,
 			Down,
 			Tackle,
+			Tackle2,
 			Jump,
 			Effect,
 			Effect2,
@@ -35,6 +36,7 @@ namespace Q
 		void Render(HDC hdc) override;
 
 		void Effect2();
+		void Tackle2();
 
 	private:
 		void Stand();

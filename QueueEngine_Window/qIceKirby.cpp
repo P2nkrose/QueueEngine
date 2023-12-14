@@ -1,21 +1,21 @@
-#include "qPlayer.h"
+#include "qIceKirby.h"
 #include "qInput.h"
 #include "qTransform.h"
 #include "qTime.h"
 
 namespace Q
 {
-	void Player::Initialize()
+	void IceKirby::Initialize()
 	{
 		GameObject::Initialize();
 	}
 
-	void Player::Update()
+	void IceKirby::Update()
 	{
 		GameObject::Update();
 	}
 
-	void Player::LateUpdate()
+	void IceKirby::LateUpdate()
 	{
 		GameObject::LateUpdate();
 
@@ -30,7 +30,7 @@ namespace Q
 
 	}
 
-	void Player::Render(HDC hdc)
+	void IceKirby::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
 	}

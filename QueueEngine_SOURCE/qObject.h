@@ -37,6 +37,8 @@ namespace Q::object
 
 	static void Destroy(GameObject* obj)
 	{
-		obj->Death();
+		obj->death();
 	}
+
+	
 }

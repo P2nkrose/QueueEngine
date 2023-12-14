@@ -1,6 +1,6 @@
 #include "qTitleScene.h"
 #include "qGameObject.h"
-#include "qPlayer.h"
+#include "qKirby.h"
 #include "qTransform.h"
 #include "qSpriteRenderer.h"
 #include "qInput.h"
@@ -28,7 +28,7 @@ namespace Q
 	}
 	void TitleScene::Initialize()
 	{
-		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(270.0f, 405.0f));
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(200.0f, 50.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
 
@@ -41,6 +41,7 @@ namespace Q
 		titlesr->SetTexture(TitleTexture);
 
 		titlesr->SetSize(Vector2::Half);
+		
 
 		
 

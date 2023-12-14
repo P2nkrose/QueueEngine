@@ -1,6 +1,6 @@
 #include "qIntroScene.h"
 #include "qGameObject.h"
-#include "qPlayer.h"
+#include "qKirby.h"
 #include "qTransform.h"
 #include "qSpriteRenderer.h"
 #include "qInput.h"

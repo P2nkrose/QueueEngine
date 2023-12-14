@@ -20,7 +20,7 @@ namespace Q::enums
 		BackGround,
 		Stage,
 		Monster,
-		Player,
+		Kirby,
 		Effect,
 		Particle,
 		Max = 16,

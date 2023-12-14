@@ -3,7 +3,7 @@
 
 namespace Q
 {
-	class Player : public GameObject
+	class IceObject : public GameObject
 	{
 	public:
 
@@ -12,10 +12,9 @@ namespace Q
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
+
 	private:
-
 	};
+
+
 }
-
-
-
