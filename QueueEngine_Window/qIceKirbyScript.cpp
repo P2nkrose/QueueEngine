@@ -131,16 +131,19 @@ namespace Q
 			KirbyTypeManager::ChangeKirby(L"Normal");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
-
 		if (Input::GetKeyDown(eKeyCode::Num3))
 		{
 			KirbyTypeManager::ChangeKirby(L"Spark");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
-
 		if (Input::GetKeyDown(eKeyCode::Num4))
 		{
 			KirbyTypeManager::ChangeKirby(L"Metal");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
+		if (Input::GetKeyDown(eKeyCode::Num5))
+		{
+			KirbyTypeManager::ChangeKirby(L"Ninja");
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
 
@@ -223,8 +226,7 @@ namespace Q
 		}
 	}
 
-	
-
+	// ¿Ã∆Â∆Æ
 	void IceKirbyScript::Effect()
 	{
 		if (Input::GetKeyUp(eKeyCode::Z))

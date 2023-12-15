@@ -128,6 +128,11 @@ namespace Q
 		{
 			KirbyTypeManager::ChangeKirby(L"Spark");
 		}
+		if (Input::GetKeyDown(eKeyCode::Num5))
+		{
+			KirbyTypeManager::ChangeKirby(L"Ninja");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
 
 
 	}

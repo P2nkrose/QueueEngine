@@ -13,7 +13,8 @@ namespace Q
 			Down,
 			Tackle,
 			Jump,
-			Effect
+			Dagger,
+			Sting,
 		};
 
 		enum class eDirection
@@ -31,14 +32,18 @@ namespace Q
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-		void Tackle2();
 
+	public:
+		void Sting2();
+		void Tackle2();
+		void Stand();
+		void Idle();
 
 	private:
-		void Stand();
 		void Walk();
 		void Down();
-		void Effect();
+		void Dagger();
+		void Sting();
 		void Tackle();
 
 	private:

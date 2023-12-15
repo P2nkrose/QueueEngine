@@ -157,6 +157,12 @@ namespace Q
 			//renderer::mainCamera->SetTarget(GetOwner());
 		}
 
+		if (Input::GetKeyDown(eKeyCode::Num5))
+		{
+			KirbyTypeManager::ChangeKirby(L"Ninja");
+			//renderer::mainCamera->SetTarget(GetOwner());
+		}
+
 
 
 		

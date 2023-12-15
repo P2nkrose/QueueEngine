@@ -119,6 +119,20 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"RightEffectModeStandMetalKirby", L"..\\Resources\\img\\Kirby\\Metal\\RightEffectModeStandMetalKirby.bmp");
 		Resources::Load<graphics::Texture>(L"LeftEffectModeStandMetalKirby", L"..\\Resources\\img\\Kirby\\Metal\\LeftEffectModeStandMetalKirby.bmp");
 
+		// Ninja Kirby
+		Resources::Load<graphics::Texture>(L"RightStandNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightStandNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStandNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftStandNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDownNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightDownNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDownNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftDownNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightWalkNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightWalkNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftWalkNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftWalkNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightTackleNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightTackleNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftTackleNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftTackleNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightStingNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightStingNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftStingNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftStingNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"RightDaggerNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightDaggerNinjaKirby.bmp");
+		Resources::Load<graphics::Texture>(L"LeftDaggerNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftDaggerNinjaKirby.bmp");
+
 
 
 		// stage

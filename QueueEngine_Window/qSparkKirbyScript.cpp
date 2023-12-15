@@ -66,6 +66,7 @@ namespace Q
 	{
 	}
 
+	// ½ºÅÄµå
 	void SparkKirbyScript::Stand()
 	{
 		if (Input::GetKey(eKeyCode::Right))
@@ -128,6 +129,7 @@ namespace Q
 
 	}
 
+	// °È±â
 	void SparkKirbyScript::Walk()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
@@ -159,6 +161,7 @@ namespace Q
 		}
 	}
 
+	// ¾É±â
 	void SparkKirbyScript::Down()
 	{
 		if (Input::GetKeyDown(eKeyCode::Right))
@@ -201,6 +204,7 @@ namespace Q
 		}
 	}
 
+	// ±â¼ú
 	void SparkKirbyScript::Effect()
 	{
 		if (Input::GetKeyUp(eKeyCode::Z))
@@ -218,6 +222,7 @@ namespace Q
 		}
 	}
 
+	// ÅÂÅ¬
 	void SparkKirbyScript::Tackle()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();

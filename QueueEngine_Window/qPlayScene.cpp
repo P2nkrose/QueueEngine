@@ -31,6 +31,8 @@
 #include "qSparkKirbyScript.h"
 #include "qMetalKirbyScript.h"
 #include "qMetalKirby.h"
+#include "qNinjaKirby.h"
+#include "qNinjaKirbyScript.h"
 
 namespace Q
 {
@@ -315,7 +317,7 @@ namespace Q
 		SparkAnimator->PlayAnimation(L"RightStandSparkKirby", true);
 		Transform* SparkkirbyTr = mSparkKirby->GetComponent<Transform>();
 
-		SparkkirbyTr->SetPosition(Vector2(0.0f, 385.0f));
+		SparkkirbyTr->SetPosition(Vector2(0.0f, 384.0f));
 		SparkkirbyTr->SetScale(Vector2(2.5f, 2.5f));
 
 		mSparkKirby->SetActive(false);
@@ -386,13 +388,79 @@ namespace Q
 		MetalkirbyTr->SetPosition(Vector2(50.0f, 414.0f));
 		MetalkirbyTr->SetScale(Vector2(2.3f, 2.3f));
 
-		mMetalKirby->SetActive(true);
+		mMetalKirby->SetActive(false);
 
 		MetalAnimator->GetCompleteEvent(L"RightEffectModeStandMetalKirby") = std::bind(&MetalKirbyScript::Effect, metalkirbyScript);
 		MetalAnimator->GetCompleteEvent(L"LeftEffectModeStandMetalKirby") = std::bind(&MetalKirbyScript::Effect, metalkirbyScript);
 
 
+		// 닌자 커비
+		mNinjaKirby = object::Instantiate<NinjaKirby>(enums::eLayerType::Kirby);
+		NinjaKirbyScript* ninjakirbyScript = mNinjaKirby->AddComponent<NinjaKirbyScript>();
 
+		graphics::Texture* RightStandNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightStandNinjaKirby");
+		graphics::Texture* LeftStandNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftStandNinjaKirby");
+		graphics::Texture* RightDownNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightDownNinjaKirby");
+		graphics::Texture* LefttDownNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftDownNinjaKirby");
+		graphics::Texture* RightWalkNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightWalkNinjaKirby");
+		graphics::Texture* LeftWalkNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftWalkNinjaKirby");
+		graphics::Texture* RightTackleNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightTackleNinjaKirby");
+		graphics::Texture* LeftTackleNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleNinjaKirby");
+		graphics::Texture* RightStingNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightStingNinjaKirby");
+		graphics::Texture* LeftStingNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftStingNinjaKirby");
+		graphics::Texture* RightDaggerNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightDaggerNinjaKirby");
+		graphics::Texture* LeftDaggerNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftDaggerNinjaKirby");
+
+		Animator* NinjaAnimator = mNinjaKirby->AddComponent<Animator>();
+
+
+		NinjaAnimator->CreateAnimation(L"RightStandNinjaKirby", RightStandNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 2, 0.5f);
+
+		NinjaAnimator->CreateAnimation(L"LeftStandNinjaKirby", LeftStandNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 2, 0.5f);
+
+		NinjaAnimator->CreateAnimation(L"RightDownNinjaKirby", RightDownNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 2, 0.5f);
+
+		NinjaAnimator->CreateAnimation(L"LeftDownNinjaKirby", LefttDownNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 2, 0.5f);
+
+		NinjaAnimator->CreateAnimation(L"RightWalkNinjaKirby", RightWalkNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 11, 0.12f);
+
+		NinjaAnimator->CreateAnimation(L"LeftWalkNinjaKirby", LeftWalkNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 11, 0.12f);
+
+		NinjaAnimator->CreateAnimation(L"LeftTackleNinjaKirby", LeftTackleNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 3, 0.1f);
+
+		NinjaAnimator->CreateAnimation(L"RightTackleNinjaKirby", RightTackleNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 3, 0.1f);
+
+		NinjaAnimator->CreateAnimation(L"LeftStingNinjaKirby", LeftStingNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 10, 0.04f);
+
+		NinjaAnimator->CreateAnimation(L"RightStingNinjaKirby", RightStingNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 10, 0.04f);
+
+		NinjaAnimator->CreateAnimation(L"LeftDaggerNinjaKirby", LeftDaggerNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 7, 0.1f);
+
+		NinjaAnimator->CreateAnimation(L"RightDaggerNinjaKirby", RightDaggerNinjaKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 7, 0.1f);
+
+
+		NinjaAnimator->PlayAnimation(L"RightStandNinjaKirby", true);
+		Transform* NinjakirbyTr = mNinjaKirby->GetComponent<Transform>();
+
+		NinjakirbyTr->SetPosition(Vector2(50.0f, 413.0f));
+		NinjakirbyTr->SetScale(Vector2(2.3f, 2.3f));
+
+		mNinjaKirby->SetActive(false);
+
+		NinjaAnimator->GetCompleteEvent(L"RightDaggerNinjaKirby") = std::bind(&NinjaKirbyScript::Stand, ninjakirbyScript);
+		NinjaAnimator->GetCompleteEvent(L"LeftDaggerNinjaKirby") = std::bind(&NinjaKirbyScript::Stand, ninjakirbyScript);
 
 
 		// 몬스터 (Waddle Dee)
@@ -463,6 +531,7 @@ namespace Q
 		KirbyTypeManager::Insert(L"Ice", mIceKirby);
 		KirbyTypeManager::Insert(L"Spark", mSparkKirby);
 		KirbyTypeManager::Insert(L"Metal", mMetalKirby);
+		KirbyTypeManager::Insert(L"Ninja", mNinjaKirby);
 
 
 		

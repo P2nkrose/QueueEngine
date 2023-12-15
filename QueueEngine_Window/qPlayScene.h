@@ -30,6 +30,9 @@ namespace Q
 
 		// 메탈커비
 		class MetalKirby* mMetalKirby;
+
+		// 닌자 커비
+		class NinjaKirby* mNinjaKirby;
 		
 		// 타이틀
 		class Stage* mStage;
