@@ -9,6 +9,8 @@
 #include "qAnimator.h"
 #include "qObject.h"
 #include "qRenderer.h"
+#include "qDaggerObject.h"
+#include "qDaggerObjectScript.h"
 
 namespace Q
 {
@@ -69,6 +71,7 @@ namespace Q
 	{
 	}
 
+	// 스탠드
 	void NinjaKirbyScript::Stand()
 	{
 		mState = NinjaKirbyScript::eState::Stand;
@@ -109,24 +112,45 @@ namespace Q
 
 		if (Input::GetKeyDown(eKeyCode::Z))
 		{
+			// 표창 이펙트
+			Transform* tr = GetOwner()->GetComponent<Transform>();
+
+			DaggerObject* rightDaggerObject = object::Instantiate<DaggerObject>(enums::eLayerType::Effect, tr->GetPosition() + Vector2(70.0f, 20.0f));
+			DaggerObject* leftDaggerObject = object::Instantiate<DaggerObject>(enums::eLayerType::Effect, tr->GetPosition() + Vector2(-20.0f, 20.0f));
+			
+		
+			DaggerObjectScript* rightDaggerSrc = rightDaggerObject->AddComponent<DaggerObjectScript>();
+			DaggerObjectScript* leftDaggerSrc = leftDaggerObject->AddComponent<DaggerObjectScript>();
+
+			graphics::Texture* RightDaggerEffectTex = Resources::Find<graphics::Texture>(L"RightDaggerEffect");
+			graphics::Texture* LeftDaggerEffectTex = Resources::Find<graphics::Texture>(L"LeftDaggerEffect");
+
+			Animator* rightDaggerEffectAnimator = rightDaggerObject->AddComponent<Animator>();
+			Animator* leftDaggerEffectAnimator = leftDaggerObject->AddComponent<Animator>();
+
+
+			rightDaggerEffectAnimator->CreateAnimation(L"RightDaggerEffect", RightDaggerEffectTex,
+				Vector2(0.0f, 0.0f), Vector2(29.0f, 30.0f), Vector2::Zero, 8, 0.1f);
+
+			leftDaggerEffectAnimator->CreateAnimation(L"LeftDaggerEffect", LeftDaggerEffectTex,
+				Vector2(0.0f, 0.0f), Vector2(29.0f, 30.0f), Vector2::Zero, 8, 0.1f);
+
+			rightDaggerObject->GetComponent<Transform>()->SetScale(Vector2::Half);
+			leftDaggerObject->GetComponent<Transform>()->SetScale(Vector2::Half);
+
+
+
 			mState = NinjaKirbyScript::eState::Dagger;
 			mOneTime = false;
 			if (mDirection == NinjaKirbyScript::eDirection::Right)
 			{
 				mAnimator->PlayAnimation(L"RightDaggerNinjaKirby", false);
-				//if (mAnimator->IsComplete())
-				//{
-				//	Stand();
-				//}
-
+				rightDaggerEffectAnimator->PlayAnimation(L"RightDaggerEffect", true);
 			}
 			else if (mDirection == NinjaKirbyScript::eDirection::Left)
 			{
 				mAnimator->PlayAnimation(L"LeftDaggerNinjaKirby", false);
-				if (mAnimator->IsComplete())
-				{
-					Stand();
-				}
+				//leftDaggerEffectAnimator->PlayAnimation(L"LeftDaggerEffect", true);
 			}
 		}
 
@@ -154,6 +178,7 @@ namespace Q
 
 	}
 	
+	// 다운
 	void NinjaKirbyScript::Down()
 	{
 		if (Input::GetKeyDown(eKeyCode::Right))
@@ -209,9 +234,7 @@ namespace Q
 		}
 	}
 
-
-
-
+	// 워크
 	void NinjaKirbyScript::Walk()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
@@ -243,7 +266,7 @@ namespace Q
 		}
 	}
 
-
+	// 태클
 	void NinjaKirbyScript::Tackle()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
@@ -305,9 +328,11 @@ namespace Q
 
 	void NinjaKirbyScript::Dagger()
 	{
+		
 
 	}
 
+	// 찌르기스킬
 	void NinjaKirbyScript::Sting()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();

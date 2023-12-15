@@ -39,6 +39,8 @@ namespace Q
 		void Stand();
 		void Idle();
 
+		eDirection GetDirection() { return mDirection; }
+
 	private:
 		void Walk();
 		void Down();
@@ -47,11 +49,13 @@ namespace Q
 		void Tackle();
 
 	private:
-		eState mState;
 		eDirection mDirection;
+		eState mState;
 		class Animator* mAnimator;
 		bool mOneTime;
 
+		//std::vector<Shoot*> mBullets;
+		//std::vector<DaggerObjectScript*> mDaggers;
 	};
 }
 

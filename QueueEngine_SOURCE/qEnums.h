@@ -36,4 +36,10 @@ namespace Q::enums
 		Prefab,	// 게임오브젝트 저장할 데이터
 		End
 	};
+
+	enum class eDirection
+	{
+		Right,
+		Left,
+	};
 }

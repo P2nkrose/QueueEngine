@@ -133,7 +133,9 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"RightDaggerNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\RightDaggerNinjaKirby.bmp");
 		Resources::Load<graphics::Texture>(L"LeftDaggerNinjaKirby", L"..\\Resources\\img\\Kirby\\Ninja\\LeftDaggerNinjaKirby.bmp");
 
-
+		// Ninja Effect
+		Resources::Load<graphics::Texture>(L"LeftDaggerEffect", L"..\\Resources\\img\\Etc\\LeftDaggerEffect.bmp");
+		Resources::Load<graphics::Texture>(L"RightDaggerEffect", L"..\\Resources\\img\\Etc\\RightDaggerEffect.bmp");
 
 		// stage
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Stage\\Stage1.bmp");

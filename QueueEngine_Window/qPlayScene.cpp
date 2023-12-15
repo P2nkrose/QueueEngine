@@ -410,6 +410,9 @@ namespace Q
 		graphics::Texture* LeftStingNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftStingNinjaKirby");
 		graphics::Texture* RightDaggerNinjaKirbyTex = Resources::Find<graphics::Texture>(L"RightDaggerNinjaKirby");
 		graphics::Texture* LeftDaggerNinjaKirbyTex = Resources::Find<graphics::Texture>(L"LeftDaggerNinjaKirby");
+		
+
+
 
 		Animator* NinjaAnimator = mNinjaKirby->AddComponent<Animator>();
 
@@ -449,6 +452,8 @@ namespace Q
 
 		NinjaAnimator->CreateAnimation(L"RightDaggerNinjaKirby", RightDaggerNinjaKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(50.0f, 32.0f), Vector2::Zero, 7, 0.1f);
+
+		
 
 
 		NinjaAnimator->PlayAnimation(L"RightStandNinjaKirby", true);

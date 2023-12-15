@@ -133,6 +133,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="qBackGround.h" />
+    <ClInclude Include="qDaggerObject.h" />
+    <ClInclude Include="qDaggerObjectScript.h" />
     <ClInclude Include="qDashObject.h" />
     <ClInclude Include="qDashObjectScript.h" />
     <ClInclude Include="qIceKirby.h" />
@@ -163,6 +165,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qBackGround.cpp" />
+    <ClCompile Include="qDaggerObject.cpp" />
+    <ClCompile Include="qDaggerObjectScript.cpp" />
     <ClCompile Include="qDashObject.cpp" />
     <ClCompile Include="qDashObjectScript.cpp" />
     <ClCompile Include="qEndScene.cpp" />

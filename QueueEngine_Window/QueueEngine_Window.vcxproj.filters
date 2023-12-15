@@ -83,6 +83,12 @@
     <ClInclude Include="qNinjaKirbyScript.h">
       <Filter>Scripts\Kirby</Filter>
     </ClInclude>
+    <ClInclude Include="qDaggerObject.h">
+      <Filter>Contents\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="qDaggerObjectScript.h">
+      <Filter>Scripts\Effect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -162,6 +168,12 @@
     </ClCompile>
     <ClCompile Include="qNinjaKirbyScript.cpp">
       <Filter>Scripts\Kirby</Filter>
+    </ClCompile>
+    <ClCompile Include="qDaggerObject.cpp">
+      <Filter>Contents\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="qDaggerObjectScript.cpp">
+      <Filter>Scripts\Effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
