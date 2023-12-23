@@ -43,7 +43,7 @@ namespace Q::object
 		obj->death();
 	}
 
-	void DontDestroyOnLoad(GameObject* gameObject)
+	static void DontDestroyOnLoad(GameObject* gameObject)
 	{
 		Scene* activeScene = SceneManager::GetActiveScene();
 		// 현재씬에서 게임오브젝트를 지워준다.

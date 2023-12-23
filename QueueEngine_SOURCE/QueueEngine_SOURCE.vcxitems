@@ -64,6 +64,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
