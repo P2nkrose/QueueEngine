@@ -1,4 +1,5 @@
 #include "qScript.h"
+#include "qCollider.h"
 
 
 namespace Q

@@ -19,6 +19,7 @@ namespace Q
 		{
 			Right,
 			Left,
+			Down,
 		};
 
 
@@ -32,6 +33,8 @@ namespace Q
 
 		void SetEffect(GameObject* effect) { mEffect = effect; };
 
+		
+		eDirection mDirection;
 
 	private:
 		void DaggerOject();
@@ -40,7 +43,7 @@ namespace Q
 
 	private:
 		eState mState;
-		eDirection mDirection;
+	
 
 		class Animator* mEffectAnimator;
 

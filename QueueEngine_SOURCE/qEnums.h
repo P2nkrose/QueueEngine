@@ -2,7 +2,6 @@
 
 namespace Q::enums
 {
-
 	enum class eComponentType
 	{
 		Transform,
@@ -26,8 +25,6 @@ namespace Q::enums
 		Max = 16,
 	};
 
-
-
 	enum class eResourceType
 	{
 		Texture,
@@ -42,4 +39,13 @@ namespace Q::enums
 		Right,
 		Left,
 	};
+
+	enum class eColliderType
+	{
+		Circle2D,
+		Rect2D,
+		End,
+	};
+
+
 }

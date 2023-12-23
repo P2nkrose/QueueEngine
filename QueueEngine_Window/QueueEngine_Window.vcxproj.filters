@@ -89,6 +89,12 @@
     <ClInclude Include="qDaggerObjectScript.h">
       <Filter>Scripts\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="qBackGround2.h">
+      <Filter>Contents\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="qStage2.h">
+      <Filter>Contents\Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="qPlayScene.cpp">
@@ -174,6 +180,12 @@
     </ClCompile>
     <ClCompile Include="qDaggerObjectScript.cpp">
       <Filter>Scripts\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="qBackGround2.cpp">
+      <Filter>Contents\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="qStage2.cpp">
+      <Filter>Contents\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

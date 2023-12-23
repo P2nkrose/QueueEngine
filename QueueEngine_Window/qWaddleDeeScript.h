@@ -20,6 +20,12 @@ namespace Q
 			End
 		};
 
+		enum class Shock
+		{
+			Kirby,
+			Effect,
+		};
+
 		WaddleDeeScript();
 		~WaddleDeeScript();
 
@@ -27,6 +33,12 @@ namespace Q
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
+
+		virtual void OnCollisionEnter(class Collider* other);
+		virtual void OnCollisionStay(class Collider* other);
+		virtual void OnCollisionExit(class Collider* other);
+		void Damage();
+
 
 	private:
 		void walk();

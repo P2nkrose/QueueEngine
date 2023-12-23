@@ -99,6 +99,7 @@ namespace Q
 		//Time::Render(mBackHdc);
 
 		CollisionManager::Render(mBackHdc);
+
 		SceneManager::Render(mBackHdc);
 
 		//mPlayer1.Render(mBackHdc);

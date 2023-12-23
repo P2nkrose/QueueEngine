@@ -26,7 +26,7 @@ namespace Q::graphics
 		image->mBitmap = CreateCompatibleBitmap(hdc, width, height);
 		image->mHdc = CreateCompatibleDC(hdc);
 
-
+		// 텍스처 그릴때 기본 투명도화지로 그리게 하기
 		HBRUSH transparentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
 		Rectangle(image->mHdc, -1, -1, image->GetWidth() + 1, image->GetHeight() + 1);

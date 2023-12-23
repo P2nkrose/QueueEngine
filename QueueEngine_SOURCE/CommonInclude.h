@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include <assert.h>
+#include <iostream>
 
 #include <vector>
 #include <algorithm>
@@ -23,6 +24,7 @@
 #pragma comment (lib, "gdiplus.lib");
 
 #include "qEnums.h"
+#include "qMath.h"
 
 #include <Vfw.h>
 #pragma comment (lib, "Vfw32.lib")

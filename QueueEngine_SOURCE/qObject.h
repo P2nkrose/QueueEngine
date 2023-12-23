@@ -13,9 +13,11 @@ namespace Q::object
 	static T* Instantiate(Q::enums::eLayerType type)
 	{
 		T* gameObject = new T();
+		gameObject->SetLayerType(type);
 		Scene* activeScene = SceneManager::GetActiveScene();
 		Layer* layer = activeScene->GetLayer(type);
 		layer->AddGameObject(gameObject);
+
 
 		return gameObject;
 	}
@@ -25,6 +27,7 @@ namespace Q::object
 	static T* Instantiate(Q::enums::eLayerType type, math::Vector2 position)
 	{
 		T* gameObject = new T();
+		gameObject->SetLayerType(type);
 		Scene* activeScene = SceneManager::GetActiveScene();
 		Layer* layer = activeScene->GetLayer(type);
 		layer->AddGameObject(gameObject);
@@ -40,5 +43,15 @@ namespace Q::object
 		obj->death();
 	}
 
+	void DontDestroyOnLoad(GameObject* gameObject)
+	{
+		Scene* activeScene = SceneManager::GetActiveScene();
+		// 현재씬에서 게임오브젝트를 지워준다.
+		activeScene->EraseGameObject(gameObject);
+
+		// 해당 게임오브젝트를 -> DontDestroy씬으로 넣어준다.
+		Scene* dontDestroyOnLoad = SceneManager::GetDontDestroyOnLoad();
+		dontDestroyOnLoad->AddGameObject(gameObject, gameObject->GetLayerType());
+	}
 	
 }

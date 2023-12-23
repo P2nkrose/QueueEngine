@@ -118,9 +118,12 @@ namespace Q
 			DaggerObject* rightDaggerObject = object::Instantiate<DaggerObject>(enums::eLayerType::Effect, tr->GetPosition() + Vector2(70.0f, 20.0f));
 			DaggerObject* leftDaggerObject = object::Instantiate<DaggerObject>(enums::eLayerType::Effect, tr->GetPosition() + Vector2(-20.0f, 20.0f));
 			
-		
+			
 			DaggerObjectScript* rightDaggerSrc = rightDaggerObject->AddComponent<DaggerObjectScript>();
 			DaggerObjectScript* leftDaggerSrc = leftDaggerObject->AddComponent<DaggerObjectScript>();
+			rightDaggerSrc->mDirection = (Q::DaggerObjectScript::eDirection)mDirection;
+			leftDaggerSrc->mDirection = (Q::DaggerObjectScript::eDirection)mDirection;
+
 
 			graphics::Texture* RightDaggerEffectTex = Resources::Find<graphics::Texture>(L"RightDaggerEffect");
 			graphics::Texture* LeftDaggerEffectTex = Resources::Find<graphics::Texture>(L"LeftDaggerEffect");
@@ -150,7 +153,7 @@ namespace Q
 			else if (mDirection == NinjaKirbyScript::eDirection::Left)
 			{
 				mAnimator->PlayAnimation(L"LeftDaggerNinjaKirby", false);
-				//leftDaggerEffectAnimator->PlayAnimation(L"LeftDaggerEffect", true);
+				leftDaggerEffectAnimator->PlayAnimation(L"LeftDaggerEffect", true);
 			}
 		}
 

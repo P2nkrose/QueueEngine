@@ -7,6 +7,14 @@
 #include "qWindObject.h"
 #include "qObject.h"
 #include "qResources.h"
+#include "qKirby.h"
+#include "qPlayerScript.h"
+#include "qCollider.h"
+#include "qComponent.h"
+#include "qWaddleDeeScript.h"
+#include "qPlayScene.h"
+#include "qBoxCollider2D.h"
+#include "qPlayerScript.h"
 
 namespace Q
 {
@@ -75,4 +83,55 @@ namespace Q
 			object::Destroy(GetOwner());
 		}
 	}
+
+
+	// Ãæµ¹
+
+	void WindObjectScript::OnCollisionEnter(Collider* other)
+	{
+
+	}
+
+	
+	void WindObjectScript::OnCollisionStay(Collider* other)
+	{
+		Transform* MonsterTr = other->GetOwner()->GetComponent<Transform>();
+		translate(MonsterTr);
+
+		
+	}
+
+	void WindObjectScript::OnCollisionExit(Collider* other)
+	{
+	}
+
+
+
+	void WindObjectScript::translate(Transform* MonsterTr)
+	{
+		Vector2 pos = MonsterTr->GetPosition();
+
+		switch (mDirection)
+		{
+		case Q::WindObjectScript::eDirection::Left:
+			pos.x += 200.0f * Time::DeltaTime();
+			break;
+		case Q::WindObjectScript::eDirection::Right:
+			pos.x -= 200.0f * Time::DeltaTime();
+
+			break;
+		default:
+			assert(false);
+			break;
+		}
+
+		MonsterTr->SetPosition(pos);
+	}
+	
+
+
+
+	//Transform* tr = GetOwner()->GetComponent<Transform>();
+	//translate(tr);
+
 }

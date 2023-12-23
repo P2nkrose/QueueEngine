@@ -1,2 +1,221 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Q::Animation" Collapsed="true">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQQAgAAAAAAABAhAgAAABAAAgAAAkAAAgBAAAAAAAAE=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qAnimation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Animator" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAQAAQQAUAAAAAAIBCAAABigAAAABEAAAQABAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qAnimator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Application" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAQABAABQFAQAAgIQBACABCAAAAABEAAEQAAII=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::BoxCollider2D" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAIAAAQAAAAAAIAAAAAAAAAAAABAAAAAAAAQ=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qBoxCollider2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Camera" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAQBAQAAAIAAAQAAACAAAABAAABAAACI=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::CircleCollider2D" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIQAAAAAAIACAAAAACAAAABAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qCircleCollider2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Collider" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAEAQAAAAAAQiAgAAIoAAAAAAAAAAcABoAAAQAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qCollider.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::CollisionManager" Collapsed="true">
+    <Position X="27.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAgAAAAQAAAAAEJQAAAAAAACAAABAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qCollisionManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::GameObject" Collapsed="true">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAACAAIAQAAEoAANAAAAAAAAAAAABAIIIIAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Component" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAIAIAAAQAAAAAAIBAAAAAAAAEAABBCAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Entity" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgEQAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Input" Collapsed="true">
+    <Position X="25.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQIAAAAAgAAQAAiAAAAAQAIAAAAAIABAAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Layer" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAQAAIAAAQAAAAAAIAAAAABAAAAEABAAAAAEAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Resource" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAAAAAAAAAIABAAAAACIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qResouce.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Resources" Collapsed="true">
+    <Position X="27.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qResources.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Scene" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAAQAAgAAAIAAAQABQAAAABJAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::SceneManager" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAQAAAABAKAAAAABAAAgAABAAACAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qSceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Script" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAAAAQAAAAAAIAAAAAAAAAAMABAAAAAhAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qScript.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Shoot" Collapsed="true">
+    <Position X="25.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAACAABAACAAAAIAAAAAAAAgBAABAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qShoot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::SpriteRenderer" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQQAAAAAAAAAQBAAAAIIAAAACAAAAAAABAAAAAAIAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qSpriteRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Time" Collapsed="true">
+    <Position X="27.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAESABAAAAAAAAAAAAAAACABAAAAEAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qTime.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::Transform" Collapsed="true">
+    <Position X="16.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCCAAQAAAAAAIAQAAAAACggAIBAAAgAAAoA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qTransform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Q::graphics::Texture" Collapsed="true">
+    <Position X="20.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAQAAAAhAAAAAAAABBQABQEAEAAAAIAAEQBAAY=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Q::math::Vector2" Collapsed="true">
+    <Position X="25.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAIARAAAAAEAAAQAAAQAAAAAAAAhgAAAAAIA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="Q::GameObjectIter" Collapsed="true">
+    <Position X="25.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qLayer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="Q::eKeyState" Collapsed="true">
+    <Position X="25.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Q::eKeyCode" Collapsed="true">
+    <Position X="29" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBIGAAIAAAAAAAAAAAD+YQAAAAAAAAAACACAvv//YQM=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Q::enums::eComponentType" Collapsed="true">
+    <Position X="25.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAQgIAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Q::enums::eLayerType" Collapsed="true">
+    <Position X="27.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABgAAEAAAAAgAAAAAAAAAAAAAgAAAQEAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Q::enums::eResourceType" Collapsed="true">
+    <Position X="29" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAggAAAAAAAAAAAAAAAIIAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Q::enums::eDirection" Collapsed="true">
+    <Position X="27.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Q:\assortrock\Win32API\QueueEngine\QueueEngine_SOURCE\qEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

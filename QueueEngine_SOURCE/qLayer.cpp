@@ -112,4 +112,22 @@ namespace Q
 
 		mGameObjects.push_back(gameObject);
 	}
+
+	void Layer::EraseGameObejct(GameObject* eraseGameObj)
+	{
+		std::erase_if(mGameObjects,
+			[=](GameObject* gameObj)
+			{
+				return gameObj == eraseGameObj;
+			});
+	}
+
+	void Layer::eraseDeadGameObject()
+	{
+		std::erase_if(mGameObjects,
+			[](GameObject* gameObj)
+			{
+				return (gameObj)->IsDead();
+			});
+	}
 }

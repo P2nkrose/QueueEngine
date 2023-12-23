@@ -50,8 +50,7 @@ namespace Q
 	}
 	void PlayScene::Initialize()
 	{
-
-		CollisionManager::CollisionLayerCheck(eLayerType::Kirby, eLayerType::Monster, true);
+		
 
 		// 카메라
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(0.0f, 420.0f));
@@ -82,24 +81,21 @@ namespace Q
 		// 커비
 		
 		mKirby = object::Instantiate<Kirby>(enums::eLayerType::Kirby);
+
+		object::DontDestroyOnLoad(mKirby);
 		PlayerScript* kirbyScript = mKirby->AddComponent<PlayerScript>();
 
 		// 카메라 커비타겟
 		cameraComp->SetTarget(mKirby);
 
+		mKirby->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 420.0f));
 		
 
 		//Transform* stageTr = mStage->GetComponent<Transform>();
 
 		//mPlayer->GetComponent<Transform>()->SetPosition(stageTr->GetPosition() + Vector2(50.0f, 360.0f));
 		
-		mKirby->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 420.0f));
 
-		// 커비 콜라이더
-		BoxCollider2D* collider = mKirby->AddComponent<BoxCollider2D>();
-		collider->SetOffset(Vector2(235.0f, -80.0f));
-
-		collider->SetSize(Vector2(0.24f, 0.24f));
 
 
 		graphics::Texture* RightStandKirbyTex = Resources::Find<graphics::Texture>(L"RightStandKirby");
@@ -284,7 +280,7 @@ namespace Q
 		Animator* SparkAnimator = mSparkKirby->AddComponent<Animator>();
 
 		SparkAnimator->CreateAnimation(L"RightStandSparkKirby", RightStandSparkKirbyTex,
-			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
+			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2(-100.0f, 0), 8, 0.2f);
 
 		SparkAnimator->CreateAnimation(L"LeftStandSparkKirby", LeftStandSparkKirbyTex,
 			Vector2(0.0f, 0.0f), Vector2(70.0f, 43.0f), Vector2::Zero, 8, 0.2f);
@@ -487,11 +483,29 @@ namespace Q
 		mWaddleDee->GetComponent<Transform>()->SetScale(Vector2(2.5f, 2.5f));
 		mWaddleDee->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 420.0f));
 
+
+
+		// 콜라이더
+
+
+		// 커비 콜라이더
+		BoxCollider2D* collider = mKirby->AddComponent<BoxCollider2D>();
+		collider->SetOffset(Vector2(-10.0f, -10.0f));
+		collider->SetSize(Vector2(50.0f, 50.0f));
+
+		// 이펙트 콜라이더
+
+
+
 		// 몬스터 콜라이더
 
 		BoxCollider2D* colliderWD = mWaddleDee->AddComponent<BoxCollider2D>();
-		colliderWD->SetOffset(Vector2(245.0f, -80.0f));
-		colliderWD->SetSize(Vector2(0.48f, 0.48f));
+		colliderWD->SetOffset(Vector2(-10.0f, -10.0f));
+		colliderWD->SetSize(Vector2(40.0f, 40.0f));
+
+
+
+
 
 
 		// 이펙트
@@ -569,6 +583,11 @@ namespace Q
 
 	void PlayScene::OnEnter()
 	{
+		Scene::OnEnter();
+
+		// 타입별 충돌할 2개의 타입 true로 해놓기
+		CollisionManager::CollisionLayerCheck(eLayerType::Kirby, eLayerType::Monster, true);
+		CollisionManager::CollisionLayerCheck(eLayerType::Effect, eLayerType::Monster, true);
 	}
 
 	void PlayScene::OnExit()

@@ -11,7 +11,9 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Title\\under.png");
 
 		Resources::Load<graphics::Texture>(L"BackGround", L"..\\Resources\\img\\BackGround\\BackGroundTest.bmp");
+		Resources::Load<graphics::Texture>(L"BackGround2", L"..\\Resources\\img\\BackGround\\BackGroundTest2.bmp");
 		Resources::Load<graphics::Texture>(L"Stage", L"..\\Resources\\img\\Stage\\StageTest.bmp");
+		Resources::Load<graphics::Texture>(L"Stage2", L"..\\Resources\\img\\Stage\\StageTest2.bmp");
 
 		Resources::Load<graphics::Texture>(L"Bubble", L"..\\Resources\\Bubble.png");
 		Resources::Load<graphics::Texture>(L"Effect", L"..\\Resources\\Effect.png");

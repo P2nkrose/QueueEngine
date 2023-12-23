@@ -21,6 +21,7 @@ namespace Q
 	class CollisionManager
 	{
 	public:
+
 		static void Initialize();
 		static void Update();
 		static void LateUpdate();

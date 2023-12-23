@@ -1,5 +1,6 @@
 #pragma once
 #include "qScript.h"
+#include "qTransform.h"
 
 namespace Q
 {
@@ -30,6 +31,11 @@ namespace Q
 		void SetEffect(GameObject* effect) { mEffect = effect; };
 
 		///static Animator* GetEffectAnimator() { return mEffectAnimator; }
+
+		virtual void OnCollisionEnter(class Collider* other);
+		virtual void OnCollisionStay(class Collider* other);
+		virtual void OnCollisionExit(class Collider* other);
+		void translate(Transform* MonsterTr);
 
 	private:
 		void WindObject();

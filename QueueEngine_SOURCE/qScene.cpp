@@ -6,13 +6,7 @@ namespace Q
 	Scene::Scene()
 		:mLayers{}
 	{
-		mLayers.resize((UINT)enums::eLayerType::Max);
-		for (size_t i = 0; i < (UINT)enums::eLayerType::Max; i++)
-		{
-			mLayers[i] = new Layer();
-		}
-		
-		int a = 0;
+		createLayers();
 	}
 
 	Scene::~Scene()
@@ -87,6 +81,29 @@ namespace Q
 		}
 	}
 
+
+
+	void Scene::AddGameObject(GameObject* gameObj, const eLayerType type)
+	{
+		mLayers[(UINT)type]->AddGameObject(gameObj);
+	}
+
+	void Scene::EraseGameObject(GameObject* gameObj)
+	{
+		eLayerType layerType = gameObj->GetLayerType();
+		mLayers[(UINT)layerType]->EraseGameObejct(gameObj);
+	}
+
+	void Scene::createLayers()
+	{
+		mLayers.resize((UINT)enums::eLayerType::Max);
+		for (size_t i = 0; i < (UINT)enums::eLayerType::Max; i++)
+		{
+			mLayers[i] = new Layer();
+		}
+	}
+
+
 	void Scene::OnEnter()
 	{
 
@@ -95,11 +112,6 @@ namespace Q
 	void Scene::OnExit()
 	{
 
-	}
-
-	void Scene::AddGameObject(GameObject* gameObj, const enums::eLayerType type)
-	{
-		mLayers[(UINT)type]->AddGameObject(gameObj);
 	}
 
 }

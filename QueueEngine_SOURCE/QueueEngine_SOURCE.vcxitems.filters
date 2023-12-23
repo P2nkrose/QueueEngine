@@ -78,6 +78,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qCollisionManager.cpp">
       <Filter>Component\Collider</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
@@ -165,6 +168,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qCollisionManager.h">
       <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

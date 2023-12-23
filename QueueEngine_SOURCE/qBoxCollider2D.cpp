@@ -34,10 +34,11 @@ namespace Q
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
 
 		Vector2 offset = GetOffset();
+		mSize = GetSize();
 		Rectangle(hdc, pos.x + offset.x
 			, pos.y + offset.y
-			, pos.x + offset.x + 50		// 50 * 50 = 충돌체 크기
-			, pos.y + offset.y + 50);
+			, pos.x + offset.x + mSize.x		// 50 * 50 = 충돌체 크기
+			, pos.y + offset.y + mSize.y);
 
 		SelectObject(hdc, oldBrush);
 

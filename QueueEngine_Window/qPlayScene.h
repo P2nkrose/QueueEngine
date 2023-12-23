@@ -1,5 +1,5 @@
 #pragma once
-#include "qScene.h"
+#include "..\\QueueEngine_SOURCE\\qScene.h"
 
 namespace Q
 {

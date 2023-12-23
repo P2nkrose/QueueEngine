@@ -1,6 +1,8 @@
 #pragma once
 #include "..\\QueueEngine_SOURCE\\qGameObject.h"
 
+#include "qRenderer.h"
+
 
 namespace Q
 {
@@ -18,6 +20,8 @@ namespace Q
 			
 			auto iter = mKirbyType.find(type);
 			iter->second->SetActive(true);
+
+			renderer::mainCamera->SetTarget(iter->second);
 
 		}
 

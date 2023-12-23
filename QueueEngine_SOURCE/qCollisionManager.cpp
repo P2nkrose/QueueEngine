@@ -132,7 +132,7 @@ namespace Q
 		}
 		else
 		{
-			//충돌을 하지 않은 상태
+			//충돌중이었으나 지금은 충돌이 아닌 상태(빠져나온상태)
 			if (iter->second == true)
 			{
 				left->OnCollisionExit(right);
@@ -152,8 +152,8 @@ namespace Q
 		Vector2 rightPos = rightTr->GetPosition() + right->GetOffset();
 
 		// size 1,1 일떄 기본크기가 100픽셀
-		Vector2 leftSize = left->GetSize() * 100.0f;
-		Vector2 rightSize = right->GetSize() * 100.0f;
+		Vector2 leftSize = left->GetSize();
+		Vector2 rightSize = right->GetSize();
 
 		//AABB 충돌
 		if (fabs(leftPos.x - rightPos.x) < fabs(leftSize.x / 2.0f + rightSize.x / 2.0f)
@@ -161,6 +161,10 @@ namespace Q
 		{
 			return true;
 		}
+
+
+
+		// circle - circle
 
 		return false;
 	}

@@ -46,7 +46,6 @@ namespace Q
 		
 		tr->SetPosition(pos);
 
-
 	}
 
 	void DaggerObjectScript::LateUpdate()
@@ -66,7 +65,6 @@ namespace Q
 		if (mDirection == DaggerObjectScript::eDirection::Right)
 		{
 			mEffectAnimator->PlayAnimation(L"RightDaggerEffect", true);
-
 		}
 		else if (mDirection == DaggerObjectScript::eDirection::Left)
 		{

@@ -25,6 +25,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qCircleCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qCollisionManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qComponent.h" />
@@ -56,6 +57,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qCollisionManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qEntity.cpp" />

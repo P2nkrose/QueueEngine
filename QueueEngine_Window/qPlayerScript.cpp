@@ -15,6 +15,7 @@
 #include "qRenderer.h"
 #include "qIceKirby.h"
 #include "qIceKirbyScript.h"
+#include "qBoxCollider2D.h"
 
 
 namespace Q
@@ -142,7 +143,7 @@ namespace Q
 		if (Input::GetKeyDown(eKeyCode::Num2))
 		{
 			KirbyTypeManager::ChangeKirby(L"Ice");
-			//renderer::mainCamera->SetTarget(GetOwner());
+			
 		}
 
 		if (Input::GetKeyDown(eKeyCode::Num3))
@@ -299,22 +300,36 @@ namespace Q
 		leftWindObject->GetComponent<Transform>()->SetScale(Vector2::Two);
 
 
-
 		if (Input::GetKey(eKeyCode::Z))
 		{
 			mState = PlayerScript::eState::Wind2;
 
+			BoxCollider2D* WindRightCollider = rightWindObject->AddComponent<BoxCollider2D>();
+			BoxCollider2D* WindLeftCollider = leftWindObject->AddComponent<BoxCollider2D>();
+
 			if (mDirection == PlayerScript::eDirection::Right && mOneTime == false)
 			{
+				mDirection = PlayerScript::eDirection::Right;
 				// 한번만 실행되게 조건을 걸어야 함(if문이나 bool)
 				mAnimator->PlayAnimation(L"RightWindKirby2", true);
 				rightWindEffectAnimator->PlayAnimation(L"RightWindEffect", true);
+
+				// 오른쪽 콜라이더
+				WindRightCollider->SetOffset(Vector2(-10.0f, -5.0f));
+				WindRightCollider->SetSize(Vector2(80.0f, 40.0f));
 				
 			}
 			else if (mDirection == PlayerScript::eDirection::Left && mOneTime == false)
 			{
+				mDirection = PlayerScript::eDirection::Left;
 				mAnimator->PlayAnimation(L"LeftWindKirby2", true);
 				leftWindEffectAnimator->PlayAnimation(L"LeftWindEffect", true);
+
+				// 왼쪽 콜라이더
+
+				WindLeftCollider->SetOffset(Vector2(-20.0f, -5.0f));
+				WindLeftCollider->SetSize(Vector2(90.0f, 40.0f));
+
 			}
 			mOneTime = true;
 		}
@@ -456,16 +471,19 @@ namespace Q
 	void PlayerScript::OnCollisionEnter(Collider* other)
 	{
 		// 충돌하면 뒤로 보내기 이벤트
+		int a = 0;
 	}
 
 	void PlayerScript::OnCollisionStay(Collider* other)
 	{
-
+		// 충돌 중인 상태
+		int a = 0;
 	}
 
 	void PlayerScript::OnCollisionExit(Collider* other)
 	{
-
+		// 충돌을 빠져나간 상태
+		int a = 0;
 	}
 
 

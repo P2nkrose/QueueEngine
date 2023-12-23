@@ -3,6 +3,10 @@
 #include "qTime.h"
 #include "qGameObject.h"
 #include "qAnimator.h"
+#include "qWindObject.h"
+#include "qWindObjectScript.h"
+#include "qCollisionManager.h"
+#include "qCollider.h"
 
 namespace Q
 {
@@ -47,6 +51,38 @@ namespace Q
 	{
 	}
 
+	void WaddleDeeScript::OnCollisionEnter(Collider* other)
+	{
+		
+	}
+
+	void WaddleDeeScript::OnCollisionStay(Collider* other)
+	{
+		// 이펙트와 커비 나누기
+		//if (other->GetOwner() == eLayerType::Kirby)
+		//{
+		//	
+		//}
+		//else if (other->GetOwner() == eLayerType::Effect)
+		//{
+		//	//겟오너->끌려가는걸
+		//	Transform* tr = GetOwner()->GetComponent<Transform>();
+		//	if(tr)
+		//	GetOwner()->IsDead();
+		//	//플레이애니메이션 - > 앙대 ㅠㅠ 
+		//	//	이동완료 = 디스트로이
+		//}
+	}
+
+	void WaddleDeeScript::OnCollisionExit(Collider* other)
+	{
+	}
+
+	void WaddleDeeScript::Damage()
+	{
+
+	}
+
 	void WaddleDeeScript::walk()
 	{
 		mTime += Time::DeltaTime();
@@ -80,6 +116,7 @@ namespace Q
 			break;
 		}
 	}
+
 	void WaddleDeeScript::translate(Transform* tr)
 	{
 		Vector2 pos = tr->GetPosition();
@@ -98,6 +135,9 @@ namespace Q
 			assert(false);
 			break;
 		}
+
 		tr->SetPosition(pos);
 	}
+
+
 }

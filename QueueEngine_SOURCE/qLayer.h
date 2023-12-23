@@ -20,11 +20,15 @@ namespace Q
 		virtual void Destroy();
 
 		void AddGameObject(GameObject* gameObject);
+		void EraseGameObejct(GameObject* eraseGameObj);
 		const std::vector<GameObject*> GetGameObjects() { return mGameObjects; }
 
 
 	private:
-		//eLayerType mType;
+		void eraseDeadGameObject();
+
+
+	private:
 		std::vector<GameObject*> mGameObjects;
 	};
 
