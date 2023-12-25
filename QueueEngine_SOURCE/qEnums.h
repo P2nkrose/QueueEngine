@@ -6,6 +6,7 @@ namespace Q::enums
 	{
 		Transform,
 		Collider,
+		Rigidbody,
 		Script,
 		SpriteRenderer,
 		Animator,
@@ -21,6 +22,7 @@ namespace Q::enums
 		Monster,
 		Kirby,
 		Effect,
+		Floor,
 		Particle,
 		Max = 16,
 	};

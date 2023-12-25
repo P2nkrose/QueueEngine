@@ -62,10 +62,8 @@
       <Filter>Component\Camera</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qRenderer.cpp">
-      <Filter>Component\Renderer</Filter>
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimator.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qCollider.cpp">
       <Filter>Component\Collider</Filter>
     </ClCompile>
@@ -75,14 +73,23 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qCircleCollider2D.cpp">
       <Filter>Component\Collider</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)qCollisionManager.cpp">
-      <Filter>Component\Collider</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qCollisionManager.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)qObject.cpp">
-      <Filter>Common</Filter>
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimation.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qAnimator.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qRigidbody.cpp">
+      <Filter>Component\Rigidbody</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +129,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qObject.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qLayer.h">
       <Filter>Layer</Filter>
     </ClInclude>
@@ -156,10 +160,8 @@
       <Filter>Component\Camera</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qRenderer.h">
-      <Filter>Component\Renderer</Filter>
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimator.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qCollider.h">
       <Filter>Component\Collider</Filter>
     </ClInclude>
@@ -169,11 +171,23 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qCircleCollider2D.h">
       <Filter>Component\Collider</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)qCollisionManager.h">
-      <Filter>Component\Collider</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)qDontDestroyOnLoad.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qCollisionManager.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimator.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qAnimation.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qRigidbody.h">
+      <Filter>Component\Rigidbody</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -222,11 +236,23 @@
     <Filter Include="Component\Transform">
       <UniqueIdentifier>{4bb8d3c5-853b-4bdd-8fca-c04bc2550d54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Renderer">
-      <UniqueIdentifier>{2f2864f2-3281-44c6-88fc-21808dbf5bab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component\Collider">
       <UniqueIdentifier>{543cd863-724b-4390-8be6-a24d1f3ddad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{456fd7f3-32fc-49ce-8a2a-0fe453bd860c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{bb9eff21-d4c0-48f3-bfa4-6b2a156ae8fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animator">
+      <UniqueIdentifier>{314a5ab8-9aeb-42b8-a028-962c60511e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{2f2864f2-3281-44c6-88fc-21808dbf5bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Rigidbody">
+      <UniqueIdentifier>{4067fe2d-8787-4cbc-b2ef-98548cc19bb7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

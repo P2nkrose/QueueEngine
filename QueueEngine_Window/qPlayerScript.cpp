@@ -16,6 +16,7 @@
 #include "qIceKirby.h"
 #include "qIceKirbyScript.h"
 #include "qBoxCollider2D.h"
+#include "qRigidbody.h"
 
 
 namespace Q
@@ -218,14 +219,19 @@ namespace Q
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+
+		Rigidbody* rb = GetOwner()->GetComponent<Rigidbody>();
+
 		if (Input::GetKey(eKeyCode::Right))
 		{
-			pos.x += 100.0f * Time::DeltaTime();
+			//pos.x += 100.0f * Time::DeltaTime();
 			// 2초있다가 스탠드로
+			rb->AddForce(Vector2(200.0f, 0.0f));
 		}
 		else if (Input::GetKey(eKeyCode::Left))
 		{
-			pos.x -= 100.0f * Time::DeltaTime();
+			//pos.x -= 100.0f * Time::DeltaTime();
+			rb->AddForce(Vector2(-200.0f, 0.0f));
 		}
 
 

@@ -37,6 +37,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResouce.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qResources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qRigidbody.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qScript.h" />
@@ -68,6 +69,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResouce.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qResources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qRigidbody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qScript.cpp" />

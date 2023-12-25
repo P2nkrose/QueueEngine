@@ -33,6 +33,8 @@
 #include "qMetalKirby.h"
 #include "qNinjaKirby.h"
 #include "qNinjaKirbyScript.h"
+#include "qRigidbody.h"
+
 
 namespace Q
 {
@@ -172,6 +174,8 @@ namespace Q
 
 		mKirby->GetComponent<Transform>()->SetScale(Vector2::Two);
 		
+		// 리지드바디
+		mKirby->AddComponent<Rigidbody>();
 
 		
 		// 아이스커비
