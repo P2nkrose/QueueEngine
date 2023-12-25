@@ -1,5 +1,6 @@
 #include "qScene.h"
 #include "CommonInclude.h"
+#include "qCollisionManager.h"
 
 namespace Q
 {
@@ -111,7 +112,7 @@ namespace Q
 
 	void Scene::OnExit()
 	{
-
+		CollisionManager::Clear();
 	}
 
 }
