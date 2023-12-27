@@ -1,4 +1,9 @@
 #include "qDontDestroyOnLoad.h"
+#include "qSceneManager.h"
+#include "qCamera.h"
+#include "qRenderer.h"
+#include "qGameObject.h"
+#include "qObject.h"
 
 namespace Q
 {
@@ -13,11 +18,19 @@ namespace Q
 	void DontDestroyOnLoad::Initialize()
 	{
 		Scene::Initialize();
+
+		//GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(0.0f, 420.0f));
+		//Camera* cameraComp = camera->AddComponent<Camera>();
+		//renderer::mainCamera = cameraComp;
+
+		//cameraComp->SetTarget(SceneManager::allKirby);
 	}
 
 	void DontDestroyOnLoad::Update()
 	{
 		Scene::Update();
+
+
 	}
 
 	void DontDestroyOnLoad::LateUpdate()

@@ -8,6 +8,7 @@ namespace Q
 {
 	Rigidbody::Rigidbody()
 		: Component(enums::eComponentType::Rigidbody)
+		, mbGround(false)
 		, mMass(1.0f)
 		, mFriction(10.0f)
 		, mForce(Vector2::Zero)

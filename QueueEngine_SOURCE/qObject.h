@@ -5,6 +5,8 @@
 #include "qScene.h"
 #include "qSceneManager.h"
 #include "qTransform.h"
+#include "qCamera.h"
+#include "qRenderer.h"
 
 
 namespace Q::object
@@ -52,6 +54,14 @@ namespace Q::object
 		// 해당 게임오브젝트를 -> DontDestroy씬으로 넣어준다.
 		Scene* dontDestroyOnLoad = SceneManager::GetDontDestroyOnLoad();
 		dontDestroyOnLoad->AddGameObject(gameObject, gameObject->GetLayerType());
+
+		// 카메라 고정
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(0.0f, 420.0f));
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		renderer::mainCamera = cameraComp;
+
+		//cameraComp->SetTarget(gameObject);
+
 	}
 	
 }

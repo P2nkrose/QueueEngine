@@ -52,6 +52,9 @@ namespace Q
 		case Q::PlayerScript::eState::Walk:
 			Walk();
 			break;
+		case Q::PlayerScript::eState::Dash:
+			Dash();
+			break;
 		case Q::PlayerScript::eState::Down:
 			Down();
 			break;
@@ -96,18 +99,7 @@ namespace Q
 		}
 
 		// 키보드
-		if (Input::GetKey(eKeyCode::Right))
-		{
-			mState = PlayerScript::eState::Walk;
-			mDirection = PlayerScript::eDirection::Right;
-			mAnimator->PlayAnimation(L"RightWalkKirby");
-		}
-		else if (Input::GetKey(eKeyCode::Left))
-		{
-			mState = PlayerScript::eState::Walk;
-			mDirection = PlayerScript::eDirection::Left;
-			mAnimator->PlayAnimation(L"LeftWalkKirby");
-		}
+		
 
 		if (Input::GetKeyDown(eKeyCode::Down))
 		{
@@ -121,6 +113,40 @@ namespace Q
 				mAnimator->PlayAnimation(L"LeftDownKirby");
 			}
 		}
+
+		if (Input::GetKey(eKeyCode::C))
+		{
+			if (Input::GetKey(eKeyCode::Right))
+			{
+				mState = PlayerScript::eState::Dash;
+				mDirection = PlayerScript::eDirection::Right;
+				mAnimator->PlayAnimation(L"RightDashKirby");
+
+			}
+			else if (Input::GetKey(eKeyCode::Left))
+			{
+				mState = PlayerScript::eState::Dash;
+				mDirection = PlayerScript::eDirection::Left;
+				mAnimator->PlayAnimation(L"LeftDashKirby");
+			}
+		}
+		else
+		{
+			if (Input::GetKey(eKeyCode::Right))
+			{
+				mState = PlayerScript::eState::Walk;
+				mDirection = PlayerScript::eDirection::Right;
+				mAnimator->PlayAnimation(L"RightWalkKirby");
+
+			}
+			else if (Input::GetKey(eKeyCode::Left))
+			{
+				mState = PlayerScript::eState::Walk;
+				mDirection = PlayerScript::eDirection::Left;
+				mAnimator->PlayAnimation(L"LeftWalkKirby");
+			}
+		}
+
 
 
 		if (Input::GetKeyDown(eKeyCode::Z))
@@ -214,26 +240,62 @@ namespace Q
 		}
 	}
 
+	// 대쉬
+	void PlayerScript::Dash()
+	{
+		//Rigidbody* rb = GetOwner()->GetComponent<Rigidbody>();
+		Transform* tr = GetOwner()->GetComponent<Transform>();
+		Vector2 pos = tr->GetPosition();
+
+		if (Input::GetKey(eKeyCode::C))
+		{
+			if (Input::GetKey(eKeyCode::Right))
+			{
+				//rb->AddForce(Vector2(100.0f, 0.0f));
+				pos.x += 250.0f * Time::DeltaTime();
+			}
+			else if (Input::GetKey(eKeyCode::Left))
+			{
+				//rb->AddForce(Vector2(-100.0f, 0.0f));
+				pos.x -= 250.0f * Time::DeltaTime();
+			}
+		}
+
+		tr->SetPosition(pos);
+
+		if (Input::GetKeyUp(eKeyCode::Right))
+		{
+			mState = PlayerScript::eState::Stand;
+			mDirection = PlayerScript::eDirection::Right;
+			mAnimator->PlayAnimation(L"RightStandKirby", true);
+		}
+		else if (Input::GetKeyUp(eKeyCode::Left))
+		{
+			mState = PlayerScript::eState::Stand;
+			mDirection = PlayerScript::eDirection::Left;
+			mAnimator->PlayAnimation(L"LeftStandKirby", true);
+
+		}
+	}
+
+
 	// 워크
 	void PlayerScript::Walk()
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
 
-		Rigidbody* rb = GetOwner()->GetComponent<Rigidbody>();
+		
 
 		if (Input::GetKey(eKeyCode::Right))
 		{
-			//pos.x += 100.0f * Time::DeltaTime();
-			// 2초있다가 스탠드로
-			rb->AddForce(Vector2(200.0f, 0.0f));
+			pos.x += 100.0f * Time::DeltaTime();
+			 //2초있다가 스탠드로
 		}
 		else if (Input::GetKey(eKeyCode::Left))
 		{
-			//pos.x -= 100.0f * Time::DeltaTime();
-			rb->AddForce(Vector2(-200.0f, 0.0f));
+			pos.x -= 100.0f * Time::DeltaTime();
 		}
-
 
 		tr->SetPosition(pos);
 
@@ -252,6 +314,9 @@ namespace Q
 
 		}
 	}
+
+
+
 
 	// 윈드
 	void PlayerScript::Wind()

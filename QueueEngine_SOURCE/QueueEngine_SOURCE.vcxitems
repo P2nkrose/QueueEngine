@@ -46,6 +46,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)qTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qUIBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)qUIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject_monster01.cpp" />
@@ -78,5 +80,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)qTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qUIBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)qUIManager.cpp" />
   </ItemGroup>
 </Project>

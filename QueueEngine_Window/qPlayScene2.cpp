@@ -9,6 +9,9 @@
 #include "qResources.h"
 #include "qTransform.h"
 #include "qStage2.h"
+#include "qInput.h"
+#include "CommonInclude.h"
+#include "qPlayerScript.h"
 
 namespace Q
 {
@@ -33,6 +36,8 @@ namespace Q
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(0.0f, 420.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
+
+		
 
 
 		// ¹è°æ
@@ -65,6 +70,11 @@ namespace Q
 	void PlayScene2::LateUpdate()
 	{
 		Scene::LateUpdate();
+
+		if (Input::GetKeyDown(eKeyCode::M))
+		{
+			SceneManager::LoadScene(L"PlayScene");
+		}
 	}
 	void PlayScene2::Render(HDC hdc)
 	{

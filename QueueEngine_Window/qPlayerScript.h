@@ -15,6 +15,7 @@ namespace Q
 			Down,
 			Tackle,
 			Tackle2,
+			Dash,
 			Jump,
 			Wind,
 			Wind2
@@ -51,6 +52,7 @@ namespace Q
 		void Down();
 		void Wind();
 		void Tackle();
+		void Dash();
 
 
 	private:

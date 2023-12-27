@@ -49,5 +49,10 @@ namespace Q::enums
 		End,
 	};
 
+	enum class eUIType
+	{
+		End,
+	};
+
 
 }

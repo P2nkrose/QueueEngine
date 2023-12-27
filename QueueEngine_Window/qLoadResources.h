@@ -70,6 +70,7 @@ namespace Q
 		Resources::Load<graphics::Texture>(L"LeftDashKirby", L"..\\Resources\\img\\Kirby\\Normal\\LeftDashKirby.bmp");
 		Resources::Load<graphics::Texture>(L"RightDashKirby", L"..\\Resources\\img\\Kirby\\Normal\\RightDashKirby.bmp");
 
+
 		// Normal Effect
 		Resources::Load<graphics::Texture>(L"RightWindEffect", L"..\\Resources\\img\\Etc\\RightWindEffect.bmp");
 		Resources::Load<graphics::Texture>(L"LeftWindEffect", L"..\\Resources\\img\\Etc\\LeftWindEffect.bmp");

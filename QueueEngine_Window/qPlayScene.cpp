@@ -60,6 +60,7 @@ namespace Q
 		renderer::mainCamera = cameraComp;
 
 		
+
 		
 		// 배경
 		mBackGround = object::Instantiate<BackGround>(enums::eLayerType::BackGround);
@@ -84,11 +85,15 @@ namespace Q
 		
 		mKirby = object::Instantiate<Kirby>(enums::eLayerType::Kirby);
 
+
+		// 디스트로이씬에 넣기 -- 중요!!!!!!!!
 		object::DontDestroyOnLoad(mKirby);
+
+
 		PlayerScript* kirbyScript = mKirby->AddComponent<PlayerScript>();
 
 		// 카메라 커비타겟
-		cameraComp->SetTarget(mKirby);
+		//cameraComp->SetTarget(mKirby);
 
 		mKirby->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 420.0f));
 		
@@ -114,6 +119,8 @@ namespace Q
 		graphics::Texture* RightTackleKirbyTex2 = Resources::Find<graphics::Texture>(L"RightTackleKirby2");
 		graphics::Texture* LeftTackleKirbyTex = Resources::Find<graphics::Texture>(L"LeftTackleKirby");
 		graphics::Texture* LeftTackleKirbyTex2 = Resources::Find<graphics::Texture>(L"LeftTackleKirby2");
+		graphics::Texture* RightDashKirbyTex = Resources::Find<graphics::Texture>(L"RightDashKirby");
+		graphics::Texture* LeftDashKirbyTex = Resources::Find<graphics::Texture>(L"LeftDashKirby");
 
 
 
@@ -159,6 +166,13 @@ namespace Q
 
 		animator->CreateAnimation(L"LeftTackleKirby2", LeftTackleKirbyTex2,
 			Vector2(0.0f, 0.0f), Vector2(40.0f, 30.0f), Vector2::Zero, 2, 0.1f);
+
+		animator->CreateAnimation(L"RightDashKirby", RightDashKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(34.0f, 30.0f), Vector2::Zero, 8, 0.1f);
+
+		animator->CreateAnimation(L"LeftDashKirby", LeftDashKirbyTex,
+			Vector2(0.0f, 0.0f), Vector2(34.0f, 30.0f), Vector2::Zero, 8, 0.1f);
+		
 
 		// 이어지기
 
@@ -267,6 +281,10 @@ namespace Q
 
 		// 스파크(전기) 커비
 		mSparkKirby = object::Instantiate<SparkKirby>(enums::eLayerType::Kirby);
+
+
+		//cameraComp->SetTarget(mSparkKirby);
+
 		SparkKirbyScript* sparkKirbyScript = mSparkKirby->AddComponent<SparkKirbyScript>();
 
 		graphics::Texture* RightStandSparkKirbyTex = Resources::Find<graphics::Texture>(L"RightStandSparkKirby");
@@ -507,7 +525,9 @@ namespace Q
 		colliderWD->SetOffset(Vector2(-10.0f, -10.0f));
 		colliderWD->SetSize(Vector2(40.0f, 40.0f));
 
+		// 맵 넘어가는 콜라이더
 
+		
 
 
 
@@ -549,6 +569,8 @@ namespace Q
 		//titleudsr->SetTexture(TitleUnderTexture);
 
 
+
+
 		// 커비타입 바꾸기
 		KirbyTypeManager::Insert(L"Normal", mKirby);
 		KirbyTypeManager::Insert(L"Ice", mIceKirby);
@@ -557,7 +579,10 @@ namespace Q
 		KirbyTypeManager::Insert(L"Ninja", mNinjaKirby);
 
 
+		//SceneManager::allKirby = mKirby;
 		
+
+
 		Scene::Initialize();
 		
 	}
@@ -575,6 +600,11 @@ namespace Q
 		if (Input::GetKeyDown(eKeyCode::N))
 		{
 			SceneManager::LoadScene(L"TitleScene");
+		}
+
+		if (Input::GetKeyDown(eKeyCode::M))
+		{
+			SceneManager::LoadScene(L"PlayScene2");
 		}
 	}
 

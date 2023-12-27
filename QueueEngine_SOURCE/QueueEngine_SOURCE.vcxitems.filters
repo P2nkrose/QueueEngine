@@ -91,6 +91,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qRigidbody.cpp">
       <Filter>Component\Rigidbody</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qUIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qUIBase.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
@@ -189,6 +195,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qRigidbody.h">
       <Filter>Component\Rigidbody</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qUIManager.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qUIBase.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -253,6 +265,9 @@
     </Filter>
     <Filter Include="Component\Rigidbody">
       <UniqueIdentifier>{4067fe2d-8787-4cbc-b2ef-98548cc19bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{f3a1f321-19e8-477e-b916-efc38d4244f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

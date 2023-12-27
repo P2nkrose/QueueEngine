@@ -1,5 +1,6 @@
 #pragma once
 #include "qScene.h"
+#include "qGameObject.h"
 
 namespace Q
 {
@@ -31,11 +32,16 @@ namespace Q
 		static void Destroy();
 		static void Release();
 
+
+		static GameObject* allKirby;
+
 	private:
 
 		static std::map<std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
 		static Scene* mDontDestroyOnLoad;
+		
+		
 
 	};
 }

@@ -16,8 +16,12 @@ namespace Q
 
 		void SetMass(float mass) { mMass = mass; }
 		void AddForce(Vector2 force) { mForce = force; }
+		void SetGround(bool ground) { mbGround = ground; }
+		void SetVelocity(Vector2 velocity) { mVelocity = velocity; }
+		Vector2 GetVelocity() { return mVelocity; }
 
 	private:
+		bool mbGround;		// ¹Ù´Ú¿¡ ´ê¾Ò´ÂÁö ¾È´ê¾Ò´ÂÁö bool
 		float mMass;		// Áú·®
 		float mFriction;	// ¸¶Âû
 
