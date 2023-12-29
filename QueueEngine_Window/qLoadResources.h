@@ -6,29 +6,42 @@ namespace Q
 {
 	void LoadResources()
 	{
-
+		// 타이틀
 		Resources::Load<graphics::Texture>(L"Title", L"..\\Resources\\img\\Title\\Title.png");
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Title\\under.png");
 
+		// 픽셀충돌
+		Resources::Load<graphics::Texture>(L"Stage1Pixel", L"..\\Resources\\img\\Stage\\Stage1Pixel.bmp");
+
+
+		// UI
+
+
+		// HUD
+		Resources::Load<graphics::Texture>(L"KirbyHud0", L"..\\Resources\\img\\UI\\Hud\\KirbyHud0.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud1", L"..\\Resources\\img\\UI\\Hud\\KirbyHud1.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud2", L"..\\Resources\\img\\UI\\Hud\\KirbyHud2.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud3", L"..\\Resources\\img\\UI\\Hud\\KirbyHud3.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud4", L"..\\Resources\\img\\UI\\Hud\\KirbyHud4.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud5", L"..\\Resources\\img\\UI\\Hud\\KirbyHud5.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud6", L"..\\Resources\\img\\UI\\Hud\\KirbyHud6.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud7", L"..\\Resources\\img\\UI\\Hud\\KirbyHud7.bmp");
+		Resources::Load<graphics::Texture>(L"KirbyHud8", L"..\\Resources\\img\\UI\\Hud\\KirbyHud8.bmp");
+
+		// ICON
+		Resources::Load<graphics::Texture>(L"KirbyLife", L"..\\Resources\\img\\UI\\Icon\\KirbyLife.bmp");
+		Resources::Load<graphics::Texture>(L"NormalTypeIcon", L"..\\Resources\\img\\UI\\Icon\\NormalTypeIcon.bmp");
+		Resources::Load<graphics::Texture>(L"IceTypeIcon", L"..\\Resources\\img\\UI\\Icon\\IceTypeIcon.bmp");
+		Resources::Load<graphics::Texture>(L"SparkTypeIcon", L"..\\Resources\\img\\UI\\Icon\\SparkTypeIcon.bmp");
+		Resources::Load<graphics::Texture>(L"MetalTypeIcon", L"..\\Resources\\img\\UI\\Icon\\MetalTypeIcon.bmp");
+		Resources::Load<graphics::Texture>(L"NinjaTypeIcon", L"..\\Resources\\img\\UI\\Icon\\NinjaTypeIcon.bmp");
+
+
+		// BackGround
 		Resources::Load<graphics::Texture>(L"BackGround", L"..\\Resources\\img\\BackGround\\BackGroundTest.bmp");
 		Resources::Load<graphics::Texture>(L"BackGround2", L"..\\Resources\\img\\BackGround\\BackGroundTest2.bmp");
 		Resources::Load<graphics::Texture>(L"Stage", L"..\\Resources\\img\\Stage\\StageTest.bmp");
 		Resources::Load<graphics::Texture>(L"Stage2", L"..\\Resources\\img\\Stage\\StageTest2.bmp");
-
-		Resources::Load<graphics::Texture>(L"Bubble", L"..\\Resources\\Bubble.png");
-		Resources::Load<graphics::Texture>(L"Effect", L"..\\Resources\\Effect.png");
-		Resources::Load<graphics::Texture>(L"Cat", L"..\\Resources\\Cat.bmp");
-
-		//Resources::Load<graphics::Texture>(L"KirbyDance", L"..\\Resources\\KirbyDacne.png");
-
-
-
-		// 이미지
-
-		// BackGround
-		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\BackGround\\BackGround.bmp");
-		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\BackGround\\BackGround1.bmp");
-		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\BackGround\\bossBackGround.bmp");
 
 		// Boss
 		Resources::Load<graphics::Texture>(L"Under", L"..\\Resources\\img\\Boss\\Boss.bmp");

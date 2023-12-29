@@ -38,7 +38,11 @@ namespace Q
 		class Stage* mStage;
 		class BackGround* mBackGround;
 		class BackGround* titleUnder;
+
+
 	};
+
+	//PlayScene ttt;
 }
 
 

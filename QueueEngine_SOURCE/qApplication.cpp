@@ -4,7 +4,7 @@
 #include "qSceneManager.h"
 #include "qResources.h"
 #include "qCollisionManager.h"
-
+#include "qUIManager.h"
 #include <dshow.h>
 #pragma comment(lib, "Strmiids.lib")
 
@@ -52,6 +52,7 @@ namespace Q
 		Time::Update();
 
 		CollisionManager::Update();
+		UIManager::Update();
 		SceneManager::Update();
 
 		//mPlayer1.Update();
@@ -90,6 +91,7 @@ namespace Q
 	void Application::LateUpdate()
 	{
 		CollisionManager::LateUpdate();
+		UIManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 
@@ -99,7 +101,7 @@ namespace Q
 		//Time::Render(mBackHdc);
 
 		CollisionManager::Render(mBackHdc);
-
+		UIManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		//mPlayer1.Render(mBackHdc);
@@ -128,6 +130,13 @@ namespace Q
 	void Application::Destroy()
 	{
 		SceneManager::Destroy();
+	}
+
+	void Application::Release()
+	{
+		SceneManager::Release();
+		UIManager::Release();
+		Resources::Release();
 	}
 
 	void Application::clearRenderTarget()

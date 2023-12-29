@@ -94,6 +94,9 @@ namespace Q::math
 		}
 
 	};
+
+
+
 }
 
 

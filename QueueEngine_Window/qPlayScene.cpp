@@ -34,6 +34,9 @@
 #include "qNinjaKirby.h"
 #include "qNinjaKirbyScript.h"
 #include "qRigidbody.h"
+#include "qUIManager.h"
+#include "qUIBase.h"
+#include "qUIHUD.h"
 
 
 namespace Q
@@ -59,9 +62,6 @@ namespace Q
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
 
-		
-
-		
 		// 배경
 		mBackGround = object::Instantiate<BackGround>(enums::eLayerType::BackGround);
 		SpriteRenderer* bgsr = mBackGround->AddComponent<SpriteRenderer>();
@@ -80,6 +80,13 @@ namespace Q
 		stageSr->SetTexture(stageTexture);
 
 		mStage->GetComponent<Transform>()->SetPosition(Vector2(-318.0f, 70.0f));
+
+		// UI
+
+		// 픽셀충돌
+		
+
+
 
 		// 커비
 		
@@ -579,7 +586,7 @@ namespace Q
 		KirbyTypeManager::Insert(L"Ninja", mNinjaKirby);
 
 
-		//SceneManager::allKirby = mKirby;
+		SceneManager::allKirby = mKirby;
 		
 
 
@@ -622,6 +629,9 @@ namespace Q
 		// 타입별 충돌할 2개의 타입 true로 해놓기
 		CollisionManager::CollisionLayerCheck(eLayerType::Kirby, eLayerType::Monster, true);
 		CollisionManager::CollisionLayerCheck(eLayerType::Effect, eLayerType::Monster, true);
+
+		UIManager::Push(eUIType::HpBar);
+
 	}
 
 	void PlayScene::OnExit()

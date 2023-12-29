@@ -17,8 +17,10 @@ namespace Q::enums
 	enum class eLayerType
 	{
 		None,
+		PixelMap,
 		BackGround,
 		Stage,
+		UI,
 		Monster,
 		Kirby,
 		Effect,
@@ -51,6 +53,8 @@ namespace Q::enums
 
 	enum class eUIType
 	{
+		HpBar,
+		Button,
 		End,
 	};
 

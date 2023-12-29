@@ -44,7 +44,7 @@ namespace Q
 		void OnCollisionStay(class Collider* other) override;
 		void OnCollisionExit(class Collider* other) override;
 
-
+		void SetPixelMapTexture(graphics::Texture* texture) { mPixelMap = texture; }
 
 	private:
 		void Stand();
@@ -61,6 +61,8 @@ namespace Q
 		class Animator* mAnimator;
 		bool mOneTime;
 		float mDeathTime;
+
+		graphics::Texture* mPixelMap;
 
 		//void (*StartEvent)();
 		//void (*CompleteEvent)();

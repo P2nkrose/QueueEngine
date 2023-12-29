@@ -34,6 +34,7 @@ namespace Q
 
 
 		static GameObject* allKirby;
+		
 
 	private:
 

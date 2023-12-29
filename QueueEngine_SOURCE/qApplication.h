@@ -22,6 +22,7 @@ namespace Q
 		void LateUpdate();
 		void Render();
 		void Destroy();
+		void Release();
 
 
 		HWND GetHwnd() { return mHwnd; }

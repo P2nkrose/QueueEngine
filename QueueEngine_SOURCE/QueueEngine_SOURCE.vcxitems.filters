@@ -97,6 +97,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)qUIBase.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)qUIHUD.cpp">
+      <Filter>UI\HUD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)qApplication.h">
@@ -201,6 +204,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)qUIBase.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)qUIHUD.h">
+      <Filter>UI\HUD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="etc">
@@ -268,6 +274,9 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{f3a1f321-19e8-477e-b916-efc38d4244f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\HUD">
+      <UniqueIdentifier>{570061f6-adfe-407e-a136-fc1830931ca7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

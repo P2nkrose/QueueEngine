@@ -17,6 +17,9 @@
 #include "qIceKirbyScript.h"
 #include "qBoxCollider2D.h"
 #include "qRigidbody.h"
+#include "qUIManager.h"
+#include "qUIBase.h"
+#include "qUIHUD.h"
 
 
 namespace Q
@@ -30,9 +33,11 @@ namespace Q
 		, mDeathTime(0.0f)
 	{
 	}
+
 	PlayerScript::~PlayerScript()
 	{
 	}
+
 	void PlayerScript::Initialize()
 	{
 		
@@ -90,7 +95,11 @@ namespace Q
 	void PlayerScript::Stand()
 	{
 
+		// UI
 		
+	
+
+
 		
 		// ¸¶¿ì½º
 		if (Input::GetKey(eKeyCode::LButton))

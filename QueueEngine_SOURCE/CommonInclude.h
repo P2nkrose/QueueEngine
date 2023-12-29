@@ -17,13 +17,14 @@
 #include "qMath.h"
 
 #include <mmsystem.h>
+#include <wingdi.h>
 #include <dinput.h>
-#pragma comment(lib, "Msimg32.lib");
-#pragma comment(lib, "winmm.lib");
+#pragma comment(lib, "Msimg32.lib")
+#pragma comment(lib, "winmm.lib")
 
 
 #include <gdiplus.h>
-#pragma comment (lib, "gdiplus.lib");
+#pragma comment (lib, "gdiplus.lib")
 
 #include "qEnums.h"
 #include "qMath.h"

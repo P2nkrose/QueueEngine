@@ -1,4 +1,5 @@
 #include "qUIManager.h"
+#include "qUIHUD.h"
 
 namespace Q
 {
@@ -11,6 +12,10 @@ namespace Q
 
 	void UIManager::Initialize()
 	{
+		// UI 按眉 积己秦林扁
+		UIHUD* hud = new UIHUD();
+		mUIs.insert(std::make_pair(eUIType::HpBar, hud));
+
 	}
 	void UIManager::OnLoad(eUIType type)
 	{
@@ -111,6 +116,15 @@ namespace Q
 	void UIManager::OnFail()
 	{
 		mActiveUI = nullptr;
+	}
+
+	void UIManager::Release()
+	{
+		for (auto iter : mUIs)
+		{
+			delete iter.second;
+			iter.second = nullptr;
+		}
 	}
 
 	void UIManager::Push(enums::eUIType type)

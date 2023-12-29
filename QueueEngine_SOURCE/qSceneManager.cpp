@@ -7,6 +7,7 @@ namespace Q
 	std::map<std::wstring, Scene*> SceneManager::mScene = {};
 	Scene* SceneManager::mActiveScene = nullptr;
 	Scene* SceneManager::mDontDestroyOnLoad = nullptr;
+	GameObject* SceneManager::allKirby = nullptr;
 
 	Scene* SceneManager::LoadScene(const std::wstring& name)
 	{
